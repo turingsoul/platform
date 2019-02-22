@@ -1,0 +1,296 @@
+.queryPanle{
+    height: 100%; 
+    margin-top: -1px; 
+    background: rgba(233,237,242,1);
+    position: relative;
+    overflow:hidden
+}
+.queryList{
+	float: left;
+	width: 240px;
+	height: 100%;
+	background: rgb(239, 241, 244);
+	color: #444;
+	font-size: 14px;
+}
+.queryList>div
+{
+	padding: 30px 15px 10px;
+}
+.queryList .addQuery
+{
+	width: 15px;
+    height: 15px;
+    background: rgba(24,144,255,1);
+    border-radius: 1px;
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 2px;
+    right: 0;
+    color: #fff;
+    line-height: 13px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.queryList>ul>li
+{
+	height: 32px;
+    line-height: 32px;
+	padding-left: 35px;
+	border-left: 2px #0000 solid;
+}
+.queryList>ul>li:hover{
+	background: rgba(24, 144, 255, 0.2);
+	border-color: #1890FF
+}
+.queryList>ul>li .deleteQuery
+{
+	background-image: url(../../../lib/images/icon.png);
+	width: 20px;
+    height: 20px;
+    display: none;
+    float: right;
+    position: relative;
+    background-position: -635px -178px;
+    top: 6px;
+    margin-right: 15px;
+}
+.queryList>ul>li:hover .deleteQuery{
+	display: inline-block;
+	cursor: pointer;
+}
+.queryInfo{
+    float: left;
+    width: calc(100% - 240px);
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.queryInfo .con{
+    width: calc(100% - 16px);
+    margin-top: 8px;
+    margin-left: 8px;
+    background: #fff;
+    padding-top: 18px;
+    padding-left: 18px;
+    color: #444;
+    font-size: 14px;
+    overflow: auto
+}
+.queryInfo .con .label{
+	line-height: 40px;
+    width: 80px;
+    display: inline-block;
+    float: left;
+}
+
+.inputBorder{
+    background: rgba(255,255,255,1);
+    border: 1px solid rgba(217, 217, 217, 1);
+	border-radius: 4px;
+	color: #444;
+	font-size: 14px;
+	height: 30px;
+    line-height: 30px;
+    padding-left: 10px
+}
+.marginTop18{
+    margin-top: 18px;
+    overflow: hidden;
+}
+.queryNameInput{
+    width: 388px
+}
+.dataConnectSelect{
+    width: 400px;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    margin-top: 4px;
+}
+.param1{
+    width: 178px; 
+    margin-right:18px;
+}
+.param2{
+    width: 178px; 
+    margin-right:20px
+}
+.param3{
+    width: 190px;
+    height: 32px;
+    line-height: 32px;
+}
+.copyAdd{
+    color: #1890FF;
+    cursor: pointer;
+}
+.apiAdd{
+    width: 770px;
+    margin-right: 18px;
+    margin-top: 4px;
+}
+.sqlArea{
+    float: left; 
+    width: 850px; 
+    height: 582px;
+    padding-left: 0;
+}
+.queryInfo .CodeMirror{
+    height: 100%
+}
+
+.myswitch {
+    position: relative;
+    float: left; 
+    width: 46px;
+    margin: 0;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+    margin-top: 8px
+}
+.myswitch-checkbox {
+    display: none;
+}
+.myswitch-label {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border-radius: 20px;
+}
+.myswitch-inner {
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.myswitch-inner::before, .myswitch-inner::after {
+    display: block; 
+    float: right; 
+    width: 50%; 
+    height: 24px; 
+    padding: 0; 
+    line-height: 26px;
+    font-size: 14px; 
+    color: white; 
+    font-family: 
+    Trebuchet, Arial, sans-serif; 
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.myswitch-inner::after {
+    content: attr(data-on);
+    padding-left: 10px;
+    background-color: #1890FF; 
+    color: #FFFFFF;
+}
+.myswitch-inner::before {
+    content: attr(data-off);
+    padding-right: 10px;
+    background-color: #EEEEEE; 
+    color: #999999;
+    text-align: right;
+}
+.myswitch-switch {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    background: #FFFFFF;
+    top: 0;
+    bottom: 0;
+    right: 56px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.myswitch-checkbox:checked + .myswitch-label .myswitch-inner {
+    margin-left: 0;
+}
+.myswitch-checkbox:checked + .myswitch-label .myswitch-switch {
+    right: 0px; 
+}
+.myswitch-checkbox + .myswitch-label .myswitch-switch{
+    right: 20px
+}
+.paramList li:not(:first-child){
+    margin-top: 18px
+}
+.deleteParam{
+    background-image: url(../../../lib/images/icon.png);
+	width: 20px;
+    height: 20px;
+    background-position: -635px -178px;
+    top: 6px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+.insertParam{
+    margin-left: 10px;
+    margin-right: 5px;
+    color: #1890FF;
+    cursor: pointer;
+}
+.btn
+{
+    width: 100px;
+    height: 36px;
+    border-radius: 4px;
+    line-height: 36px;
+    text-align: center;
+    border: none;
+}
+.saveButton{
+    background: rgba(24,144,255,1);
+    color: #fff;
+    margin-left: 38px;
+}
+.reviewButton{
+    color: #444444;
+    border: 1px solid #999;
+    margin-left: 17px;
+    background: #fff;
+}
+footer{
+    margin-top: 63px;
+    margin-bottom: 36px;
+}
+.addParam
+{
+    margin-left: 80px;
+    width: 720px;
+    text-align: center;
+    color: #1890FF;
+    margin-top: 13px;
+    cursor: pointer;
+}
+.addParaButton{
+    background-image: url(../../../lib/images/icon.png);
+	width: 20px;
+    height: 20px;
+    background-position: -949px -179px;
+    top: 6px;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+.queryPanle .alert .alert-box .imgbox{
+    background-image: url(../../../lib/images/icon.png);
+	width: 24px;
+    height: 24px;
+    background-size: auto;
+    background-position: -450px -153px;
+}
+.queryPanle .error.alert .alert-box .imgbox{
+    background-position: -479px -153px;
+}
+.queryTitle{
+    width: 160px;
+    overflow: hidden;
+    display: inline-block;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

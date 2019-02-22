@@ -1,0 +1,206 @@
+@charset "UTF-8";
+.panel{
+	width: 100%;
+	height: calc(100% - 56px);
+}
+.toolbarBoxIcon{
+	width: 15px;
+	height: 100%;
+	background: #333;
+	float: right;
+	cursor: pointer;
+}
+.toolbarBoxIcon i{
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: url("../../lib/images/icon_dark2.png") no-repeat;
+	background-position: -41px -16px;
+	margin-top: 117px;
+}
+.panel>.toolbarBox{
+	height: 250px;
+	position: absolute;
+	top:41%;
+	left: -10px;
+}
+.panel .toolbar{
+	position: absolute;
+	top:0;
+	background: #001529;
+	border-radius: 0 0 5px 5px;
+}
+.panel .toolbar:hover{
+	background: #001529;
+}
+.panel .active{
+	right: 0;
+}
+.panel .toolbar>span{
+    display: block;
+    width: 70px;
+	border-left: 10px solid #001529;
+	padding: 0 22px;
+	font-size: 14px;
+    line-height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b0b0b0;
+	position: relative;
+	cursor: pointer;
+	-webkit-transition: all .1s linear;
+}
+.panel .toolbar>span:hover{
+	border-left:10px solid #1890FF;
+	color: #fff;
+}
+/* .panel .toolbar>span:before {
+  content:"";
+  background-image: url(../../lib/images/icon_dark2.png);
+  background-repeat:no-repeat;
+  position: absolute;
+  top:16px;
+  left:13px;
+  width: 22px;
+  height: 15px;
+} */
+.collect{
+	/*background-image: url(../../lib/images/icon_dark2.png);*/
+	/*background-repeat:no-repeat;*/
+	/*background-position: -140px -66px;*/
+	background: red;
+	position: absolute;
+	top:16px;
+	left:13px;
+	width: 22px;
+	height: 15px;
+}
+/* .panel .toolbar>span:nth-child(1):before {
+  background-position: -140px 0px;
+} 
+.panel .toolbar>span:nth-child(2):before {
+  background-position: -140px -22px;
+} 
+.panel .toolbar>span:nth-child(3):before {
+  background-position: -140px -45px;
+} 
+.panel .toolbar>span:nth-child(4):before {
+  background-position: -140px -66px;
+} 
+.panel .toolbar>span:nth-child(5):before {
+  background-position: -140px -86px;
+}  */
+.reportReview{
+	height: calc(100% - 61px);
+	overflow-y: auto;
+}
+.reportNode{
+	width:300px;
+	height: 200px;
+	/*box-shadow: 1px 1px 10px 1px grey;*/
+	/*overflow: hidden;*/
+	border: 1px solid #E1E6E8;
+	float: left;
+	margin: 10px;
+	position: relative;
+	cursor: pointer;
+	z-index: 0;
+}
+.reportNode:hover {
+	/*box-shadow:0 2px 20px 0 rgba(75,175,216,0.39);*/
+}
+.reportNode i{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color:rgba(46,95,148,0.8);
+	color: #fff;
+	/* border: 2px solid #fff; */
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	z-index: 1;
+	display: none;
+	text-align: center;
+	line-height: 20px;
+	font-size: 16px;
+	font-style: normal;
+	font-family: 'Microsoft YaHei';
+}
+.reportNode>.tips{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:300px;
+	height:40px;
+	background-color:rgba(240,242,245,0.9);
+	line-height: 30px;
+	-webkit-transition: all .1s linear;
+	cursor: pointer;
+	font-family: "microsoft yahei";
+}
+.reportNode>.tips span:nth-child(1){
+	font-size:16px;
+	display: block;
+	margin-left:2%;
+	color:#333;
+	line-height:40px;
+	padding-left:10px;
+	width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.reportNode>.tips span:nth-child(2){
+	position: absolute;
+	font-size:14px;
+	display: block;
+	color:#333;
+	line-height:40px;
+	top: 0px;
+	height:40px;
+	right:10px;
+}
+/*hover*/
+.reportNode:hover .tips{
+	background-color:rgba(240,242,245,0.9);
+	color:white;
+	height: 100%;
+	-webkit-transition-property: height,background;
+	-webkit-transition-duration: 0.2s,0.2s;
+}
+.reportNode:hover i{
+	display: block;
+	background:#1890ff;
+}
+.reportNode i:hover{
+	background-color:rgba(46,95,148,1);
+}
+.reportNode:hover .tips span:nth-child(1){
+	display: block;
+	font-size: 20px;
+	/* margin-top: 60px; */
+	padding: 0 10px;
+	height: 120px;
+	text-overflow: clip;
+	white-space: normal;
+	width: auto;
+	overflow-wrap: break-word;
+}
+.reportNode:hover .tips span:nth-child(2){
+	position: absolute;
+	font-size:14px;
+	display: block;
+	color:#666;
+	font-family: "microsoft yahei";
+	line-height:40px;
+	top: 26px;
+	height:40px;
+	left:21px;
+}
+iframe{
+	width:100%;
+	border:0px;
+}
+

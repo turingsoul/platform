@@ -1,0 +1,105 @@
+<div class="roleDisplayPart">
+    <div>
+        <span class="manageGroup">角色</span>
+        <span class="deleteRole"></span>
+        <span class="addRole"></span>
+    </div>
+    <select class="chooseUser2" multiple="true">
+        <option value="admin1">admin5</option>
+        <option value="admin2">admin6</option>
+        <option value="option-C">admin7</option>
+        <option value="option-D">admin8</option>
+    </select>
+</div>
+<div class="roleManagerRight">
+    <div>
+        <span class="controlPower">操作权限</span>
+        <div class="controlList">
+            <div class="authority authority0">
+                <input type="checkbox" id="checkbox1"/>
+                <label for="checkbox1" id="checkLabel1">管理员安全</label>
+            </div>
+            <div class="authority authority1">
+                <input type="checkbox" id="checkbox2"/>
+                <label for="checkbox2" id="checkLabel2">运行报表</label>
+            </div>
+            <div class="authority authority2">
+                <input type="checkbox" id="checkbox3"/>
+                <label for="checkbox3" id="checkLabel3">阅读内容</label>
+            </div>
+            <div class="authority authority3">
+                <input type="checkbox" id="checkbox4"/>
+                <label for="checkbox4" id="checkLabel4">计划内容</label>
+            </div>
+            <div class="authority authority4">
+                <input type="checkbox" id="checkbox5"/>
+                <label for="checkbox5" id="checkLabel5">发布内容</label>
+            </div>
+            <div class="authority authority5">
+                <input type="checkbox" id="checkbox6"/>
+                <label for="checkbox6" id="checkLabel6">创建内容</label>
+            </div>
+            <div class="authority authority6">
+                <input type="checkbox" id="checkbox7"/>
+                <label for="checkbox7" id="checkLabel7">管理数据源</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="roleRightLeft">
+            <span class="roleType1 spanStyle">用户</span>
+            <span class="canChooseItem1">可用项</span>
+            <select class="canChooseSelect1" multiple="true">
+                <option value="admin1">admin1</option>
+                <option value="admin2">admin2</option>
+                <option value="option-C">admin3</option>
+                <option value="option-D">admin4</option>
+            </select>
+        </div>
+        <div class="roleRightMiddle">
+            <div class="jumpSelect11" ng-click="addUserToRole();"> </div>
+            <div class="jumpSelect31" ng-click="assignAllUser();"> </div>
+            <div class="jumpSelect41" ng-click="removeAllUser();"> </div>
+            <div class="jumpSelect21" ng-click="removeUsersFromRole();"></div>
+        </div>
+        <div class="roleRightRight">
+            <span class="choosedItem1">选中的</span>
+            <select class="choosedSelect1" multiple="true">
+                <option value="admin1">admin5</option>
+                <option value="admin2">admin6</option>
+                <option value="option-C">admin7</option>
+                <option value="option-D">admin8</option>
+            </select>
+        </div>
+    </div>
+</div>
+<!--add New Role-->
+<div class="addNewRole">
+    <div class="title">
+        <span class="title-name">新角色</span>
+        <span class="addNewRoleFalse title-cancel"></span>
+    </div>
+    <div class="item addNewRoleItem">
+        <div class="name">
+            <span class="spanRole spanStyle">角色名</span>
+            <span class="roleNameNulTips"></span>
+        </div>
+        <input type="text" class="inputNewRole"/>
+    </div>
+    <div class="btn-wrapper">
+        <div class="addNewRoleTrue btnCheckStyle">确定</div>
+        <div class="addNewRoleFalse btnCancelStyle">取消</div>
+    </div>
+</div>
+<!--Delete Role-->
+<div class="deleteOldRole">
+    <div class="title">
+        <span class="title-name">删除角色</span>
+        <span class="title-cancel deleteOldRoleFalse"></span>
+    </div>
+    <div class="deleteOldRoleTrue btnCheckStyle">确定</div>
+    <div class="deleteOldRoleFalse btnCancelStyle">取消</div>
+    <div class="deleteRoleLogo"></div>
+    <panel class="deleteRoleLogoTips">确定删除该角色？</panel>
+</div>

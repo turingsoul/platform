@@ -1,0 +1,75 @@
+<div ng-controller="userAdminCtr">
+    <div class="userAdmin">
+        <div class="title font-blod600">
+            <span class="title-name">用户设置</span>
+            <span class="title-cancel" ng-click="close();" title="关闭"></span>
+        </div>
+        <div class="main">
+            <div class="limits">
+                <p class="font-blod600">用户权限</p>
+                <div class="label-wrapper">
+                    <label ng-repeat="x in localizedRoleNames"><input type="checkbox" disabled ng-checked="checkRole(x.roleName);"/>{{x.localizedName}}</label>
+                </div>
+            </div>
+            <div class="settings">
+                <span id="yhnUserExpireTips">用户将在10天后过期</span>
+                <p class="font-blod600">授权信息</p>
+
+                <div class="index">
+                    <span>用户首页</span>
+                    <button class="myBtn" ng-click="showViewFile();">浏览</button>
+                    <input type="text" class="setFilePath" ng-model= "setFilePath"></input>
+                </div>
+                <div class="theme">
+                    <span>用户主题</span>
+                    <select>
+                        <option value="theme-default">主题1</option>
+                    </select>
+                </div>
+                <div class="showFile">
+                    <label><input type="checkbox" ng-model="ifhide"/>显示隐藏文件</label>
+                </div>
+            </div>
+            <div class="model-btn">
+                <input type="button" class="cancel myBtn1" ng-click="close();" value="取消" title="取消"/>
+                <input type="button" class="next myBtn" ng-click="sure();" value="确定" title="确定"/>
+            </div>
+        </div>
+    </div>
+    <div class="viewFile" ng-hide="viewFile">
+        <div class="title font-blod600">
+            <span class="title-name">浏览文件</span>
+            <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+        </div>
+        <div class="main" style="height: 440px">
+            <div class="index">
+                <span>位置</span>
+                <button class="myBtn" ng-click="upLocation();">上一级</button>
+                <div class="setFilePath">{{myPath}}</div>
+            </div>
+            <div class="fileLists">
+                <div class="fileListsTitle"><span>名字</span><span>修改日期</span></div>
+                <div class="xdt-div-loading" ng-style="{display:fileListLoading?'block':'none'}"></div>
+                <ul>
+                    <li ng-repeat="x in fileList" ng-click="folderList(x);" ng-show="folderShow(x);">
+                        <span class="fileTypeIcon" ng-value="{{x.file.name | getExtension}}"></span>
+                        <span>{{x.file.name | hideExtension }}</span>
+                        <span>{{x.file.createdDate  | date : 'yyyy-MM-dd'}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="fileName">
+                <span>文件名</span>
+                <select ng-model="filetype" ng-change="changeType(filetype);">
+                    <option ng-repeat="n in fileType">{{n}}</option>
+                </select>
+                <div class="setFileName">{{setFileName}}</div>
+            </div>
+            <div class="model-btn">
+                <input type="button" class="cancel myBtn1" ng-click="closeAlert();" value="取消" title="取消"/>
+                <input type="button" class="next myBtn" ng-click="filePath();" value="确定" title="确定"/>
+            </div>
+        </div>
+    </div>
+</div>
+

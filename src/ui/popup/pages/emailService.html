@@ -1,0 +1,71 @@
+<div class="emailServiceBox" ng-controller="emailServiceController">
+    <div class="emailHead">
+        <span class="emailTitle">邮件服务器设置</span>
+        <span class="emailClose" ng-click ="close();" ></span>
+    </div>
+    <div class="emailContent">
+        <div class="smtpServer smallOuterBox">
+            <span class="smtpLabel emailLabelCommon">SMTP服务器</span>
+            <input type="text" class="emailInputCommon"/>
+        </div>
+        <div class="smtpPort smallOuterBox">
+            <span class="smtpPortLabel emailLabelCommon">端口</span>
+            <input type="text" class="emailInputCommon"/>
+        </div>
+        <div class="username smallOuterBox">
+            <span class="usernameLabel emailLabelCommon">用户名</span>
+            <input type="text" class="emailInputCommon"/>
+        </div>
+        <div class="password smallOuterBox">
+            <span class="passwordLabel emailLabelCommon">密码</span>
+            <input type="password" class="emailInputCommon"/>
+        </div>
+        <div class="emailAddress smallOuterBox">
+            <span class="emailAddressLabel emailLabelCommon">邮件发送地址</span>
+            <input type="text" class="emailInputCommon"/>
+        </div>
+        <div class="emailUserName smallOuterBox">
+            <span class="emailUsernameLabel emailLabelCommon">邮件发送者名称</span>
+            <input type="text" class="emailInputCommon"/>
+        </div>
+        <div class="protocal smallOuterBox">
+            <span class="protocalLabel emailLabelCommon">协议</span>
+            <select name="" id="" class="emailInputCommon">
+                <option value="smtp"><div>SMTP</div></option>
+                <option value="smtps"><div>SMTPS</div></option>
+            </select>
+        </div>
+        <div class="checkGroup smallOuterBox">
+            <div class="checkGroupLeft">
+                <input type="checkbox" id="tlsCheck"/>
+                <label class="checkTLSLabel" for="tlsCheck">
+                    使用TLS
+                </label>
+            </div>
+            <div class="checkGroupRight">
+                <input type="checkbox" id="sslCheck"/>
+                <label class="checkTLSLabel" for="sslCheck">
+                    使用SSL
+                </label>
+            </div>
+        </div>
+        <!--button-->
+        <div class="buttonGroup smallOuterBox">
+            <button class="yhnBtn checkConfirm">确认</button>
+            <button class="yhnBtn testConnect" ng-click ="connectTest();" >测试</button>
+            <button class="yhnBtn cancel" ng-click="close();">取消</button>
+        </div>
+    </div>
+</div>
+<div class="configBackGround" ng-controller="emailServiceController">
+    <div class="connectConfig">
+        <div class="connectConfigHead">
+            <span class="configTitle">连接邮件配置</span>
+            <span class="configClose" ng-click ="closeConfig();" ></span>
+        </div>
+        <span class="configTestSuccessLogo"></span>
+        <span class="configSuccessLabel1">成功连接到邮箱服务器</span>
+        <span class="configSuccessLabel2">检查<a>test@unionbigdata.com</a>的收件箱确认</span>
+        <span class="configClose2" ng-click ="closeConfig();" >关闭</span>
+    </div>
+</div>

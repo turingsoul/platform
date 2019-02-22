@@ -1,0 +1,369 @@
+.emailServiceBox{
+    position: fixed;
+    height:616px;
+    width:700px;
+    left:50%;
+    top:50%;
+    margin-left:-350px;
+    margin-top:-310px;
+    z-index:100;
+    background:white;
+}
+/*ͷ��*/
+.emailServiceBox .emailHead{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+.emailServiceBox .emailHead span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 54px;
+}
+.emailServiceBox .emailHead .emailClose{
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 19px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+
+.emailServiceBox .emailHead .emailClose:hover{
+    cursor: pointer;
+    background-position: -713px -159px;
+}
+/*���߿�*/
+
+.emailContent {
+    margin-top: -20px;
+}
+.emailContent>div {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 0 36px;
+    font-size: 14px;
+    color: #333333;
+}
+.emailContent .buttonGroup {
+    padding: 0 20px;
+}
+.emailContent>div span {
+    width: 110px;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+    font-weight: 400;
+    padding-right: 2px;
+}
+.emailContent>div input,
+.emailContent>div select {
+    width: 514px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid#d9d9d9;
+    text-indent: 14px;
+    color: #666;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 4px;
+}
+.emailContent .checkGroup {
+    display: flex;
+    justify-content: flex-start;
+    width: 500px;
+    margin-left: 148px;
+    margin-top: -10px;
+    padding: 0;
+}
+.emailContent .checkGroupLeft,
+.emailContent .checkGroupRight {
+    width: 50%;
+}
+.emailContent .checkGroupLeft input,
+.emailContent .checkGroupRight input {
+    width: 15px;
+    height: 15px;
+    margin-left: 0;
+    float: left;
+}
+
+.smallOuterBox{
+    margin-top: 14px;
+    display: block;
+    width:100%;
+    height:57px;
+    font-family: "microsoft yahei";
+
+}
+.emailLabelCommon{
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    float:left;
+    width:30%;
+    text-align: right;
+    padding-right:11px;
+    line-height: 29px;
+}
+.emailInputCommon{
+    display: block;
+    float:left;
+    width:321px;
+    height:29px;
+    border:1px solid #D8D8D8;
+    font-size: 14px;
+    line-height:14px;
+    text-indent: 12px;
+}
+.emailContent .protocal select{
+    text-indent: 11px;
+    /*padding-left:12px;*/
+    display: block;
+}
+.protocal option{
+    padding-left:12px;
+}
+.smtpServer{
+    margin-top: 40px;
+}
+.buttonGroup button{
+    float: right;
+    width:80px;
+    height:32px;
+    line-height: 32px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background: #1890ff;
+    color: #fff;
+}
+/*.yhnBtn{*/
+/*color:white;*/
+/*font-size: 14px;*/
+/*line-height: 29px;*/
+/*text-align: center;*/
+/*border:none;*/
+/*letter-spacing:10px;*/
+/*text-indent: 10px;*/
+/*-webkit-border-radius: 4px;*/
+/*-moz-border-radius: 4px;*/
+/*border-radius: 4px;*/
+/*cursor: pointer;*/
+/*}*/
+.buttonGroup button.checkConfirm,
+.buttonGroup button.testConnect {
+    margin-left: 10px;
+    margin-top: 8px;
+
+}
+.buttonGroup button.testConnect:hover,
+.buttonGroup button.checkConfirm:hover{
+    border: 1px solid #40a9ff;
+    background: #40a9ff;
+    color: #FFFFFF;
+}
+.buttonGroup button.testConnect:focus,
+.buttonGroup button.checkConfirm:focus{
+    border: 1px solid #1368b7;
+    background: #1368b7;
+    color: #FFFFFF;
+}
+
+.buttonGroup button.cancel{
+    background: #fff;
+    margin-top: 8px;
+    color: #333333;
+}
+.buttonGroup button.cancel:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+    background: #ffffff;
+}
+.buttonGroup button.cancel:active{
+    border: 1px solid #1368b7;
+    color: #1368b7;
+    background: #ffffff;
+}
+.checkGroupLeft input{
+    display: block;
+    width: 15px;
+    height: 15px;
+    float:left;
+    margin-left:190px;
+}
+.checkGroupLeft label{
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    float:left;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left:8px;
+    margin-top: -3px;
+}
+.checkGroupRight input{
+    display: block;
+    width: 15px;
+    height: 15px;
+    float:left;
+    margin-left:135px;
+}
+.checkGroupRight label{
+    float:left;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left:10px;
+    margin-top: -3px;
+}
+.protocal{
+    height:40px;
+}
+.connectConfig{
+    position: absolute;
+    width:440px;
+    height:200px;
+    background:white;
+    left:50%;
+    top:50%;
+    margin-left:-220px;
+    margin-top:-100px;
+}
+.connectConfigHead{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+
+.connectConfigHead span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.connectConfigHead .configClose {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 17px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.connectConfigHead .configClose:hover {
+    cursor: pointer;
+}
+.alert-box .title .configClose:hover {
+    background-position: -713px -159px;
+    cursor: pointer;
+}
+
+
+.configBackGround{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:100;
+    display: none;
+}
+
+
+.connectConfig .configTestSuccessLogo{
+    float: left;
+    margin-top:16px;
+    margin-left:44px;
+    width:30px;
+    height:30px;
+    display: block;
+    margin-right: 14px;
+    background-size: contain;
+}
+.testRight{
+    width:128px;
+    height:128px;
+    background:url("../../../lib/images/successLogo.png");
+}
+.testWrong{
+    background:url("../../../lib/images/deleteLogo.png");
+    background-repeat: no-repeat;
+}
+.configSuccessLabel1{
+    float: left;
+    width: calc(100% - 160px);
+    text-align: left;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: #666666;
+    margin-top: 22px;
+}
+.configSuccessLabel2{
+    display:block;
+    width:100%;
+    margin-top: 56px;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 86px;
+    text-align: left;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: #666666;
+}
+.configSuccessLabel2 a{
+    color:#1890FF;
+}
+.configClose2{
+    display: block;
+    width:80px;
+    height:32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    margin-left:339px;
+    margin-top: 21px;
+    color:white;
+    background:#1890ff;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: "microsoft yahei";
+}
+.configClose2:hover{
+    border: 1px solid #40a9ff;
+    background: #40a9ff;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.configClose2:active{
+    border: 1px solid #1368b7;
+    background: #1368b7;
+    color: #FFFFFF;
+    cursor: pointer;
+}

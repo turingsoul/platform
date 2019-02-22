@@ -1,0 +1,883 @@
+.tree-folder .uploadPopup{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -205px 0 0 -220px;
+    width: 440px;
+    height: 410px;
+    background-color: #fff;
+    z-index: 100;
+    font-family: "Microsoft YaHei";
+}
+/*titleName*/
+.uploadPopup .titleName,.propertyPopup .titleName{
+    width: 100%;
+    box-sizing: border-box;
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+.uploadPopup{
+    display: none;
+}
+.uploadPopup .titleName span,.propertyPopup .titleName span{
+    display: block;
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 54px;
+    padding: 0 20px;
+    height: 54px;
+    overflow: hidden;
+}
+.uploadPopup .titleName span:nth-child(2),.propertyPopup .titleName span:nth-child(2){
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-image: url("../../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+	background-position: -692px -159px;
+	padding: 0
+}
+.uploadPopup .titleName span:nth-child(2):hover,.propertyPopup .titleName span:nth-child(2):hover{
+    background-position: -713px -159px;
+    cursor: pointer;
+}
+.uploadPopup div.wordsTip{
+    margin: 0px 0 18px 0 ;
+    font-size: 14px;
+    color: #666666;
+    padding: 0 36px
+}
+.uploadPopup .fileOperate{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding:0 36px;
+    height: 34px;
+    line-height: 34px;
+    color: #666
+}
+.uploadPopup .operateOption{
+    font-size: 12px;
+    padding-left:20px;
+}
+
+.tree-folder .uploadPopup .submitButton{
+    font-size: 14px;
+    cursor: pointer;
+    background: #1890ff;
+    border: none;
+    outline: none;
+    border: 1px solid #1890ff;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    margin-top: 30px;
+}
+.tree-folder .uploadPopup .submitButton:hover{
+    border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+.tree-folder .uploadPopup .cancelButton{
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    /* margin: 30px 12px 0 0; */
+    margin-right: 7px;
+    background: #ffffff;
+    color: #333333;
+    border: 1px solid #d9d9d9;
+    transition:all .1s linear;
+    -webkit-transition:all .1s linear;
+}
+.tree-folder .uploadPopup .cancelButton:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+}
+.uploadPopup .fileOperate {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.uploadPopup .fileOperate .span {
+    display: block;
+    width: 65px;
+    float: left;
+}
+.uploadPopup .fileOperate .font-blod600 {
+    color: #666666;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.fileOperate label {
+    width: 60px;
+    height: 30px;
+    float: right;
+}
+.fileOperate .myBtn, .fileOperate .myBtn1 {
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid #1890ff;
+    outline: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    margin-right: 0px;
+    line-height: 28px;
+    color: #1890ff;
+}
+.fileOperate .myBtn:hover {
+    background-color: #1890ff;
+    color: #ffffff;
+}
+
+.hide {
+    display: none;
+}
+.fileOperate .filePathParam {
+    display: block;
+    float: right;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    width: 216px;
+    height: 30px;
+    box-sizing: border-box;
+    color: #666;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+
+.uploadPopup .setOptions {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 14px;
+    margin-bottom: -12px;
+}
+.uploadPopup .setOptions span{
+    font-size: 14px;
+    color: #444444;
+    font-weight: bold;
+    display: inline-block;
+}
+.uploadPopup .setOptions span:nth-child(1){
+    width: 0px;
+    height: 0px;
+    /*background-image: url(../../../../lib/images/icon_dark2.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: -42px -72px;*/
+}
+.uploadPopup .fileOption {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    height: 34px;
+    line-height: 34px;
+    padding: 6px 17px;
+    font-size: 14px;
+    margin: 15px 0;
+    color: #666666;
+}
+.uploadPopup .fileOption:last-child{
+    margin-bottom: 20px;
+}
+.uploadPopup .fileOption span {
+    display: inline-block;
+    line-height: 32px;
+    margin-right: 20px;
+}
+.uploadPopup .fileOption .special {
+    margin-right: 6px;
+}
+.uploadPopup .fileOption select {
+    width: 220px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    color: #666666;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+
+
+/*.uploadPopup .operateOption>div:not(:first-child){*/
+/*margin:15px 0 15px 0;*/
+/*font-size: 12px;*/
+/*}*/
+/*.uploadPopup .operateOption>div:not(:first-child) span{*/
+/*display: inline-block;*/
+/*width: 80px;*/
+/*}*/
+
+/*.uploadPopup .operateOption>div:not(:first-child) select{*/
+/*width: 200px;*/
+/*height: 25px;*/
+/*}*/
+.uploadPopup>.handleButton{
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 14px;
+}
+
+
+.newFolderPopup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -220px;
+    width: 440px;
+    height: 200px;
+    border-radius: 3px;
+    background-color: #fff;
+    z-index: 10;
+}
+.newFolderPopup .newNameTips{
+    margin-top: 10px;
+    color: red;
+    font-size: 12px;
+}
+
+/*.newFolderPopup span{*/
+/*display: block;*/
+/*padding-left: 30px;*/
+/*font-size:14px;*/
+/*}*/
+
+/*.newFolderPopup span:nth-child(1){*/
+/*color: #fff;*/
+/*width: 270px;*/
+/*padding-top: 5px;*/
+/*height: 25px;*/
+/*background-color: #000;*/
+/*font: 14px "Microsoft YaHei";*/
+/*}*/
+/*.newFolderPopup span:nth-child(2){*/
+/*font: 14px "Microsoft YaHei";*/
+/*margin-top: 15px;*/
+/*height: 30px;*/
+/*}*/
+
+/*.newFolderPopup .handleButton{*/
+/*margin-top: 10px;*/
+/*margin-left: 110px;*/
+/*}*/
+
+.newFolderPopup .title {
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+.newFolderPopup .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 54px;
+}
+
+.newFolderPopup .title .title-cancel {
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-image: url("../../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+	background-position: -692px -159px;
+	padding: 0
+}
+.newFolderPopup .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+
+.newFolderPopup .name {
+    width: 100%;
+    padding: 0 36px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: #444444;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 20px;
+
+}
+.newFolderPopup .name span {
+    margin-right: 8px;
+}
+.newFolderPopup .name input {
+    width: 318px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666666;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 0;
+}
+.newFolderPopup .errMessge {
+    margin-top: 5px;
+}
+.newFolderPopup .errMessge span {
+    padding-left: 72px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    color: red;
+}
+.newFolderPopup .handleButton {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-top: 14px;
+    overflow: hidden;
+    margin-bottom: 14px;
+
+}
+.newFolderPopup .handleButton button {
+    float: right;
+    width: 80px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    outline: none;
+    border-radius: 4px;
+    color: #333333;
+    font-size: 14px;
+}
+.newFolderPopup .handleButton .submitButton {
+    border: 1px solid #1890ff;
+    background-color: #1890ff;
+    color: #ffffff;
+}
+
+.newFolderPopup .handleButton .submitButton:hover{
+    border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+
+.newFolderPopup .handleButton .cancelButton:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+}
+
+.newFolderPopup input{
+    display: inline-block;
+    margin-left:30px;
+    width: 238px;
+    height: 28px;
+    border-radius: 3px;
+    outline: none;
+    text-indent: 5px;
+    color: #666;
+    box-sizing: border-box;
+    border: 0.5px solid #A9A9A9;
+}
+.newFolderPopup .hiddenTips{
+    visibility: hidden;
+}
+.newFolderPopup .renameTips{
+    margin-top: 10px;
+    color: red;
+    font-size: 12px;
+}
+.submitButton,.cancelButton{
+    font-size: 12px;
+    cursor: pointer;
+    background: #2e5f94;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    transition: all .1s linear;
+    -webkit-transition:all .1s linear;
+}
+.newFolderPopup .submitButton,.newFolderPopup .cancelButton{
+    width: 60px;
+}
+.submitButton:hover{
+    border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+.cancelButton{
+    background-color: #fff;
+	border: 1px solid #d9d9d9;
+    color: #333333;
+    margin-right: 12px
+}
+
+.cancelButton:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+}
+
+.clearoutCollection{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -220px;
+    width: 440px;
+    height: 200px;
+    z-index: 100;
+    background: #fff;
+    box-shadow: none;
+}
+
+.clearoutCollection .title {
+    width: 100%;
+    box-sizing: border-box;
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.clearoutCollection .title span{
+    color: #333333;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 54px;
+}
+.clearoutCollection .title .title-cancel {
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-image: url("../../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+	background-position: -692px -159px;
+	padding: 0
+}
+.clearoutCollection .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+
+.clearoutCollection .content {
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 0px 36px;
+    box-sizing: border-box;
+    height: 80px;
+}
+.clearoutCollection .content .imgbox {
+    line-height: 60px;
+    margin-right: 16px;
+    margin-top: 30px;
+    width: 24px;
+	height: 24px;
+	background: url(../../../../lib/images/icon.png) no-repeat;
+    background-position: -450px -153px;
+}
+.clearoutCollection .content .text {
+    text-align: left;
+    color: #666;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 30px;
+}
+.clearoutCollection .handleButton {
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-right: 20px;
+    width: 172px;
+    float: right;
+    margin-bottom: 14px;
+    margin-top: 22px;
+}
+
+.clearoutCollection .handleButton button {
+    float: right;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+}
+
+.clearoutCollection .handleButton .cancelButton:hover {
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+    background: #ffffff;
+}
+.clearoutCollection .handleButton .cancelButton:active {
+    border: 1px solid #1368b7;
+    color: #1368b7;
+    background: #ffffff;
+}
+
+.clearoutCollection .handleButton .submitButton {
+    border: 1px solid #1890ff;
+    background: #1890ff;
+    color: #ffffff;
+}
+.clearoutCollection .handleButton .submitButton:hover {
+    border: 1px solid #40a9ff;
+    background: #40a9ff;
+    color: #FFFFFF;
+ }
+
+.clearoutCollection .handleButton .submitButton:active {
+    border: 1px solid #1368b7;
+    background: #1368b7;
+    color: #FFFFFF;
+}
+
+
+
+
+
+.propertyPopup{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -220px 0 0 -220px;
+    width: 440px;
+    /* height: 467px; */
+    background-color: #fff;
+    z-index: 200;
+    font-family: "Microsoft YaHei";
+}
+.roleBox {
+    width: 440px;
+    height: 523px;
+    margin: -220px 0 0 -220px;
+}
+.roleBox .titleName {
+    margin-bottom: -10px;
+}
+.roleBox, .item1{
+    display: none;
+    color: #666;
+    /* width: 368px */
+}
+.roleBox .propertyBody p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.item1 p label{
+    width: 50%;
+}
+
+.propertyPopup .propertyBox{
+    font-size: 14px;
+}
+.propertyPopup .propertyBox p{
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #666666;
+    overflow: hidden;
+}
+.propertyPopup .propertyBox p:last-child{
+    margin-bottom: 0;
+}
+.propertyPopup .propertyBox .special {
+    margin-top: 20px;
+}
+.propertyPopup .propertyBody{
+    padding: 0 36px 20px 36px;
+}
+.propertyPopup .btn-wrapper {
+   overflow: hidden
+}
+.propertyPopup .item1 .btn-wrapper input {
+    margin: 0;
+    margin-left: 10px;
+    text-align: center;
+}
+.propertyPopup .btn-wrapper .model-btn {
+    width: 52px;
+    float: right;
+    zoom: 1;
+    margin-top: 0;
+    margin-bottom: 8px;
+    margin-right: 15px;
+}
+.propertyPopup .propertyBody .btn-wrapper .model-btn{
+    margin-right: 0
+}
+.propertyBox .btn-wrapper .model-btn input:first-child{
+    background: #1890ff;
+    border: none;
+    border-radius: 1px;
+    color: #fff;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin-right: 0
+}
+
+.propertyBox .btn-wrapper .model-btn input:nth-child(2){
+    background: #1890ff;
+    border: none;
+    border-radius: 1px;
+    color: #fff;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+}
+.propertyPopup.roleBox .model-btn{
+    margin-top: 7px;
+    width: 172px;
+    margin-right: 20px;
+}
+.propertyPopup.roleBox .model-btn input:first-child{
+    margin-right: 12px
+}
+.propertyPopup .model-btn {
+    width: 172px;
+    float: right;
+    overflow: hidden;
+    zoom: 1;
+    margin-bottom: 14px;
+    margin-top: 34px;
+    margin-right: 20px;
+}
+.propertyPopup .model-btn input {
+    float: left;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    color: #333333;
+    font-size: 14px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.propertyPopup .model-btn input:first-child{
+    margin-right: 12px;
+}
+.propertyPopup .model-btn .next {
+    border: 1px solid #1890ff;
+    background: #1890ff;
+    color: #ffffff;
+}
+.propertyPopup .model-btn .next:hover{
+    border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+.selectProperty{
+    height: 32px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+.selectProperty ul {
+    height: 32px;
+    width: 440px;
+    box-sizing: border-box;
+    padding: 0 140px;
+}
+.selectProperty  ul li{
+    width: 80px;
+    box-sizing: border-box;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #c4c4c4;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333333;
+}
+.selectProperty ul li:nth-child(1){
+    border-radius: 4px 0 0 4px;
+    border-right: 1px solid #1890ff;
+}
+.selectProperty ul li:nth-child(2){
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #1890ff;
+    margin-left: -1px;
+}
+.selectProperty .active{
+    border: 1px solid #1890ff;
+    color: #1890ff;
+}
+
+
+.propertyBody select{
+    width:368px;
+    height:177px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(217,217,217,1);
+    overflow-y: auto
+}
+.propertyBody select option{
+    height: 25px;
+    line-height: 32px;
+    padding-left: 10px;
+    padding-top: 7px;
+    color: #666;
+}
+.roleBox select{
+    height: 164px;
+    width: 100%;
+    overflow-y: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.roleBox select option {
+    height: 20px;
+    line-height: 20px;
+    text-indent: 14px;
+    font-size: 14px;
+    padding:5px 0;
+    color: #666666;
+}
+.propertyBox .item0 label,
+.propertyBox .item1 label {
+    vertical-align: middle;
+}
+.propertyBox .item0 input,
+.propertyBox .item1 input {
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 8px;
+}
+.propertyBox .item1 input {
+    padding-left: 20px;
+}
+.propertyBox .item1 label {
+    padding-left: 10px;
+}
+.propertyBox .item1 .first {
+    padding-left: 0;
+}
+/*.propertyPopup>div:nth-child(2){*/
+/*margin: 20px 0 20px 15px;*/
+/*display: none;*/
+/*}*/
+/*.propertyPopup .userInfo span{*/
+/*display: block;*/
+/*color: #000;*/
+/*font-weight: bold;*/
+/*font-size: 12px;*/
+/*margin-bottom: 5px;*/
+/*}*/
+/*.propertyPopup .roleName span{*/
+/*margin-top: 10px;*/
+/*}*/
+/*.propertyPopup div:nth-child(2) select{*/
+/*width:280px;*/
+/*height: 90px;*/
+/*}*/
+/*.propertyPopup div:nth-child(2) select option{*/
+/*width: 280px;*/
+/*height: 20px;*/
+/*padding: 2px 10px 2px 10px;*/
+/*font-size: 12px;*/
+/*cursor: pointer;*/
+/*}*/
+/*.propertyPopup .handleButton{*/
+/*margin:10px 0 0 80px;*/
+/*}*/
+
+/*.propertyPopup div:nth-child(2) select option:hover{*/
+/*background-color: #CEE3F4;*/
+
+/*}*/
+/*.propertyPopup .shareInfo{*/
+/*display: none;*/
+/*}*/
+
+/*.setProperty .propertyTitle span{*/
+/*display: inline-block;*/
+/*width: 171px;*/
+/*height: 35px;*/
+/*text-align: center;*/
+/*line-height: 35px;*/
+/*margin-bottom: 10px;*/
+/*font-size: 12px;*/
+/*cursor: pointer;*/
+/*}*/
+/*.setProperty .propertyTitle span:nth-child(2){*/
+/*border-left: 0.5px solid #D1D1D1;*/
+/*border-bottom: 0.5px solid #D1D1D1;*/
+/*background-color: #F1F1F1;*/
+/*}*/
+/*.setProperty .propertyTitle{*/
+/*margin-left: -20px;*/
+/*padding-left: 2px;*/
+/*}*/
+
+/*.setProperty .propertyInfo>span{*/
+/*display: block;*/
+/*color: #000;*/
+/*font-size: 12px;*/
+/*margin-bottom: 5px;*/
+/*}*/
+/*.shareInfo select{*/
+/*width: 310px;*/
+/*} */
+/*.shareInfo select option{*/
+/*padding-left:10px;*/
+/*height: 20px;*/
+/*line-height: 20px;*/
+/*}*/
+/*.shareInfo span{*/
+/*display: block;*/
+/*margin-top: 10px;*/
+/*}*/
+/*.shareInfo{*/
+/*font-size: 12px;*/
+/*margin-top: 15px;*/
+/*}*/
+/*.shareInfo .authenticated span{*/
+/*display: inline-block;*/
+/*}*/
+/*.authenticated span.evenSpan{*/
+/*margin-right:110px;*/
+/*}*/
+/*.authenticated span.deletSpan{*/
+/*margin-right: 133px;*/
+/*}*/

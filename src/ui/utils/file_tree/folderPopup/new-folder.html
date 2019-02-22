@@ -1,0 +1,18 @@
+
+<div class="newFolderPopup" ng-if="folderOperateObj.newFolderPopup">
+  <div class="title">
+    <span>新建文件夹</span>
+    <span class="title-cancel" ng-click = "folderOperateClose()"></span>
+  </div>
+  <div class="name">
+    <span>名字</span>
+    <input class="newNameInput" type="text" ng-keyup="hideNewErrormsg()" value="">
+  </div>
+  <div class="errMessge">
+    <span class='newNameTips hiddenTips'>你没有权限创建目录或目录已存在</span>
+  </div>
+  <span class="handleButton">
+      <button class="submitButton" ng-click = "newFolderRequest()">确定</button>
+      <button class="cancelButton" ng-click = "folderOperateClose()">取消</button>
+    </span>
+</div>

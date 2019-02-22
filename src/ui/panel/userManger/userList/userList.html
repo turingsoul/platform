@@ -1,0 +1,42 @@
+<!--用户列表-->
+
+<div class="user-list" ng-controller="userList">
+  <div class="head">
+    <div class="title">用户列表</div>
+    <div class="event">
+      <div class="add" ng-click="addUser('addUser')"><span></span>添加</div>
+      <div class="minus"><span></span>删除</div>
+      <div class="search">
+        <input type="text" placeholder="输入用户名或姓名进行搜索">
+        <div class="icon"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <section>
+      <div class="ul-head">
+        <div class="item first"><input type="checkbox"></div>
+        <div class="item"><div class="name">用户名</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+        <div class="item"><div class="name">姓名</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+        <div class="item"><div class="name">角色</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+        <div class="item"><div class="name">邮箱</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+        <div class="item"><div class="name">有效期</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+        <div class="item"><div class="name">状态</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+        <div class="item"><div class="name">操作</div><div class="order"><span class="up"></span><span class="down"></span></div></div>
+      </div>
+
+      <div ng-show="users.length>=1" class="content">
+        <div ng-repeat="user in users" class="user">
+          <div class="item"><input type="checkbox"></div>
+          <div class="item">{{user.userName}}</div>
+          <div class="item">{{user.name}}</div>
+          <div class="item">{{user.role}}</div>
+          <div class="item">{{user.email}}</div>
+          <div class="item">{{user.time}}</div>
+          <div class="item">{{user.status}}</div>
+          <div class="item">{{user.operate}}</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

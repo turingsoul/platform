@@ -1,0 +1,761 @@
+.mainGuide{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+.mainGuide .rightFrame{
+    position: absolute;
+    width: 345px;
+    box-sizing: border-box;
+    background: #fff;
+    top: 8px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.mainGuide .leftFrame{
+    position: relative;
+    height: calc(100% - 8px);
+    padding-right: 360px;
+    top: 8px;
+}
+.leftFrame .leftTopGuide{
+    height:calc(100% - 278px);
+    background:#E9EFF2;
+    position: relative;    
+    margin-left: 8px;
+}
+.leftFrame .leftBottomGuide{
+    height:250px;
+    margin-left:8px;
+    margin-top: 12px;
+    background:#fff;
+    overflow-y: hidden;
+}
+.leftBottomGuide .bottomCaseContent{
+    overflow-y: hidden;
+}
+.leftBottomGuide .bottomContent{
+    position: relative;
+    height: calc(100% - 40px);
+    overflow: auto;
+    padding: 0 0 0 15px;
+}
+.bottomContent ul{
+    width:100%;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.bottomContent li{
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 10px 10px 10px 0;
+    width:285px;
+    height:174px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    border:1px solid #E1E6E8;
+}
+.welcomeRepeatLi .tips{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(240,242,245,0.9);
+    color: #333;
+    line-height: 30px;
+    -webkit-transition: all .1s linear;
+    cursor: pointer;
+    font-family: "microsoft yahei";
+}
+.welcomeRepeatLi .tips span:nth-child(1){
+    font-size: 16px;
+    display: block;
+    color: #333;
+    padding-left: 10px;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 40px;
+    white-space: nowrap;
+    /* fff-space: nowrap; */
+}
+.welcomeRepeatLi .tips span:nth-child(2){
+    position: absolute;
+    font-size:14px;
+    display: block;
+    color:#333;
+    line-height:40px;
+    top: 0px;
+    height:40px;
+    right:10px;
+}
+/*hover*/
+.welcomeRepeatLi:hover .tips{
+    /* background-color:rgba(46,95,148,0.8); */
+    background-color:rgba(240,242,245,0.9);
+    color:#fff;
+    height: 100%;
+    -webkit-transition-property: height,background;
+    -webkit-transition-duration: 0.2s,0.2s;
+}
+.welcomeRepeatLi:hover i{
+    display: block;
+}
+.welcomeRepeatLi i:hover{
+    background-color:rgba(46,95,148,1);
+}
+.welcomeRepeatLi:hover .tips span:nth-child(1){
+    display: block;
+    font-size: 14px;
+    padding: 0 10px;
+    color: #333;
+    text-overflow: clip;
+    white-space: normal;
+    width: auto;
+    overflow-wrap: break-word;
+    max-height: 120px;
+}
+.welcomeRepeatLi:hover .tips span:nth-child(2){
+    position: relative;
+    font-size: 12px;
+    display: block;
+    color: #666666;
+    font-family: "microsoft yahei";
+    line-height: 40px;
+    top: 0px;
+    left: 20px;
+}
+
+
+.IconGroupLeft .topPart{
+    position: relative;
+    width:100%;
+    height:calc(50% - 5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pic1Content .title1,
+.pic2Content .title2,
+.pic4Content .title4,
+.pic5Content .title5,
+.pic6Content .title6,
+.pic31Content .title31,
+.pic32Content .title32{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 3px;
+}
+
+
+.pic1Box .box1 .pic1Content{
+    width:60%;
+    height:80%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
+}
+.pic1Content .pic1{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon1.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+    }
+.pic1Content .title1{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+}
+
+.pic2Box .box2 .pic2Content{
+    width:60%;
+    height:80%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
+}
+.pic2Content .pic2{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon2.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pic2Content .title2{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+}
+/*图2end*/
+/*图3 左下图*/
+.IconGroupLeft .bottomPart{
+    width:100%;
+    padding-top: 5px;
+    height:calc(50% - 5px);
+}
+
+.box3 .pic3Group1,.box3 .pic3Group2{
+    position: relative;
+    float:left;
+    height:100%;
+    width:50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.box3 .pic31Content{
+    width:60%;
+    height:80%;
+    cursor: pointer;
+}
+.pic31Content .pic31{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon3.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pic31Content .title31{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+}
+.box3 .pic32Content{
+    width:60%;
+    height:80%;
+    cursor: pointer;
+}
+.pic32Content .pic32{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon4.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pic32Content .title32{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+    /* font-weight:bold; */
+}
+/*pic4*/
+.IconGroupRight{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width:50%;
+    height:100%;
+}
+.IconGroupRight .leftPart{
+    position: relative;
+    width:50%;
+    height:100%;
+    padding-right: 20px;
+    background:#fff;
+}
+.IconGroupRight .pic4Box{
+    position: relative;
+    width:100%;
+    padding-bottom: 5px;
+    height:calc(50% - 5px);
+}
+.IconGroupRight .pic5Box{
+    position: relative;
+    width:100%;
+    padding-top: 5px;
+    height:calc(50% - 5px);
+}
+.IconGroupRight .pic6Box{
+    position: relative;
+    width:100%;
+    height:100%;
+}
+/*图4*/
+.pic4Box .box4{
+    position: relative;
+    width:100%;
+    height:100%;
+    background:rgba(249,250,252,1);
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 4px;
+    border:1px solid #E1E6E8;
+    cursor: pointer;
+}
+.pic4Box .box4:hover{
+}
+.pic4Box .box4 .pic4Content{
+    width:60%;
+    height:80%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
+}
+.pic4Content .pic4{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon5.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pic4Content .title4{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+}
+/*图5*/
+.pic5Box .box5{
+    position: relative;
+    width:100%;
+    height:100%;
+    background:rgba(249,250,252,1);
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 4px;
+    border:1px solid #E1E6E8;
+    cursor: pointer;
+}
+.pic5Box .box5:hover{
+}
+.pic5Box .box5 .pic5Content{
+    width:60%;
+    height:80%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
+}
+.pic5Content .pic5{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon6.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pic5Content .title5{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+}
+/*图6*/
+/*图5*/
+.pic6Box .box6{
+    position: relative;
+    width:100%;
+    height:100%;
+    background:rgba(249,250,252,1);
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 4px;
+    border:1px solid #E1E6E8;
+    cursor: pointer;
+}
+.pic6Box .box6:hover{
+}
+.pic6Box .box6 .pic6Content{
+    width:60%;
+    height:40%;
+}
+.pic6Content .pic6{
+    position: relative;
+    width:100%;
+    height:80%;
+    background-image:url("../../lib/images/icon7.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.pic6Content .title6{
+    position: relative;
+    height:20%;
+    text-align: center;
+    color:#000;
+    font-family:PingFangSC-Medium;
+}
+.pic6Box .floatQuestion{
+    position: absolute;
+    right: -18px;
+    top: -18px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 22px;
+    color: rgba(66,192,264,1);
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #1890FF;
+    font-weight: bold;
+    cursor: pointer;
+}
+.pic6Box .floatQuestion:hover{
+    box-shadow:0 2px 20px 0 rgba(75,175,216,0.39);
+}
+.IconGroupRight .rightPart{
+    position: relative;
+    width:50%;
+    height:100%;
+    background:#fff;
+}
+/*右侧教程面板*/
+.rightFrame .rightCourseContent{
+    box-sizing: border-box;
+    margin:15px 17px;
+    overflow-y: hidden;
+    overflow-x:hidden;
+}
+.rightCourseContent .rightTitle{
+    position: relative;
+    width:100%;
+    height:30px;
+}
+.rightCourseContent .blueSpan{
+    display: inline-block;
+    width:8px;
+    height:30px;
+    background:rgba(66,192,264,1);
+}
+.rightCourseContent .boldSpan{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 16px;
+}
+.rightCourseContent .moreCase{
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    color:rgba(93,156,229,1);
+    font-size:14px;
+    font-weight:bold;
+}
+#screen1{
+    background-position: 0px -10px;
+    background:url("../../lib/images/screen1pic.png");
+    background-repeat:no-repeat;
+    margin-top:14px;
+}
+#screen2{
+    background-position: 0px -10px;
+    background-repeat:no-repeat;
+    margin-top:14px;
+}
+.video1title{
+    margin-left:10px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+.video1title span:nth-child(1){
+    color:rgba(255,183,0,1);
+    font-weight:bold;
+}
+.video1title a{
+    color:black;
+}
+.video1title a:hover{
+    text-decoration: underline;
+    color:black;
+}
+.video2title{
+    margin-left:10px;
+    margin-top: 8px;
+}
+.video2title span:nth-child(1){
+    color:rgba(255,183,0,1);
+    font-size: 14px;
+    font-weight:bold;
+}
+.video2title a{
+    color:black;
+    font-size: 14px;
+}
+.video2title a:hover{
+    text-decoration: underline;
+    color:black;
+}
+.textCourse{
+    margin-top:14px;
+    margin-left:10px;
+    font-size: 14px;
+}
+.textCourse span:nth-child(1){
+    color:rgba(80,148,227,1);
+    font-weight:bold;
+}
+.textCourse a:nth-child(2){
+    color:black;
+    font-weight:normal;
+}
+.textCourse a:nth-child(2):hover{
+    color:black;
+    text-decoration: underline;
+    font-weight:normal;
+}
+.clickGrid{
+    width: calc(25% - 6px);
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    background:white;
+}
+
+.imageMinus60{
+    height:calc(100% - 60px);
+}
+.welcomePic>div{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height:100%;
+}
+.welcomePic{
+    height:60%;
+    width: calc(100% - 60px);
+    padding:0 30px;
+    padding-top: 30px;
+}
+.welcomePic1 div{
+    background:url(../../lib/images/welcomePic1.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.welcomePic2 div{
+    background:url(../../lib/images/welcomePic2.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.welcomePic3 div{
+    background:url(../../lib/images/welcomePic3.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.welcomePic4 div{
+    background:url(../../lib/images/welcomePic4.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.clickGrid.paddingRight8px{
+    margin-right: 8px;
+}
+.clickGrid .textPointerArea>div{
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.2em;
+    color:#344F5F;
+}
+.clickGrid .textPointerArea>div:hover{
+    cursor: not-allowed;
+}
+.clickGrid .textPointerArea .contrlHover:hover{
+    color:#3aa3de;
+    cursor: pointer;
+}
+/*更多案例*/
+.bottomCaseContent{
+    position: relative;
+    padding: 15px 17px 0;
+    box-sizing: border-box;
+    height:100%;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+.bottomCaseContent .bottomTitle{
+    position: relative;
+    width:100%;
+    height:30px;
+}
+.bottomCaseContent .blueSpan{
+    display: inline-block;
+    width:8px;
+    height:30px;
+    background:rgba(66,192,264,1);
+}
+.bottomCaseContent .boldSpan{
+    position: absolute;
+    top: 0px;
+    left:14px;
+    margin:0px;
+    padding:0px;
+    display: inline-block;
+    line-height:30px;
+    font-size: 16px;
+}
+.bottomCaseContent .moreCase{
+    position: absolute;
+    left:90px;
+    bottom:0px;
+    color:rgba(93,156,229,1);
+    font-size:14px;
+    font-weight:bold;
+}
+/*弹出层*/
+.popGuide{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background:red;
+    background:rgba(255,255,255,0.6);
+    z-index:1;
+}
+.popGuide .popGuideContent{
+    position: absolute;
+    width:800px;
+    height:580px;
+    background:red;
+    left:50%;
+    top: 50%;
+    margin-left:-400px;
+    margin-top:-330px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 20px rgba(0,0,0,0.2);
+}
+.popGuideContent .iconImg{
+    position: relative;
+    margin-top: 20px;
+    margin-left:30px;
+    width:740px;
+    height:300px;
+    background-image: url("../../lib/images/smallIconGroup.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat:no-repeat;
+}
+.popGuideContent .iconImg span{
+    position: absolute;
+    color:#4bafd8;
+    font-weight:bold;
+    font-size:15px;
+    font-family:"microsoft yahei";
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.popGuideContent .iconImg span:nth-child(1){
+    top: 100px;
+    left:49px;
+}
+.popGuideContent .iconImg span:nth-child(2){
+    top: 100px;
+    left:231px;
+}
+.popGuideContent .iconImg span:nth-child(3){
+    top: 254px;
+    left:74px;
+}
+.popGuideContent .iconImg span:nth-child(4){
+    top: 254px;
+    left:209px;
+}
+.popGuideContent .iconImg span:nth-child(5){
+    top: 100px;
+    left:430px;
+}
+.popGuideContent .iconImg span:nth-child(6){
+    top: 254px;
+    left:424px;
+}
+.popGuideContent .iconImg span:nth-child(7){
+    top: 175px;
+    left:616px;
+}
+.popGuideContent .TipsFont{
+    height:100px;
+    padding-left:30px;
+    margin-top:10px;
+}
+.TipsFont span{
+    display: block;
+    color:#434343;
+    opacity: 0.71;
+}
+.popGuideContent .TipsFont .boldFont{
+    font-size:28px;
+    color:black;
+}
+.popGuideContent .iknowBox{
+    margin-top:40px;
+}
+.popGuideContent .iknowBox span{
+    display: block;
+    border:1px solid #4bafd8;
+    border-radius:8px;
+    width:358px;
+    height:62px;
+    text-align: center;
+    color:#4bafd8;
+    line-height:62px;
+    margin-left:220px;
+    margin-top:10px;
+}
+.popGuideContent .iknowBox span:hover{
+    cursor: pointer;
+}
+
+
+

@@ -1,0 +1,511 @@
+section div.fileTree{
+	width: 280px;
+	float: left;
+	background: #e9edf2;
+	overflow:hidden;
+	z-index: -1;
+	height: 100%;
+}
+
+
+.tree-folder{
+	height: 100%;
+	background: #e9edf2;
+}
+.tree-folder .leftNav{
+	height: calc(100% - 98px);
+	overflow-y: auto;
+	position: relative;
+	background: #e9edf2;
+}
+section div.filePanel{
+	width: calc(100% - 292px);
+	box-sizing: border-box;
+	margin-left:289px;
+	min-width:675px;
+    padding-top: 8px;
+    position: relative;
+}
+section>div.fileTree>file-tree{
+	z-index: -1;
+}
+.fileTitle{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 0px;
+	font-size:0;
+	position: relative;
+	background: #eeeeee;
+	border: 1px solid #e6e6e6;
+}
+.fileTitle>input {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.fileTitle>span{
+	width: 20%;
+	box-sizing: border-box;
+	display: inline-block;
+	border-left:1px solid #e6e6e6;
+	background-color: #eeeeee;
+	font-size: 16px;
+	color:white;
+	font-weight: bold;
+}
+
+@media screen and (max-width:1200px) {
+	.fileTitle > span:nth-of-type(2),
+	.fileTitle > span:nth-of-type(3){
+		width: 16%;
+	}
+	.fileTitle > span:nth-of-type(4) {
+		width: 40%;
+	}
+	.filesList li>span:nth-child(3) {
+		width: calc(20% - 43px);
+	}
+}
+
+@media screen and (min-width:1201px) and (max-width:1500px) {
+	.fileTitle > span:nth-of-type(2),
+	.fileTitle > span:nth-of-type(3){
+		width: 22%;
+	}
+	.fileTitle > span:nth-of-type(4) {
+		width: 28%;
+	}
+	.filesList li>span:nth-child(3) {
+		width: calc(24% - 43px);
+	}
+}
+@media screen and (min-width:1501px) {
+	.fileTitle > span:nth-of-type(2),
+	.fileTitle > span:nth-of-type(3){
+		width: 24%;
+	}
+	.fileTitle > span:nth-of-type(4) {
+		width: 26%;
+	}
+	.filesList li>span:nth-child(3) {
+		width: calc(26% - 43px);
+	}
+}
+
+.fileTitle>span:nth-of-type(1) {
+	border-left: none;
+	margin-left: 28px;
+}
+.fileTitle>span a{
+	text-decoration: none;
+	color:white;
+	font-size: 15px;
+}
+.firstList ul {
+	border-top: none;
+}
+.filesList ul li{
+	list-style: none;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size:14px;
+	color: #666666;
+	z-index: 1;
+}
+.filesList ul li:hover {
+	background: #ebf7ff;
+}
+.filesList ul li:nth-child(even){
+	background-color: #f9f9f9;
+}
+.filesList ul li:nth-child(odd){
+	background-color: #ffffff;
+}
+
+
+@media screen and (max-width:1200px) {
+	.filesList li > span:nth-of-type(3),
+	.filesList li > span:nth-of-type(4){
+		width: 16%;
+	}
+	.filesList li > span:nth-of-type(5) {
+		width: 46%;
+	}
+	.filesList li>span:nth-child(3) {
+		width: calc(20% - 43px);
+	}
+}
+
+@media screen and (min-width:1201px) and (max-width:1500px) {
+	.filesList li > span:nth-of-type(3),
+	.filesList li > span:nth-of-type(4){
+		width: 22%;
+	}
+	.filesList li > span:nth-of-type(5) {
+		width: 28%;
+	}
+	.filesList li>span:nth-child(3) {
+		width: calc(24% - 43px);
+	}
+
+}
+@media screen and (min-width:1501px) {
+	.filesList li > span:nth-of-type(3),
+	.filesList li > span:nth-of-type(4){
+		width: 24%;
+	}
+	.filesList li > span:nth-of-type(5) {
+		width: 26%;
+	}
+	.filesList li>span:nth-child(3) {
+		width: calc(26% - 43px);
+	}
+}
+
+
+.filesList li>span{
+	font-size: 14px;
+	display: inline-block;
+	width: 20%;
+	height: 40px;
+	line-height:40px;
+	color:#666666;
+	overflow: hidden;
+	font-family: "microsoft yahei";
+	text-indent: 20px;
+}
+.filesList li>span:last-child{
+	font-size: 16px;
+	display: inline-block;
+	width: 26%;
+	height: 40px;
+	color:#9D9D9D;
+	overflow: hidden;
+	padding-left: 0px;
+}
+
+.filesList li>span>span{
+	display: inline-block;
+	background-image: url(../../../lib/images/icon_dark2.png);
+	width: 20px;
+	height:20px;
+	margin-top: 10px;
+	margin-right: 12px;
+	cursor: pointer;
+}
+.filesList li>span>span:hover{
+	background-position-x: -84px;
+}
+.filesList li>span>.rename{
+	background-position: -105px 2px;
+}
+.filesList li>span>.newWindow{
+	background-position: -105px -17px;
+}
+.filesList li>span>.download{
+	background-position: -105px -40px;
+}
+.filesList li>span>.property{
+	background-position: -105px -61px;
+}
+.filesList li>span>.edit{
+	background-position: -105px -122px;
+}
+.filesList li>span>.plan{
+	background-position: -105px -145px;
+}
+.filesList li>span>.restore{
+	background-position: -105px -185px;
+}
+.filesList li>span>.delete{
+	background-position: -105px -165px;
+}
+.filesList li>span>.file-filePlan{
+	background-position: -105px -144px;
+}
+.filesList li>span:nth-child(3){
+	cursor: pointer;
+	width: calc(20% - 43px);
+	text-indent: 0px;
+}
+.filesList li>span:nth-child(1) {
+	width: calc(24% - 30px);
+}
+.filesList li>span:nth-child(2){
+	width: 20px;
+	height: 20px;
+	margin-left: 20px;
+	margin-right:10px;
+	position: relative;
+	top: 10px;
+	margin-bottom: 17px;
+	color: #627387;
+	cursor: pointer;
+	background-image: url(../../../lib/images/icon_dark2.png);
+}
+
+.filesList span.olapIcon{
+	background-position: -60px -135px;
+}
+
+.filesList span.wcdfIcon{
+	background-position: -60px -95px;
+}
+.filesList span.fileIcon{
+	background-position: -60px -179px;
+}
+.filesList span.imgIcon{
+	background-position: -60px -222px;
+}
+.filesList span.xdpIcon{
+	background-position: -60px -243px;
+}
+.filesList span.adhocIcon{
+	background-position: -60px -155px;
+}
+.filesList span.folderIcon{
+	background-position: -60px -72px;
+}
+.filesList span.newWindow>a{
+	display: inline-block;
+	width: 20px;
+	height:20px;
+	cursor: pointer;
+}
+.filesList  li .blue{
+	color: #41a9e4;
+}
+.renamePopup{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -100px 0 0 -220px;
+	width: 440px;
+	height: 200px;
+	background-color: #fff;
+	z-index: 1000;
+}
+
+
+.renamePopup .rename .title {
+	height: 54px;
+	line-height: 54px;
+	font-size: 14px;
+	background-color: #fff;
+}
+.renamePopup .rename .title span {
+	float: left;
+	color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 20px;
+	line-height: 54px;
+}
+
+.renamePopup .rename .title .title-cancel {
+	float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+	background-position: -692px -159px;
+	padding: 0
+}
+.renamePopup .rename .title .title-cancel:hover {
+	background-position: -713px -159px;
+}
+
+.renamePopup .rename .name {
+	width: 100%;
+	padding: 0 36px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: flex-start;
+	font-size: 14px;
+	color: #444444;
+	height: 32px;
+	line-height: 32px;
+	margin-top: 25px;
+
+}
+.renamePopup .rename .name span {
+	margin-right: 8px;
+}
+.renamePopup .rename .name input {
+	width: 330px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #d9d9d9;
+	background: #ffffff;
+	text-indent: 10px;
+	font-size: 14px;
+	color: #666666;
+	border-radius: 4px;
+	outline: none;
+	margin-left: 0;
+}
+.renamePopup .rename .errMessge {
+	margin-top: 5px;
+}
+.renamePopup .rename .errMessge span {
+	padding-left: 72px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	color: red;
+}
+.renamePopup .rename .handleButton {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin-top: 8px;
+
+}
+.renamePopup .rename .handleButton button {
+	float: right;
+	width: 80px;
+	height: 30px;
+	background-color: #fff;
+	border: 1px solid #d9d9d9;
+	text-align: center;
+	outline: none;
+	border-radius: 4px;
+	color: #333333;
+	font-size: 14px;
+}
+.renamePopup .rename .handleButton button:hover{
+	border: 1px solid #40a9ff;
+    color: #40a9ff;
+}
+.renamePopup .rename .handleButton .submitButton:hover{
+	border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+.renamePopup .rename .handleButton .submitButton {
+	border: 1px solid #1890ff;
+	background-color: #1890ff;
+	color: #ffffff;
+}
+
+
+/*.renamePopup span{*/
+/*display: block;*/
+/*padding-left: 30px;*/
+/*font-size:14px;*/
+/*}*/
+
+/*.renamePopup span:nth-child(1){*/
+/*color: #fff;*/
+/*width: 270px;*/
+/*padding-top: 5px;*/
+/*height: 25px;*/
+/*background-color: #000;*/
+/*font: 14px "Microsoft YaHei";*/
+/*}*/
+
+/*.renamePopup span:nth-child(2){*/
+/*font: 14px "Microsoft YaHei";*/
+/*margin-top: 15px;*/
+/*height: 30px;*/
+/*}*/
+
+/*.renamePopup .handleButton{*/
+/*margin-top: 10px;*/
+/*margin-left: 110px;*/
+/*}*/
+
+/*.renamePopup input{*/
+/*display: inline-block;*/
+/*margin-left:30px;*/
+/*width: 238px;*/
+/*height: 28px;*/
+/*border-radius: 3px;*/
+/*outline: none;*/
+/*text-indent: 5px;*/
+/*color: #666;*/
+/*box-sizing: border-box;*/
+/*border: 0.5px solid #A9A9A9;*/
+/*}*/
+.renamePopup .hiddenTips{
+	visibility: hidden;
+}
+/*.renamePopup .renameTips{*/
+/*margin-top: 10px;*/
+/*font-size: 12px;*/
+/*}*/
+/*.renamePopup .submitButton,.renamePopup .cancelButton{*/
+/*font-size: 12px;*/
+/*cursor: pointer;*/
+/*background: #2e5f94;*/
+/*border: none;*/
+/*outline: none;*/
+/*border-radius: 3px;*/
+/*color: #fff;*/
+/*text-align: center;*/
+/*width: 60px;*/
+/*height: 25px;*/
+/*}*/
+
+
+/*lv*/
+.alert-main {
+	display: flex;
+	justify-content: flex-start;
+	text-align: center;
+	padding: 0px 36px;
+	box-sizing: border-box;
+	height: 80px;
+}
+/* .file-alert .imgbox1{
+	line-height: 60px;
+    margin-right: 16px;
+    margin-top: 30px;
+    width: 24px;
+    height: 24px;
+	background-size: contain;
+	background: url("../../popup/dataSource/component/images/fail.jpg") no-repeat center center;
+} */
+.filesList .alert-main p {
+	margin-top: 30px;
+    max-width: 320px;
+}
+
+.searchNull{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.searchNull .nullBox{
+	width: 100%;
+	height: 168px;
+	position: absolute;
+	top: 50%;
+	margin-top: -84px;
+}
+.searchNull .searchNullImg{
+	width: 142px;
+	height: 128px;
+	margin: 0 auto;
+	background: url("../../../lib/images/search.png") no-repeat;
+}
+.searchNull p{
+	line-height: 20px;
+	text-align: center;
+	color: #666;
+	font-size: 20px;
+	padding: 20px 100px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.searchNull span{
+	color: #2e5f94;
+}

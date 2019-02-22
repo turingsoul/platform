@@ -1,0 +1,54 @@
+<div class="importModel">
+    <div class="title font-blod600">
+        <span class="title-name">导入数据集</span>
+        <span class="title-cancel" ng-click="close();" title="关闭"></span>
+    </div>
+    <div class="main">
+        <div class="import-type">
+            <span class="mySpan font-blod600 span">数据集类型</span>
+            <select class="mySelect">
+                <option value="0">多维数据集</option>
+                <option value="1" ng-hide="edit">业务数据集</option>
+            </select>
+        </div>
+        <div class="typeOne" style="margin-bottom:49px">
+            <form id="form2" enctype="multipart/form-data">
+                <div class="file-source">
+                    <span class="font-blod600 span">选择文件</span>
+                    <div class="file-path2">上传多维数据集xml文件</div>
+                    <label for="upload2" class="myBtn upload"><input type="file" id="upload2" class="hide" name="uploadAnalysis" accept=".xml"/>浏览</label>
+                </div>
+                <p>你正在导入多维数据集，请选择模型所使用的数据连接</p>
+                <div class="data-link">
+                    <span class="mySpan font-blod600 span">选择数据库连接</span>
+                    <input type="hidden" class="hide overwrite" name="parameters" value="Datasource={{Datasource}};overwrite={{overwrite}}"/>
+                    <input type="hidden" class="hide catalogName" name="catalogName" value=""/>
+                    <input type="hidden" class="hide" name="origCatalogName" value="{{origCatalogName}}"/>
+                    <select class="mySelect" ng-model="Datasource">
+                        <option ng-repeat="x in jdbc.databaseConnections">{{x.name}}</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="typeTwo hide">
+            <form id="form3" enctype="multipart/form-data">
+                <div class="file-source">
+                    <span class="font-blod600 span">选择文件</span>
+                    <div class="file-path3">上传业务数据集xmi文件</div>
+                    <label for="upload3" class="myBtn upload"><input type="file" id="upload3" class="hide" name="metadataFile" accept=".xmi"/>浏览</label>
+                </div>
+                <p>你正在导入业务数据集，请设置ID</p>
+                <div class="data-link">
+                    <span class="mySpan font-blod600 span">域ID</span>
+                    <input type="text" name="domainId" ng-model="domainId"/>
+                    <input type="text" name="overwrite" value="false" class="hide"/>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <div class="import-input">
+        <input type="button" class="myBtn1" value="取消" title="取消" ng-click="close();"/>
+        <input type="button" class="myBtn" value="完成" title="完成" ng-click="complete();"/>
+    </div>
+</div>

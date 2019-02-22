@@ -1,0 +1,43 @@
+<ul class="tabBox" ng-style="{height:tabsHeight,width: '100%'}">
+  <li ng-repeat="tab in tabs" ng-show="tab.state" style="height: 100%">
+    <div ng-if="tab.type=='detailReport'">
+      <detail-report propdata="tab.data" ></detail-report>
+    </div>
+    <!--<div ng-if="tab.type=='userManager'">-->
+      <!--<user-manager propdata="tab.data"></user-manager>-->
+    <!--</div>-->
+    <div ng-if="tab.type=='fileManagement'" style="height: 100%">
+      <file-management propdata="tab.data" ></file-management>
+    </div>
+    <div ng-if="tab.type=='dataQueryManagement'" style="height: 100%">
+      <query-management propdata="tab.data" ></query-management>
+    </div>
+    <div ng-if="tab.type=='searchResult'" style="height:100%;position: relative;">
+      <search-result propdata="tab.data" ></search-result>
+    </div>
+    <div ng-if="tab.type=='taskPlan'" style="height: 100%">
+      <task-plan propdata="tab.data" ></task-plan>
+    </div>
+    <div ng-if="tab.type=='collection'">
+      <collection propdata="tab.data" ></collection>
+    </div>
+    <div ng-if="tab.type=='newAdhoc'">
+      <new-adhoc propdata="tab.data" ></new-adhoc>
+    </div>
+    <div ng-if="tab.type=='newDashboard'" style="height: 100%;overflow: hidden;">
+      <new-dashboard propdata="tab.data" ></new-dashboard>
+    </div>
+    <div ng-if="tab.type=='newPortal'" style="height: 100%;overflow: hidden;">
+      <new-portal propdata="tab.data" ></new-portal>
+    </div>
+    <div ng-if="tab.type=='newOlap'" style="height: 100%;overflow: hidden;">
+      <new-olap propdata="tab.data" ></new-olap>
+    </div>
+    <div ng-if="tab.type=='operateEdit'">
+      <operate-edit propdata="tab.data" ></operate-edit>
+    </div>
+    <div ng-if="tab.type=='recentReview'">
+      <recent-review propdata="tab.data" ></recent-review>
+    </div>
+  </li>
+</ul>

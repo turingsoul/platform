@@ -1,0 +1,30 @@
+<!--<div>-->
+  <!--<p>{{folder.name}}</p>-->
+  <!--<ul>-->
+    <!--<li ng-repeat="subfolder in folder.children">-->
+      <!--<user-tree folder="subfolder"></user-tree>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</div>-->
+
+<div ng-repeat="item in folder" class="tree-wrapper">
+  <div ng-if="!item.children" class="ut-list" ng-click="clickTree(item,$event)">
+    <div class="ut-left">{{item.name}}</div>
+    <div class="ut-right-noitem">
+      <div class="edit" ng-click="clickEdit(item,$event)"></div>
+      <div class="delete"></div>
+    </div>
+  </div>
+  <div ng-if="item.children" class="parent-list">
+    <div class="ut-list-parent" ng-click="clickTree(item,$event)">
+      <div class="ut-left">
+        <span class="icon" ng-class="item.isOpen ? 'rotated':''"></span>{{item.name}}
+      </div>
+      <div class="ut-right">
+        <div class="edit" ng-click="clickEdit(item,$event)"></div>
+        <div class="delete"></div>
+      </div>
+    </div>
+    <user-tree  ng-show="item.isOpen" ng-init="folder=item.children"></user-tree>
+  </div>
+</div>

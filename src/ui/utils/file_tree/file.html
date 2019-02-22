@@ -1,0 +1,41 @@
+
+
+<div class="tree-folder">
+
+  <div class="leftNav">
+    <!--添加动画框-->
+    <!-- <div id="fileFreshCarton" class = "hide">
+      <div id="circularG">
+        <div id="circularG_1" class="circularG"></div>
+        <div id="circularG_2" class="circularG"></div>
+        <div id="circularG_3" class="circularG"></div>
+        <div id="circularG_4" class="circularG"></div>
+        <div id="circularG_5" class="circularG"></div>
+        <div id="circularG_6" class="circularG"></div>
+        <div id="circularG_7" class="circularG"></div>
+        <div id="circularG_8" class="circularG"></div>
+      </div>
+    </div> -->
+    <treecontrol class="tree-classic" tree-model="treedata" >
+      {{node.file.title}}
+    </treecontrol>
+  </div>
+  <treecontrol class="tree-other" tree-model="otherdata" >
+    {{node.file.title}}
+  </treecontrol>
+  <rename-folder></rename-folder>
+  <upload-folder></upload-folder>
+  <new-folder></new-folder>
+  <!--<delete-folder></delete-folder>-->
+  <clearout-collection></clearout-collection>
+  <clearout-trash></clearout-trash>
+  <property-folder></property-folder>
+  <div class="operate-menu">
+    <ul>
+      <li ng-repeat = "node in operateList">
+        <i class={{node.operateMenuClass}} ng-click = "folderOperateMeans($event,node)"></i>
+        <span ng-click = "folderOperateMeans($event,node)">{{node.operateMenuParam}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

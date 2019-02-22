@@ -1,0 +1,78 @@
+<div id="xdt-share" class="login-share-wrap" ng-controller="shareCtr">
+
+    <div class="xdt-share-create xdt-dialog" ng-show="popup.create.show">
+        <div class="xdt-dialog-header">
+            <div class="xdt-dialog-title">创建快照</div>
+            <i class="xdt-dialog-close" ng-click="close()"></i>
+        </div>
+        <div class="xdt-dialog-body">
+            <p class="xdt-share-create__tip">即将为页面创建快照，用于发送给朋友或分享到社交网络</p>
+            <div class="xdt-share-create__item">
+                <span>有效期至</span>
+                <input  class="xdt-input__text" id="xdt-share-create-term" ng-model="popup.create.term" type="text" readonly style="width:200px;"/>
+            </div>
+            <div class="xdt-share-create__item">
+                <span>私密分享</span>
+                <input type="checkbox" ng-model="popup.create.private"/>
+            </div>
+            <div class="xdt-share-create__item" ng-show="popup.create.private">
+                <span>密码</span>
+                <input class="xdt-input__text" type="password" ng-model="popup.create.password" style="width:200px;"/>
+            </div>
+        </div>
+        <div class="xdt-dialog-footer">
+            <button class="xdt-button" ng-click="close()">取消</button>
+            <button class="xdt-button active" ng-click="createShare()">确定</button>
+        </div>
+    </div>
+
+    <div class="xdt-share xdt-dialog" ng-show="popup.share.show">
+        <div class="xdt-dialog-header">
+            <div class="xdt-dialog-title">分享</div>
+            <i class="xdt-dialog-close" ng-click="close()"></i>
+        </div>
+        <div class="xdt-dialog-body">
+            <p class="xdt-share__info">
+                已为"<span>{{popup.share.name}}</span>"创建了快照，有效期至<span>{{popup.share.term}}</span>。你可以复制下方的链接发送给朋友，或者分享到社交网络。
+            </p>
+            <div class="xdt-share__address">
+                <span>链接地址</span>
+                <input class="xdt-input__text" id="xdt-share-link" ng-model="popup.share.link" readonly style="width:210px;" type="text"/>
+                <button class="xdt-button" ng-click="copyLink()">复制地址</button>
+            </div>
+        </div>
+        <div class="xdt-dialog-footer">
+            <button class="xdt-button" ng-click="showConfirm()">取消分享</button>
+            <a class="xdt-button active" href="{{popup.share.link}}" target="_blank">查看分享</a>
+        </div>
+    </div>
+
+    <div class="xdt-unshare-confirm xdt-dialog" ng-show="popup.confirm.show">
+        <div class="xdt-dialog-header">
+            <div class="xdt-dialog-title">提示</div>
+            <i class="xdt-dialog-close" ng-click="closeConfirm()"></i>
+        </div>
+        <div class="xdt-dialog-body">
+            <p>该操作将删除页面快照，确定要取消分享吗？</p>
+        </div>
+        <div class="xdt-dialog-footer">
+            <button class="xdt-button" ng-click="closeConfirm()">取消</button>
+            <button class="xdt-button active" ng-click="cancelShare()">确定</button>
+        </div>
+    </div>
+
+    <div class="xda-share-prompt xdt-dialog" ng-show="popup.error.show">
+        <div class="xdt-dialog-header">
+            <div class="xdt-dialog-title">提示</div>
+            <i class="xdt-dialog-close" ng-click="close()"></i>
+        </div>
+        <div class="xdt-dialog-body">
+            <p class="xdt-tip-text">{{popup.error.message}}</p>
+        </div>
+        <div class="xdt-dialog-footer">
+            <button class="xdt-button" ng-click="close()">取消</button>
+            <button class="xdt-button active" ng-click="close()">确定</button>
+        </div>
+    </div>
+
+</div>

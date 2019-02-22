@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: 'Microsoft YaHei';
+}
+ul{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+.font-blod600{
+    font-weight: 600;
+    color: #474747;
+}
+.sheetRelation .main p{
+    margin-left: 0;
+    margin-bottom: 15px
+}
+.main p{
+    margin-bottom: 9px;
+    color: #999999;
+}
+textarea{
+    width: 100%;
+    resize: none;
+    padding: 5px;
+    font-size: 16px;
+    color: #666
+}
+/*option:hover{*/
+/*cursor: pointer;*/
+/*background-color: #d3e6f6;*/
+/*}*/
+.createModel .main .warning-info{
+    margin-bottom: 0;
+    height: 20px;
+    line-height: 20px;
+    color: #ff4242;
+    margin-top: 0
+}
+.warning{
+    visibility: hidden;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.mySpan{
+    line-height: 28px;
+    vertical-align: top;
+}
+.myInput,.mySelect{
+    padding: 0 10px;
+    height: 28px;
+    width: 190px;
+    color: #878787;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.myOption option{
+    height: 21px;
+    max-width: 540px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 9px 10px 0 10px;
+}
+.myTips{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    width: 200px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 1003;
+}
+/*ͷ*/
+.title{
+    height: 40px;
+    background: #fff;
+}
+.alert-input2 .myBtn.yhnSure{
+    position: absolute;
+    right: 20px;
+    margin: 0px;
+    bottom: 14px;
+}
+.alert-input2 .myBtn1.yhnCancel{
+    position: absolute;
+    bottom: 14px;
+    margin: 0px;
+    right: 112px;
+}
+.yhnTextTips{
+    margin-top: 32px;
+}
+.yhnIconPng{
+    /*margin-left:50px;*/
+    /*margin-top: 30px;*/
+}
+.title span{
+    color: #000;
+    font-size: 14px;
+    line-height: 40px;
+    /*padding: 0 20px;*/
+}
+.title .title-name{
+    float: left;
+}
+.title .title-cancel{
+    float: right;
+    font-size: 18px;
+}
+.title .title-cancel:hover{
+    cursor: pointer;
+    /* color: #fff; */
+}
+/*����*/
+.navigation,.navigation1{
+    /*height: 30px;*/
+    background: #f3f3f3;
+    padding-left: 10px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-start;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding: 0 60px;
+    background-color: #fff;
+}
+ .navigation-center {
+  margin-left: 92px;
+ }
+.navigation span {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+.navigation .order {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+    text-align: center;
+    border: none;
+    background-color: #CCCCCC;
+    border-radius: 50%;
+}
+.navigation .active .order {
+    background-color: #1890ff;
+    color: #fff;
+}
+.navigation span .icon {
+    width: calc(100% - 30px);
+    height: 26px;
+    line-height: 26px;
+    margin-top: 2px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: #CCCCCC;
+    font-size: 12px;
+    color: #666666;
+    overflow: hidden;
+}
+.navigation .active .icon {
+    background-color: #1890ff;
+    color: #fff;
+}
+.navigation span .icon .left,
+.navigation span .icon .right{
+    margin-top: -2px;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 45%;
+}
+.navigation span:nth-of-type(4) .icon .right {
+    background-color: #CCCCCC;
+}
+.navigation .active:nth-of-type(4) .icon .right{
+    background-color: #1890ff;
+}
+
+.navigation span .icon .last {
+    background-color: #CCCCCC;
+}
+.navigation .active .icon .last {
+    background: #1890ff;
+}
+
+.navigation span .icon .left {
+    left: -23px;
+}
+.navigation span .icon .right {
+    right: -23px;
+}
+.navigation span .icon .name {
+    line-height: 23px;
+    /*height: 22px;*/
+    font-size: 12px;
+    margin-top: 2px;
+    padding: 0px 12px;
+    font-style: normal
+}
+.navigation span,.navigation1 span{
+    line-height: 30px;
+    /*padding: 0 10px;*/
+    color: #b2b2b2;
+}
+.navigation span:nth-child(even){
+    background: url("../images/fenge.png") no-repeat;
+    background-size: 10px 16px;
+}
+.navigation .active,.navigation1 .active{
+    color: #474747;
+    font-weight: 400;
+}
+/*����*/
+.main{
+    padding: 20px 35px 0;
+    font-size: 10.5pt;
+}
+.createModel1 .main{
+    padding-top: 20px;
+} 
+.createModel1  .main-top{
+    margin-bottom: 20px
+}
+.createModel1 .model-btn{
+    overflow: hidden;
+    margin-bottom: 14px;
+    margin-right: 20px;
+    width: 172px;
+    float: right;
+}
+/*��ť*/
+.model-btn{
+    overflow: hidden;
+    margin-right: 20px;
+    margin-bottom: 14px;
+    width: 172px;
+    float: right;
+}
+.model-btn input:nth-child(1){
+    float: left;
+}
+.model-btn input:nth-child(1):hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+}
+.model-btn input:nth-child(2){
+    float: right;
+}
+.model-btn input:nth-child(3){
+    float: right;
+}
+.myBtn,.myBtn1{
+    cursor: pointer;
+    background: #1890FF;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+}
+.myBtn:hover, .myBtn:focus:hover{
+    border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+.myBtn:active:focus{
+    border: 1px solid #40a9ff;
+	background: #40a9ff;
+	color: #fff
+}
+.myBtn1{
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #d9d9d9;
+}
+.myBtn1:hover, .myBtn1:focus:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+    background: #fff
+}
+/*���*/
+table{
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    border-collapse: collapse;
+    text-align: center;
+    text-indent: 5px;
+}
+table th {
+    background: #999999;
+    color: #fff;
+    height: 42px;
+}
+table tr{
+    height: 28px;
+    color: #5a5a5a;
+}
+table tr:nth-child(even){
+    background: #fff;
+}
+table tr:nth-child(odd){
+    background: #f2f2f2;
+}
+.lvpopu{
+    background: rgba(0,0,0,0.7);
+}
+
+
+

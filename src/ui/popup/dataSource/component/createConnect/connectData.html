@@ -1,0 +1,302 @@
+
+<div class="connectData">
+    <div class="title font-blod600">
+        <span class="title-name">新建数据源连接</span>
+        <span class="title-cancel" ng-click="close();" title="关闭"></span>
+    </div>
+    <div class="main" style="position: relative;">
+        <div class="xdt-div-loading" ng-style="{display:divLoading?'block':'none'}"></div>
+        <div class="args1">
+            <div class="database-name argsItem1 args-name1">
+                <div class="font-blod600 connent-name">连接名称</div>
+                <input type="text" placeholder="请输入连接名称" ng-model="connectName"/>
+                <p class="warning">连接名称不能为空且不能包含下列字符：\/:;?+#%&</p>
+            </div>
+            <div class="main-body">
+                <div class="main-left">
+                    <div class="font-blod600">数据库类型</div>
+                    <ul size="10" class="myOption" >
+                        <li title="{{x.name}}" ng-repeat="x in typeList" ng-click="setType(x.name,$event);">{{x.name}}</li>
+                        <!--<option title="MySql" selected>MySql</option>-->
+                        <!--<option title="ORACLE">ORACLE</option>-->
+                        <!--<option title="SQL Server">SQL Server</option>-->
+                        <!--<option title="DB2">DB2</option>-->
+                        <!--&lt;!&ndash;<option title="mongoDB">mongoDB</option>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<option title="cassandra">cassandra</option>&ndash;&gt;-->
+                        <!--<option title="HYE">HYE</option>-->
+                        <!--<option title="Spark">Spark</option>-->
+                        <!--<option title="others">其他数据库</option>-->
+                    </ul>
+                </div>
+                <div class="main-right">
+                    <div class="argsItem1 database-host" ng-hide="visible">
+                        <div class="name">主机名/IP</div>
+                        <input type="text" placeholder="请输入主机名/IP" ng-model="host" ng-change="changeInput();"/>
+                        <p class="warning">请输入主机名/IP</p>
+                    </div>
+                    <div class="argsItem1 database-databaseName" ng-hide="visible">
+                        <div class="name">数据库名</div>
+                        <input type="text" placeholder="请输入数据库名" ng-model="databaseName" ng-change="changeInput();"/>
+                        <p class="warning">请输入数据库名</p>
+                    </div>
+                    <div class="argsItem1 database-port" ng-hide="visible">
+                        <div class="name">端口号</div>
+                        <input type="text" placeholder="请输入端口号" ng-model="port" ng-change="changeInput();"/>
+                        <p class="warning">请输入端口号</p>
+                    </div>
+                    <div class="argsItem2" ng-show="visible">
+                        <div class=" name">自定义链接URL</div>
+                        <input type="text" placeholder="自定义链接URL" ng-model="url" ng-change="changeInput();"/>
+                        <p class="warning">请输入链接URL</p>
+                    </div>
+                    <div class="argsItem2" ng-show="visible">
+                        <div class="name">自定义驱动类型名</div>
+                        <input type="text" placeholder="自定义驱动类型名" ng-model="qudong" ng-change="changeInput();"/>
+                        <p class="warning">请输入驱动类型名</p>
+                    </div>
+                    <div class="database-input database-username">
+                        <div class="name">用户名</div>
+                        <input type="text" placeholder="请输入用户名" ng-model="username" ng-change="changeInput();"/>
+                        <p></p>
+                    </div>
+                    <div class="database-input database-password">
+                        <div class="name">密码</div>
+                        <input type="password" placeholder="请输入密码" ng-model="password" ng-change="changeInput();"/>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-span">
+            <span title="高级设置" ng-click="advanceSet();">高级设置</span>
+            <span title="测试连接" ng-click="test();">测试连接</span>
+        </div>
+    </div>
+    <div class="model-btn">
+        <input type="button" class="cancel myBtn1" value="取消" ng-click="close();" title="取消"/>
+        <input type="button" class="next myBtn" value="完成" ng-click="complete();" title="完成"/>
+    </div>
+    <div class="hide-box hide">
+        <div class="advanced-set hide" id="advanced-set" style="height: 428px;margin-top: -214px">
+            <div class="title font-blod600">
+                <span class="title-name">高级设置</span>
+                <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+            </div>
+            <div class="main">
+                <div class="biaozhifu">
+                    <p>标识符</p>
+                    <div class="input">
+                        <label><input type="checkbox" ng-model="quoteAllFields"/>为数据库对象加上定界符</label>
+                    </div>
+                    <div class="input">
+                        <label><input type="checkbox" ng-model="forcingIdentifiersToUpperCase" ng-change="uporlow(true);"/>强制使用大写</label>
+                    </div>
+                    <div class="input">
+                        <label><input type="checkbox" ng-model="forcingIdentifiersToLowerCase" ng-change="uporlow(false);"/>强制使用小写</label>
+                    </div>
+                </div>
+                <div class="advanced-args">
+                    <div class="args-title">
+                        <span>参数</span>
+                        <span class="remove-args" ng-click="removeArgs();">-</span>
+                        <span class="add-args" ng-click="addArgs();">+</span>
+                    </div>
+                    <div style="max-height: 134px; height:134px; overflow:auto;border: 1px solid #d8d8d8;">
+                        <table style="border:none">
+                            <tr>
+                                <th>名称</th>
+                                <th>值</th>
+                            </tr>
+                            <tr ng-repeat="x in tr" ng-click="setClass($index);">
+                                <td><input type="text" ng-model="x.name"/></td>
+                                <td><input type="text" ng-model="x.content"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="do-btn">
+                <input type="button" class="myBtn" value="保存" title="保存" ng-click="save();"/>
+                <input type="button" class="myBtn1" value="取消"  ng-click="closeAlert();" title="取消"/>
+            </div>
+        </div>
+        <div class="alert-box hide">
+            <div class="title font-blod600">
+                <span class="title-name">连接测试</span>
+                <span class="title-cancel" ng-click="closeAlert();"></span>
+            </div>
+            <div class="alert-main">
+                <div class="alert-img"></div>
+                <p>dsfasfasfdaaaaaaaa</p>
+            </div>
+            <div class="alert-input">
+                <input type="button" class="myBtn" value="关闭" ng-click="closeAlert();"/>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-fugai1 hide">
+            <div class="fugai-box">
+                <div class="fugai-main title font-blod600">
+                    <span class="fugai-title title-name">覆盖确认</span>
+                    <span class="title-cancel" title="关闭"></span>
+                </div>
+                <div class="alert-main file-alert">
+                    <div class="imgbox1"></div>
+                    <p>连接已经存在，你想要覆盖它吗？</p>
+                </div>
+                <div class="fugai-input1 alert-input">
+                    <input type="button" class="myBtn sure" value="确定"  title="删除" />
+                    <input type="button" class="myBtn1 cancel" value="取消" title="取消" />
+                </div>
+            </div>
+        </div>
+    <div class="hide-mask">
+
+    </div>
+
+</div>
+
+
+<!--<div class="connectDataWrap">-->
+    <!--<div class="connectData">-->
+        <!--<div class="title font-blod600">-->
+            <!--<span class="title-name">新建数据源连接</span>-->
+            <!--<span class="title-cancel" ng-click="close();" title="关闭">×</span>-->
+        <!--</div>-->
+        <!--<div class="main">-->
+            <!--<div class="args1">-->
+                <!--<div class="database-name argsItem1 args-name1">-->
+                    <!--<div class="font-blod600 connent-name">连接名称</div>-->
+                    <!--<input type="text" placeholder="请输入连接名称" ng-model="connectName"/>-->
+                <!--</div>-->
+                <!--<div class="main-body">-->
+                    <!--<div class="main-left">-->
+                        <!--<div class="font-blod600">数据库类型</div>-->
+                        <!--<ul size="10" class="myOption" >-->
+                            <!--<li title="{{x.name}}" ng-repeat="x in typeList" ng-click="setType(x.name,$event);">{{x.name}}</li>-->
+                            <!--&lt;!&ndash;<option title="MySql" selected>MySql</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option title="ORACLE">ORACLE</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option title="SQL Server">SQL Server</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option title="DB2">DB2</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;<option title="mongoDB">mongoDB</option>&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;<option title="cassandra">cassandra</option>&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option title="HYE">HYE</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option title="Spark">Spark</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option title="others">其他数据库</option>&ndash;&gt;-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="main-right">-->
+                        <!--<div class="argsItem1 database-host" ng-hide="visible">-->
+                            <!--<div class="font-blod600 name">主机名/IP</div>-->
+                            <!--<input type="text" placeholder="请输入主机名/IP" ng-model="host" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                        <!--<div class="argsItem1 database-databaseName" ng-hide="visible">-->
+                            <!--<div class="font-blod600 name">数据库名</div>-->
+                            <!--<input type="text" placeholder="请输入数据库名" ng-model="databaseName" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                        <!--<div class="argsItem1 database-port" ng-hide="visible">-->
+                            <!--<div class="font-blod600 name">端口号</div>-->
+                            <!--<input type="text" placeholder="请输入端口号" ng-model="port" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                        <!--<div class="argsItem2" ng-show="visible">-->
+                            <!--<div class="font-blod600 name">自定义链接URL</div>-->
+                            <!--<input type="text" placeholder="自定义链接URL" ng-model="url" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                        <!--<div class="argsItem2" ng-show="visible">-->
+                            <!--<div class="font-blod600 name">自定义驱动类型名</div>-->
+                            <!--<input type="text" placeholder="自定义驱动类型名" ng-model="qudong" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                        <!--<div class="database-input database-username">-->
+                            <!--<div class="font-blod600 name">用户名</div>-->
+                            <!--<input type="text" placeholder="请输入用户名" ng-model="username" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                        <!--<div class="database-input database-password">-->
+                            <!--<div class="font-blod600 name">密码</div>-->
+                            <!--<input type="password" placeholder="请输入密码" ng-model="password" ng-change="changeInput();"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="main-span">-->
+                <!--<span title="高级设置" ng-click="advanceSet();">高级设置</span>-->
+                <!--<span title="测试连接" ng-click="test();">测试连接</span>-->
+            <!--</div>-->
+            <!--<div class="model-btn">-->
+                <!--<input type="button" class="cancel myBtn1" value="取消" ng-click="close();" title="取消"/>-->
+                <!--<input type="button" class="next myBtn" value="完成" ng-click="complete();" title="完成"/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="hide-box hide">-->
+        <!--<div class="advanced-set hide" id="advanced-set" style="height: 554px;margin-top: -287px">-->
+            <!--<div class="title font-blod600">-->
+                <!--<span class="title-name">高级设置</span>-->
+                <!--<span class="title-cancel" ng-click="closeAlert();" title="关闭">×</span>-->
+            <!--</div>-->
+            <!--<div class="main">-->
+                <!--<div class="biaozhifu">-->
+                    <!--<p class="font-blod600">标识符</p>-->
+                    <!--<div class="input">-->
+                        <!--<label><input type="checkbox" ng-model="quoteAllFields"/>为数据库对象加上定界符</label>-->
+                    <!--</div>-->
+                    <!--<div class="input">-->
+                        <!--<label><input type="checkbox" ng-model="forcingIdentifiersToUpperCase" ng-change="uporlow(true);"/>强制使用大写</label>-->
+                    <!--</div>-->
+                    <!--<div class="input">-->
+                        <!--<label><input type="checkbox" ng-model="forcingIdentifiersToLowerCase" ng-change="uporlow(false);"/>强制使用小写</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="advanced-args">-->
+                    <!--<div class="args-title">-->
+                        <!--<span class="font-blod600">参数</span>-->
+                        <!--<span class="remove-args" ng-click="removeArgs();">-</span>-->
+                        <!--<span class="add-args" ng-click="addArgs();">+</span>-->
+                    <!--</div>-->
+                    <!--<div style="max-height: 236px; overflow:auto;">-->
+                        <!--<table>-->
+                            <!--<tr>-->
+                                <!--<th>名称</th>-->
+                                <!--<th>值</th>-->
+                            <!--</tr>-->
+                            <!--<tr ng-repeat="x in tr" ng-click="setClass($index);">-->
+                                <!--<td><input type="text" ng-model="x.name"/></td>-->
+                                <!--<td><input type="text" ng-model="x.content"/></td>-->
+                            <!--</tr>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="do-btn">-->
+                    <!--<input type="button" class="myBtn" value="保存" title="保存" ng-click="save();"/>-->
+                    <!--<input type="button" class="myBtn1" value="取消"  ng-click="closeAlert();" title="取消"/>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="alert-box hide">-->
+            <!--<div class="title font-blod600">-->
+                <!--<span class="title-name">连接测试</span>-->
+                <!--<span class="title-cancel" ng-click="closeAlert();">×</span>-->
+            <!--</div>-->
+            <!--<div class="alert-main">-->
+                <!--<div class="alert-img"></div>-->
+                <!--<p>dsfasfasfdaaaaaaaa</p>-->
+            <!--</div>-->
+            <!--<div class="alert-input">-->
+                <!--<input type="button" class="myBtn" value="关闭" ng-click="closeAlert();"/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="alert alert-fugai1 hide">-->
+        <!--<div class="fugai-box">-->
+            <!--<div class="fugai-main">-->
+                <!--<div class="fugai-title font-blod600">覆盖确认</div>-->
+                <!--<p>连接已经存在，你想要覆盖它吗？</p>-->
+            <!--</div>-->
+            <!--<div class="fugai-input1">-->
+                <!--<input type="button" class="myBtn cancel" value="取消" title="取消"/>-->
+                <!--<input type="button" class="myBtn sure" value="确认" title="确认"/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

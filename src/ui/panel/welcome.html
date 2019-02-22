@@ -1,0 +1,134 @@
+<div class="popGuide" ng-show="welcomePopPageCtrl">
+  <div class="popGuideContent">
+    <div class="iconImg">
+      <span>导入数据</span> <span>连接数据源</span> <span>创建业务关系</span>
+      <span>管理数据源</span> <span>仪表盘</span> <span>多维分析</span>
+      <span>数据门户</span>
+    </div>
+    <div class="TipsFont">
+      <span class="boldFont">功能说明</span>
+      <span>上图描述了系统各模块间的关系，初次使用时通常需要按步骤操作</span>
+      <span>例如你可以 1连接数据源 - 2创建业务关系 - 3仪表盘 - 4数据门户</span>
+      <span>了解更多内容，请点击界面右侧“教程”</span>
+    </div>
+    <div class="iknowBox" ng-click="closeIknow();"><span>我知道了</span></div>
+  </div>
+</div>
+<div class="mainGuide">
+  <div class="leftFrame">
+    <div class="leftTopGuide">
+      <div class="clickGrid paddingRight8px">
+        <div class="welcomePic1 welcomePic flexCenter"><div></div></div>
+        <div class="textPointerArea">
+          <div ng-click="leadingData();" class="welcomeCtrol1 contrlHover">
+            <a>新建数据集</a>
+          </div>
+          <div ng-click="quickModule();" class="welcomeCtrol2 contrlHover">
+            <a>管理数据源</a>
+          </div>
+        </div>
+      </div>
+      <div class="clickGrid paddingRight8px">
+        <div class="welcomePic2 welcomePic"><div></div></div>
+        <div class="textPointerArea">
+          <div ng-click="openNewOlap();" class="welcomeCtrol3 contrlHover">
+            <a>自助式多维分析</a>
+          </div>
+        </div>
+      </div>
+      <div class="clickGrid paddingRight8px">
+        <div class="welcomePic3 welcomePic"><div></div></div>
+        <div class="textPointerArea">
+          <div ng-click="openDashboard();" class="welcomeCtrol4 contrlHover">
+            <a>敏捷仪表盘</a>
+          </div>
+        </div>
+      </div>
+      <div class="clickGrid">
+        <div class="welcomePic4 welcomePic"><div></div></div>
+        <div class="textPointerArea">
+          <div ng-click="openPortal();" class="welcomeCtrol5 contrlHover">
+            <a>构建数据门户</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--下方面板-->
+    <div class="leftBottomGuide">
+      <div class="bottomCaseContent">
+        <div class="bottomTitle">
+          <!-- <span class="blueSpan"></span> -->
+          <span class="boldSpan">案例</span>
+        </div>
+        <div class="bottomContent">
+          <ul>
+            <li
+              class="welcomeRepeatLi"
+              ng-repeat="case in caseList"
+              ng-style="{background: case._image}"
+              ng-click="reportOpen(case)"
+            >
+              <!--<a href = "{{case.file.path.slice(1)}}">{{case.file.title}}</a>-->
+              <!-- <span ng-click = "reportOpen(case)">{{case.file.title}}</span> -->
+              <div class="tips">
+                <span>{{ case.file.title.split('.')[0]}}</span> <span>{{ case._time }}</span>
+              </div>
+              <!-- ng-style="{background: 'url(xdatainsight/api/repos/:public:2235bbb.xdf/thumbnail}" -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rightFrame">
+    <!--右侧教程面板-->
+    <div class="rightCourseContent">
+      <div class="rightTitle">
+        <!-- <span class="blueSpan"></span> -->
+        <span class="boldSpan">教程</span>
+        <a class="moreCase" href="doc/help.html" target="_blank">查看更多</a>
+      </div>
+      <!--preload="auto" autoplay="autoplay"-->
+      <video id="screen1" width="300" height="170" controls>
+        <source src="doc/intro_xdt.mp4" type="video/mp4" />
+      </video>
+      <div class="video1title">
+        <span>[视频]</span>
+        <a href="doc/intro_xdt.mp4" target="_blank">xDataInsight介绍</a>
+      </div>
+      <video id="screen2" width="300" height="170" controls>
+        <source src="doc/start_to_use.mp4" type="video/mp4" />
+      </video>
+      <div class="video2title">
+        <span>[视频]</span>
+        <a href="doc/start_to_use.mp4" target="_blank">从零开始制作报表</a>
+      </div>
+      <div class="textCourse">
+        <span>[教程]</span>
+        <a href="doc/dataimport.html" target="_blank">数据导入方法</a>
+      </div>
+      <div class="textCourse">
+        <span>[教程]</span>
+        <a href="doc/datasource.html" target="_blank">如何连接数据源</a>
+      </div>
+      <div class="textCourse">
+        <span>[教程]</span>
+        <a href="doc/businessrelationship.html" target="_blank"
+          >建立业务关系并创建数据集</a
+        >
+      </div>
+      <div class="textCourse">
+        <span>[教程]</span>
+        <a href="doc/editolapmodel.html" target="_blank">如何编辑数据集</a>
+      </div>
+      <div class="textCourse">
+        <span>[教程]</span>
+        <a href="doc/olapanalysis.html" target="_blank">自助式分析方法</a>
+      </div>
+      <div class="textCourse">
+        <span>[教程]</span>
+        <a href="doc/dashboard.html" target="_blank">创建和编辑仪表盘</a>
+      </div>
+    </div>
+  </div>
+</div>

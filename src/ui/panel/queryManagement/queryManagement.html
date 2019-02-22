@@ -1,0 +1,99 @@
+<section class="queryPanle">
+    <div class="queryList">
+        <div>数据查询<span class="addQuery" ng-click="addQuery()">+</span></div>
+        <ul>
+            <li ng-repeat="(key, item) in queryList">
+                <span class="queryTitle" ng-click="getQuery(item.file.id, item.file.name)">{{item.file.name}}</span>
+                <span class="deleteQuery" ng-click="deleteQuery(item.file.id, key)"></span></li>
+        </ul>
+    </div>
+    <div class="queryInfo">
+        <div class="con">
+            <div style="margin-bottom:20px;">查询信息</div>
+            <div><span class="label">查询名称</span><input type="text" class="inputBorder queryNameInput" ng-model="currentQuery.queryName"/></div>
+            <div class="marginTop18">
+                <span class="label">数据连接</span>
+                <select type="text" class="inputBorder dataConnectSelect" ng-model="currentQuery.dataConnection"/>
+                    <option ng-repeat="connection in connectionList">{{connection.name}}</option>
+                </select>
+                <span class="label" style="margin-left: 23px;margin-right: 13px;width: auto;">数据缓存</span>
+                <div class="myswitch">
+                    <input class="myswitch-checkbox" id="onoffswitch" type="checkbox">
+                    <label class="myswitch-label" for="onoffswitch">
+                        <span class="myswitch-inner" data-on="" data-off=""></span>
+                        <span class="myswitch-switch"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="marginTop18"><span class="label">查询参数</span>
+                <ul class="paramList" style="overflow: hidden;">
+                    <li ng-repeat="(key, param) in currentQuery.paramList"> 
+                        <input type="text" class="inputBorder paramName" ng-model="param['@attributes'].name"/>
+                        <input type="text" class="inputBorder paramValue" ng-model="param['@attributes'].default"/>
+                        <select type="text" class="inputBorder paramType" ng-model="param['@attributes'].type"/>
+                            <option>String</option>
+                            <option>Numeric</option>
+                            <option>Integer</option>
+                        </select>
+                        <span class="insertParam" ng-click="insertParam(param['@attributes'])">插入参数</span>
+                        <span class="deleteParam" ng-click="deleteParam(key)"></span>
+                    </li>
+                </ul>
+                <div class="addParam"><span class="addParaButton" ng-click="addParam()"></span>新增参数</div>
+            </div>
+            <div style="margin-top:15px;overflow:hidden">
+                <span class="label">API地址</span>
+                <input type="text" class="inputBorder apiAdd" ng-model="currentQuery.api"/>
+                <span class="copyAdd">复制地址</span>
+            </div>
+            <div class="marginTop18">
+                <span class="label" style="float: left">SQL语句</span>
+                <div class="inputBorder sqlArea">
+                    <textarea id="sqlTextArea" ng-model="currentQuery.sql"></textarea>
+                </div>
+            </div>
+            <footer>
+                <button class="btn saveButton" ng-click="save();">保存</button>
+                <button class="btn reviewButton">预览</button>
+            </footer>
+        </div>
+    </div>
+    <!-- 保存 点击保存或切换查询项时触发 -->
+    <div class="alert alert-del hide">
+        <div class="alert-box">
+            <div class="title font-blod600">
+                <span class="title-name">保存查询</span>
+                <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+            </div>
+            <div class="alert-main">
+                <div class="imgbox"></div>
+                <p class="long-text">是否保存当前查询？</p>
+            </div>
+            <div class="alert-input">
+                <input type="button" class="myBtn" value="是" ng-click="del();" title="是" />
+                <input type="button" class="myBtn1" value="否" ng-click="closeAlert();" title="否" />
+                <input type="button" class="myBtn1" value="取消" ng-click="closeAlert();" title="取消" />
+            </div>
+        </div>
+    </div>
+    <!-- 预览 点击预览时触发-->
+
+    <!-- 错误处理 -->
+    <div class="error alert alert-del hide">
+        <div class="alert-box">
+            <div class="title font-blod600">
+                <span class="title-name">错误</span>
+                <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+            </div>
+            <div class="alert-main">
+                <div class="imgbox"></div>
+                <p class="long-text">查询失败，未能成功获取数据</p>
+            </div>
+            <p>详情</p>
+            <textarea></textarea>
+            <div class="alert-input">
+                <input type="button" class="myBtn" value="关闭" ng-click="del();" title="关闭" />
+            </div>
+        </div>
+    </div>
+</section>

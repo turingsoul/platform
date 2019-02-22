@@ -1,0 +1,949 @@
+@charset "UTF-8";
+#vertical_line{
+	position:absolute;
+	top:0px;
+	left:230px;
+	background:white;
+	height:56px;
+	width:1px;
+	
+}
+.navbar div.showOther {
+	float: left;
+	position: relative;
+	width: 40px;
+	height: 56px;
+	
+}
+.showOtherBtn {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	text-align: center;
+}
+.showOtherBtn::before {
+	content: "\00BB";
+	line-height: 58px;
+	font-size: 35px;
+	color: #767676;	
+}
+.navList1 {
+	width: 190px;
+	position: absolute;
+	top: 56px;
+	display: none;
+	z-index: 20;
+}
+.navList {
+	float: left;
+	max-width: calc(100% - 380px);
+	margin-top: -1px;
+	overflow: hidden;
+}
+.navList li:hover,
+.navList1 li:hover{
+	background: #042749;
+	color: #fff;
+}
+.navList li,
+.navList1 li
+{
+	float: left;
+	width: 186px;
+	height: 56px;
+	line-height: 56px;
+	box-sizing: border-box;
+	padding: 0 35px 0 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #b0b0b0;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    font-size: 14px;
+}
+.navList1 li {
+	float: none;
+	background: #333;
+}
+.navList li.active{
+	color: #fff;
+	background: #1A2D3F;
+}
+.navList li.active::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin-left: -15px;
+	height: 5px;
+	background: #1084d4;
+}
+.navList .navLiBtn {
+	position: absolute;
+	right: 15px;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+	margin: auto;
+	background: url(../../lib/images/close.png) no-repeat center center;
+}
+/*.navList .navLiBtn::after{
+	content: '\2715';
+	color: #767676;
+}*/
+.otherBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+	height: 100%;
+	margin-top: -1px;
+}
+.otherBtn li{
+	float: left;
+	margin-left: 10px;
+	width: 30px;
+	cursor: pointer;
+	height: 100%;
+}
+.otherBtn li:hover::before
+{
+	color: #666;
+}
+.showPageControll {
+	position: relative;
+}
+#panel1 {
+    position: absolute;
+    width: 114px;
+	top: 56px;
+	left: 0;
+	z-index: 20;
+}
+/* .showPageControll::before {
+	content: '\2026';
+	color: #767676;
+	font-size: 20px;
+	line-height: 49px;
+	text-align: center;
+} */
+.showPageControll{
+	background: url(../../lib/images/function.png) no-repeat center center;
+}
+.hideNav {overflow: hidden;}
+.hideNav{
+	background: url(../../lib/images/up.png) no-repeat center center;
+}
+.removeNavList{
+	background: url(../../lib/images/close.png) no-repeat center center;
+}
+.toolbarBg {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 800px;
+	background: transparent;
+	z-index: 0;
+}
+.showNav {
+	/*overflow: hidden;*/
+	float: right;
+    cursor: pointer;
+    position: fixed;
+    z-index: 200;
+    right: 0;
+    width: 30px;
+    height: 16px;
+    background: #767676;
+    opacity: 0.5;
+}
+#xdt-navBar .imgbox1 {
+	line-height: 60px;
+    margin-right: 16px;
+    margin-top: 30px;
+    width: 24px;
+	height: 24px;
+	background: url(../../lib/images/icon.png) no-repeat;
+    background-position: -450px -153px;
+}
+.showNav::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -11px;
+	width: 0;
+    height: 0;
+    border-top: 16px solid #767676;
+    border-left: 10.5px solid transparent;
+    border-right: 10.5px solid transparent;
+}
+.showNavImg {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background: url(../../lib/images/down.png) no-repeat center center;
+}
+/* .showNav::before {
+	content: '\003C';
+	display: block;
+	width: 100%;
+	height: 100%;
+	transform: rotate(90deg);
+	color: #b0b0b0;
+	font-size: 30px;
+	line-height: 49px;
+	text-align: center;
+} */
+.flexline{
+    position:absolute;
+	left:25px;
+	top:19px;
+	width:26px;
+    height:22px;
+    z-index: 1;
+}
+.flexline.folded{
+	background-image:url(../../lib/images/icon_dark2.png);
+	background-repeat:no-repeat;
+	background-position: -367px 0px;
+}
+.flexline.folded:hover{
+	background-image:url(../../lib/images/icon_dark2.png);
+	background-repeat:no-repeat;
+	background-position: -367px -26px;
+}
+.flexline.unfolded{
+    top:18px;
+	background-image:url(../../lib/images/icon_dark2.png);
+	background-repeat:no-repeat;
+	background-position: -367px -52px;
+}
+#logo{
+	position: absolute;
+	top:8px;
+	left:42px;
+	width:160px;
+	height:37px;
+	background-size: auto;
+	background-image:url(../../lib/images/logo_new.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	z-index: 5;
+	background-size: cover;
+}
+.navbar .userAttribute{
+	margin-top:9px;
+	width:39px;
+	height:37px;
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: 0px -150px;
+}
+
+.navbar .userAttribute:hover{
+	background-position: 0px -272px;
+}
+
+.navbar .collection1{
+	display: block;
+	margin-top: 9px;
+	width:39px;
+	height:37px;
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: 0px -109px;
+}
+
+.navbar .collection1:hover{
+	background-position: 0px -231px;
+}
+
+.navbar .lastest{
+	display: block;
+	margin-top: 9px;
+	width:39px;
+	height:37px;
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: 0px -67px;
+}
+.navbar .lastest:hover{
+	background-position: 0px -190px;
+}
+.navbar .lastest:active{
+	background-position: 0px -190px;
+}
+.navbar{
+	display: block;
+    font-size: 22px;
+    background-color: #001529;
+    color: white;
+    width:100%;
+    height:56px;
+}
+.navbar span{
+    cursor: pointer;
+    display: inline-block;
+    margin-right:1%;
+	font-family: "microsoft yahei";
+	font-weight: normal;
+	font-size:18px;
+}
+.navbar span a{ 
+	text-decoration: none;
+	color:inherit;
+}
+.navbar span a:hover{ 
+	text-decoration: none;
+	color:inherit;
+}
+.navbar .navSpan1{
+    width:16%;
+    margin-left: 5%;
+	position: relative;
+}
+.yhn_search{
+	margin-top: 16px;
+	margin-left:165px;
+    padding-left:30px;
+    width:100%;
+    height:25px;
+    border-radius: 4px;
+    background-image: url("../../lib/images/icon-search.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    font-size: 13px;
+    transition: all 0.15s ease-in 0s;
+    background-color:#1A2D3F;
+	border:none;
+
+    outline: none;
+	color:#FEFEFF;
+}
+
+.yhn_search1{
+	margin-top: 16px;
+	padding-left:30px;
+	margin-right:10px;
+	/*width:310px;*/
+	float:right;
+	height:25px;
+	border-radius: 4px;
+	background-image: url("../../lib/images/icon-search.png");
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	font-size: 13px;
+	transition: all 0.15s ease-in 0s;
+	/*background-color: rgba(255, 255, 255, 1);*/
+	border: none ;
+	outline: none;
+	/*color:black;*/
+	background-color:#1A2D3F;
+	color:#FEFEFF;
+}
+
+.navbar .navSpan1>ul{
+	width: calc(100% + 30px);
+	/*padding-left: 30px;*/
+	margin-top: 5px;
+	margin-left:250px;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 3px #ccc;
+	z-index: 10;
+	position: absolute;
+	max-height: 200px;
+	height:200px;
+	overflow-y: auto;
+}
+.navbar .navSpan1>ul>li{
+	width: 100%;
+	height: 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #2e5f94;
+	line-height: 25px;
+	font-size: 16px;
+	text-indent: 5px;
+}
+.navbar .navSpan1>ul>.active{
+	background: #2e5f94;
+	color: #fff;
+}
+.navbar .navSpan4{
+    float: right;
+}
+.navbar span:nth-child(8){
+	/*margin-right: 0;*/
+}
+.navbar .navSpan3{
+    float: right;
+}
+.navbar .navSpan2{
+    float: right;
+}
+.userList.user-hide{
+    display: none;
+}
+.navbar .menu-hide{
+     display: none;
+ }
+.userList{
+    position: absolute;
+    top:54px;
+    right:-14px;
+    z-index: 10;
+}
+.userList ul{
+	position: absolute;
+    right:-9px;
+    width:160px; 
+    background:#001529;
+}
+
+.userList ul>li{
+	position:relative;
+    color: #a6aaae;
+    list-style: none;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    text-indent: 10px;
+    width:100%;
+    border-left:8px solid #001529;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+	box-sizing: border-box;
+}
+.userList ul>li:hover{
+	border-left:8px solid #1890ff;
+	color:#fff;
+}
+
+.userList ul li:before{
+	position: absolute;
+	content:"";
+	display: block;
+	width:20px;
+	height:20px;
+	top:16px;
+	left:24px;
+	z-index: 100000;
+	text-align: left;
+}
+.userList ul li:nth-child(1):before{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -165px 0px;
+}
+.userList ul li:nth-child(2):before{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -165px -21px;
+}
+.userList ul li:nth-child(3):before{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -165px -41px;
+}
+.userList ul li:nth-child(4):before{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -165px -62px;
+}
+.userList ul li:nth-child(5):before{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -165px -83px;
+}
+.userList ul li:nth-child(6):before{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -165px -103px;
+}
+.userList ul li:nth-child(6){
+	 text-indent: 15px;
+}
+#username{
+	width:200px;
+	height:56px;
+	line-height:56px;
+	text-align: right;
+	font-family:"microsoft yahei";
+	font-weight: normal;
+	font-size: 16px;
+	top:0;
+	float: right;
+	margin-right: 40px;
+}
+
+/*search Result*/
+span.searchTitle{
+	background:#999;
+	float:left;
+	display:inline-block;
+	width:25%;
+	font-size:17px;
+	text-indent:20px;
+	line-height:40px;
+	color:white;
+	font-weight:bold;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-right: 1px solid white;
+}
+.searchResultList{
+	/*position:absolute;*/
+	left:0;
+	right:0;
+	width:100%;
+	display: inline-block;
+	bottom:0;
+	top:40px;
+	overflow-y: auto;
+}
+.searchResultList>li{
+	width:100%;
+	display: inline-block;
+}
+.searchResultList>li:nth-child(odd){
+	background:#f2f2f2;
+}
+.searchResultList>li:hover{
+	background:#d3e6f6;
+}
+.searchResultList>li>span{
+	display: inline-block;
+	height:40px;
+	overflow-y: hidden;
+	line-height:40px;
+	width:25%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.searchResultList>li>span:nth-child(1){
+	width: 20px;
+	height: 20px;
+	margin-left: 8px;
+	margin-right:8px;
+	margin-bottom: 8px;
+	color: #627387;
+	cursor: pointer;
+	background-image: url(../../lib/images/icon_dark2.png);
+}
+.searchResultList span.iconOfwcdf{
+	background-position: -60px -95px;
+}
+.searchResultList span.iconOfxwaqr{
+	background-position: -60px -158px;
+}
+.searchResultList span.iconOfsaiku{
+	background-position: -60px -136px;
+}
+.searchResultList span.iconOfCommonFile{
+	background-position: -60px -201px;
+}
+.searchResultList span.iconOfReport{
+	background-position: -60px -116px;
+}
+.searchResultList span.iconOfdirectory{
+	background-position: -60px -75px;
+}
+
+.searchResultList>li>span:nth-child(2){
+	font-family: "microsoft yahei";
+	width:-webkit-calc(25% - 36px);
+	width:calc(25% - 36px);
+	width:-moz-calc(25% - 36px);
+	cursor: pointer;
+	padding-left: 27px;
+}
+
+.searchResultList  li .blue{
+	color: #41a9e4;
+}
+
+.searchResultList>li>span:nth-child(3){
+	text-indent:25px;
+	color:#989898;
+	font-family: "microsoft yahei";
+}
+.searchResultList>li>span:nth-child(4){
+	text-indent:28px;
+	color:#989898;
+	font-family: "microsoft yahei";
+}
+.searchResultList>li>span:nth-child(5){
+	padding-left:18px;
+	text-indent:28px;
+	color:#989898;
+	font-family: "microsoft yahei";
+	width:19%;
+}
+
+@media screen and (max-width:1340px) {
+	.searchResultList>li>span:nth-child(3){
+		width: 22%;
+	}
+	.searchResultList>li>span:nth-child(4){
+		width: 22%;
+	}
+	.searchResultList>li>span:nth-child(5) {
+		width: 25%;
+	}
+}
+#searchSection{
+	position: absolute;
+	width:100%;
+	/*top: 139px;*/
+	height: 100%;
+	/*z-index:9;*/
+}
+.searchContainer{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	overflow-y: scroll;
+	/*z-index: 150;*/
+}
+span.iconGroup>span{
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	color: #627387;
+	cursor: pointer;
+	background-image: url(../../lib/images/icon_dark2.png);
+	float:left;
+}
+.yhn_newWindow{
+	background-position: -105px -17px;
+}
+.yhn_edit{
+	background-position: -105px -122px;
+}
+.yhn_rename{
+	background-position: -105px 2px;
+}
+.yhn_download{
+	background-position: -105px -40px;
+}
+.yhn_delete{
+	background-position: -105px -165px;
+}
+.yhn_plan{
+	background-position: -105px -143px;
+}
+span.iconGroup>span:hover{
+	background-position-x: -84px;
+}
+/*YHN:文件管理菜单刷新与批量操作*/
+.fileTree .controlHead{
+	position: relative;
+	height:50px;
+	background: #e9edf2;
+	/*border-bottom:1px solid #D8D8D8;*/
+}
+.fileTree .fresh{
+	position: absolute;
+	display: inline-block;
+	width:22px;
+	height:22px;
+	top:7px;
+	right:12px;
+	background-image:url("../../lib/images/fresh.png");
+	-webkit-background-size: cover;
+	background-size: cover;
+	cursor: pointer;
+}
+.fileTree .kit{
+	position: absolute;
+	display: inline-block;
+	width:22px;
+	height:22px;
+	top:18px;
+	right:12px;
+	background-image:url("../../lib/images/olapmulti.png");
+	background-position:-63px -150px;
+	cursor: pointer;
+}
+#outerShelter{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0);
+	z-index:100;
+	display:none;
+}
+
+#outerShelter .buttonGroup{
+	position: absolute;
+	width: 121px;
+	height: 58px;
+	top: 16px;
+	background: white;
+	left: 283px;
+	box-shadow:0px 0px 1px 1px rgba(200,200,200,0.8);
+}
+#outerShelter .buttonGroup>div{
+	position: relative;
+	width: 100%;
+	float:left;
+	height:29px;
+}
+#outerShelter .buttonGroup>div:hover{
+	background:rgba(179,225,255,1);
+	cursor: pointer;
+}
+#outerShelter .buttonGroup .icon1{
+	position: absolute;
+	display: inline-block;
+	float:left;
+	top:10px;
+	left:13px;
+	width:11px;
+	height:11px;
+	background:url("../../lib/images/fresh.png");
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#outerShelter .buttonGroup .text1{
+	position: absolute;
+	display: inline-block;
+	top:4px;
+	left:38px;
+	width:150px;
+	height:15px;
+	font-size:14px;
+}
+#outerShelter .buttonGroup .icon2{
+	position: absolute;
+	display: inline-block;
+	float:left;
+	top:7px;
+	left:13px;
+	width:15px;
+	height:15px;
+	background:url("../../lib/images/Popup_icon.png");
+	background-position: -51px -51px;
+}
+#outerShelter .buttonGroup .text2{
+	position: absolute;
+	display: inline-block;
+	top:4px;
+	left:38px;
+	width:150px;
+	height:15px;
+	font-size:14px;
+}
+
+
+
+.fileTree .multiControl{
+	position: absolute;
+	display: inline-block;
+	width:22px;
+	height:22px;
+	top:7px;
+	right:10px;
+	background-image:url(../../lib/images/multiControl.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.fileTree .mytitle{
+	position: absolute;
+	width:68px;
+	height:24px;
+	font-size: 14px;
+	font-weight:bold;
+	line-height:24px;
+	display: inline-block;
+	top:20px;
+	left:10px;
+	text-align: center;
+	background: none;
+}
+/*显示批量操作功能按钮*/
+.fileTitle .multiFuncPanel{
+	background:white;
+	width:100%;
+	height:100%;
+	border-bottom:1px solid rgb(216, 216, 216);
+}
+.multiFuncPanel .multiName{
+	font-size: 14px;
+	margin-left: 40px;
+	font-weight: bold;
+	position: relative;
+	top: -11px;
+}
+.multiFuncPanel .multiButton{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #1890ff;
+	margin-left: 30px;
+	border-radius: 4px;
+	cursor: pointer;
+	position: relative;
+	margin-top:5px;
+}
+.multiFuncPanel .multiButton.copy{
+	margin-left:60px;
+}
+.multiFuncPanel .multiButton a.name{
+	font-size:14px;
+	text-align: center;
+	line-height:23px;
+	position: absolute;
+	display: inline-block;
+	width:100%;
+	color: #1890ff;
+	padding-left:10px;
+	margin-top: 3px;
+}
+.multiFuncPanel a.icon{
+	background-image: url(../../lib/images/Popup_icon.png);
+	position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 15px;
+	margin-top: 6px;
+	color: #627387;
+	cursor: pointer;
+
+}
+.multiFuncPanel .copy a.icon{
+	background-position: -100px -27px;
+}
+.multiFuncPanel .move a.icon{
+	background-position: -100px -48px;
+}
+.multiFuncPanel .delete a.icon{
+	background-position: -100px -7px;
+}
+.multiFuncPanel .download a.icon{
+	background-position: -356px -62px;
+}
+.multiFuncPanel .recover a.icon{
+	background-image: url(../../lib/images/icon_dark2.png);
+	background-position: -105px -189px;
+}
+
+.fileTitle>span{
+	cursor: pointer;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.fileTitle>span a.name{
+	margin-left:27px;
+	font-size: 14px;
+	color: #444;
+	font-weight: bold;
+}
+
+.fileTitle>span a.up{
+	position: absolute;
+	display: inline-block;
+	right: 10px;
+	top: 9px;
+	border:5px solid rgba(0,0,0,0);
+	border-bottom:5px solid rgba(255,255,255,1);
+}
+
+.fileTitle>span a.down{
+	position: absolute;
+	display: inline-block;
+	right: 10px;
+	bottom: 9px;
+	border:5px solid rgba(0,0,0,0);
+	border-top:5px solid rgba(255,255,255,1);
+}
+/*文件管理checkbox*/
+input.fileCheck {
+	position: relative;
+	display: inline-block;
+	top: -12px;
+	line-height: 40px;
+	margin-left: 7px;
+	z-index: 1;
+}
+
+
+input.fileCheck1 {
+	position: absolute;
+	line-height: 40px;
+	margin-left: 7px;
+	margin-top: 14px;
+	z-index: 1;
+}
+
+.fileTitle input.fileCheck1 {
+	top: 0;
+	left: 0;
+}
+
+/*菜单上方按钮样式*/
+.controlHead .deleteButton{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	border: 1px solid #1890ff;
+	margin-left: 134px;
+	border-radius: 4px;
+	cursor: pointer;
+	position: relative;
+	margin-top:14px;
+	background: #ffffff;
+}
+
+.controlHead .cancelButton1{
+	display: inline-block;
+	float: right;
+	width: 44px;
+	height: 25px;
+	border-radius: 4px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 5px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #666;
+	margin-top: 17px;
+}
+
+.controlHead .deleteButton a.name{
+	font-size:14px;
+	text-align: center;
+	line-height:30px;
+	position: absolute;
+	display: inline-block;
+	width:100%;
+	color: #1890ff;
+	margin-left:10px;
+}
+.controlHead .deleteButton a.icon{
+	background-image: url("../../lib/images/Popup_icon.png");
+	position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 15px;
+	margin-top: 6px;
+	font-size: 14px;
+	color: #1890ff;
+	cursor: pointer;
+}
+
+.controlHead .deleteButton a.icon{
+	background-position: -100px -7px;
+}

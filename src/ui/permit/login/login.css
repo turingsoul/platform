@@ -1,0 +1,97 @@
+.login-form-wrap{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.2);
+}
+.login-form{
+    position: absolute;
+    box-sizing:border-box;
+    top: 40%;
+    left: 50%;
+    width:340px;
+    height: 300px;
+    margin-left: -195px;
+    margin-top: -162px; 
+    background-color: #fff;
+    padding: 27px 40px 20px 40px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.login-form .login-form-loading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(../../style/images/div-loading.gif) no-repeat center;
+    z-index: 1;
+}
+.login-form-title{
+    height: 26px;
+    line-height: 26px;
+    font-size: 18px;
+    color: #333333;
+    font-weight: 400;
+}
+.login-form-msg{
+    height: 26px;
+    line-height: 26px;
+    margin-top: 14px;
+    color: #f68a26;
+}
+.login-form-item{
+    padding: 14px 0;
+    position: relative;
+}
+.login-form-item:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABBUlEQVQokY3SMS+DURTG8V+btyGMBrUYRLqSsGGRDia0o0WET+AzGISlo4kvgEiJELGYDCRNTCSshIhJSIga3tvm9UabPtPJued/n3PPuZl8pS6lfmyijB9UsYrnZFE2BeVwikHMoxQuOgtnTUUpsIQ+TOA95C5xhznstnIs4CoBCXENw+1avcUYuhO5XowG15bgAd7EA5nCNPbEg6m2A79QxCMOsR+gIr6ThenhwAsW/8n/URLMit83gxEMIBPcazjBtXi3zVaXcY9zjOMGO9gO8SQu8IClhuM6VrCGLXy26K4HC9hAIZOv1D8wK/4dnaiIo0i8swhDHYI5dEV4wnGHUEOvv37xNikd+U1SAAAAAElFTkSuQmCC);
+    background-repeat:no-repeat;
+    background-position: center;
+}
+.login-form-item-pw:before{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AAAAz0lEQVQokb3QIUtDURiA4Wd3JxgERXDIQCz7AUsWMYvJZBJE1uzrY5ZV/8LC1kw2k2DxH1hcmZgGQ5AtbV7DNjjIvddh8I0f38PHOaW921RUGde4wgwbeEET76ulEIES7vCJU4yW8ws84BATSCJ0jhSXEYAe7tFYDWJ0hs4S/qyP4yxUxWsGgDfsZqGAeQ76Er0/4Agt1PGYA8uoWXxIO6CLEwxyrsRt4ynBdE0AH0iTX9cyKkLDv6D9f7t0UIQ2USnAcRVsBdzgGeM10A5a31+8JVfQzb2QAAAAAElFTkSuQmCC);
+}
+.login-form-item input{
+    width: 100%;
+    height: 30px;
+    text-indent: 28px;
+    border-color: #c7c6d4;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+.login-form-error{
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    color: #fc0707;
+}
+.login-form-footer{
+    text-align: center;
+    margin-top: 10px;
+}
+.login-form-footer button{
+    display: inline-block;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background-color: #0998e7;
+    border:1px #1b8dc1 solid;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff; 
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+.login-form-footer button:hover{
+    background-color: #047cbe;
+}

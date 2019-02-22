@@ -1,0 +1,36 @@
+<!--添加新用户分组-->
+<div class="new-group" ng-controller="newGroup">
+  <div class="new-group-con">
+    <div class="left">
+      <div class="title">用户组</div>
+      <div class="edit-info">
+        <div class="item">
+          <div class="name no-stress">编号</div>
+          <input type="text" ng-model="defaultValue.number" value="defaultValue.number">
+        </div>
+        <div class="item">
+          <div class="name"><span>*</span>组名</div>
+          <input type="text" ng-model="defaultValue.name" value="defaultValue.name">
+        </div>
+        <div class="item">
+          <div class="name no-stress">描述</div>
+          <textarea name="" id="" cols="50" rows="10" class="text" ng-model="defaultValue.des" value="defaultValue.des"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="title">角色组</div>
+      <div class="role-wrapper">
+        <div ng-show="roles.length>=1" class="roles">
+          <div ng-repeat="role in roles" class="role">
+            <input type="checkbox" ng-checked="role.selected"> {{role.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <button class="save" ng-click="save()">保存</button>
+    <button class="reset">重置</button>
+  </div>
+</div>

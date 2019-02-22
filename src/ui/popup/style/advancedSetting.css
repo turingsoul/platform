@@ -1,0 +1,1898 @@
+span,
+button,
+div,
+input {
+  margin: 0px;
+  padding: 0px;
+}
+.advancedSettingBox {
+  position: fixed;
+  height: 420px;
+  width: 700px;
+  left: 50%;
+  top: 50%;
+  margin-left: -350px;
+  margin-top: -210px;
+  z-index: 100;
+  background: white;
+  font-size: 14px;
+  color: #444444;
+}
+/*ͷ��*/
+
+
+
+.advancedSettingBox .advancedHead {
+  height: 54px;
+  line-height: 54px;
+  font-size: 14px;
+  background-color: #fff;
+}
+.advancedSettingBox .advancedHead span {
+  color: #333333;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  line-height: 54px;
+
+}
+.advancedSettingBox .advancedHead .advancedClose {
+  float: right;
+  padding: 0;
+  margin-right: 20px;
+  width: 12px;
+  height: 12px;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-image: url("../../../lib/images/icon.png");
+  background-repeat: no-repeat;
+  background-position: -692px -159px;
+}
+.advancedSettingBox .advancedHead .advancedClose:hover {
+  background-position: -713px -159px;
+  cursor: pointer;
+}
+
+.advancedSettingContent {
+}
+.advancedSettingContent > p:nth-child(1) {
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  width: 100%;
+  padding: 0px 0px 0px 35px;
+  box-sizing: border-box;
+}
+
+.advancedSettingContent > div:nth-of-type(1),
+.advancedSettingContent > div:nth-of-type(2) {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 35px;
+  margin-top: 10px;
+}
+.advancedSettingContent > div:nth-of-type(1) button,
+.advancedSettingContent > div:nth-of-type(2) button{
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  background: #fff;
+  border: 1px solid #1890ff;
+  border-radius: 4px;
+  color: #1890ff;
+}
+
+/*.advancedSettingContent > div:nth-child(2) {*/
+/*margin-left: 20px;*/
+/*margin-top: 20px;*/
+/*}*/
+.planToDelete {
+  background: #2e5f94;
+  outline: none;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.planToDelete:hover {
+  /* background: #235081; */
+}
+.deletePlan {
+  display: inline-block;
+  color: #2e5f94;
+  width: 90px;
+  height: 30px;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.advancedSettingContent .immediateDelete {
+  background: #2e5f94;
+  outline: none;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.advancedSettingContent .immediateDelete:hover {
+  /* background: #235081; */
+}
+.advancedSettingContent .inputedDay {
+  width: 60px;
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  margin-left: 14px;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  color: #444444;
+  border-radius: 4px;
+}
+.advancedSettingContent > div:nth-child(3) > span {
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  display: inline-block;
+  width: 90px;
+  height: 32px;
+  line-height: 32px;
+  text-align: left;
+  color: #444444;
+  margin-left: 8px;
+  margin-top: 2px;
+}
+.advancedSettingContent > p:nth-child(4),
+.advancedSettingContent > p:nth-child(6) {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 35px;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #666666;
+  font-family: "microsoft yahei";
+}
+.clearCache,
+.permit {
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  background: #fff;
+  border: 1px solid #1890ff;
+  outline: none;
+  text-align: center;
+  border-radius: 4px;
+  color: #1890ff;
+  margin: 14px 0 0px 35px
+}
+.clearCache:hover,
+.permit:hover {
+  cursor: pointer;
+}
+.advancedSettingConfirm {
+  position: absolute;
+  right: 20px;
+  bottom: 14px;
+  background: #1890ff;
+  box-sizing: border-box;
+  outline: none;
+  width: 80px;
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.advancedSettingConfirm:hover {
+  border: 1px solid #40a9ff;
+  background: #40a9ff;
+  color: #FFFFFF;
+}
+.advancedSettingCancel {
+  position: absolute;
+  right: 113px;
+  bottom: 14px;
+  background: #fff;
+  outline: none;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  cursor: pointer;
+  color: #333333;
+  -webkit-border-radius: 34px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+}
+.advancedSettingCancel:hover {
+  border: 1px solid #40a9ff;
+  color: #40a9ff;
+  background: #ffffff;
+}
+
+/*plan*/
+.advancedSettingPlan {
+  position: absolute;
+  display: none;
+  width: 440px;
+  height: 650px;
+  left: 50%;
+  margin-left: -220px;
+  top: 50%;
+  margin-top: -325px;
+  background: white;
+  z-index: 101;
+}
+
+.advancedPlanHead {
+  height: 54px;
+  line-height: 54px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.advancedPlanHead .advancedPlanTitle {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  margin-left: 20px;
+}
+
+.advancedPlanContent .advancedPlanTitle span{
+  color: #333333;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  line-height: 54px;
+}
+
+.advancedPlanHead .advancedPlanClose {
+  float: right;
+  width: 12px;
+  height: 12px;
+  margin-top: 19px;
+  margin-right: 20px;
+  background-image: url("../../../lib/images/icon.png");
+  background-repeat: no-repeat;
+  background-position: -692px -159px;
+}
+
+.advancedPlanHead .advancedPlanClose:hover {
+  background-position: -713px -159px;
+  cursor: pointer;
+}
+
+.advancedPlanContent {
+  width: 100%;
+  height: 360px;
+  margin-top: -14px;
+}
+.advancedPlanContent > p:nth-child(1) {
+  margin-top: 10px;
+  margin-left: 32px;
+  width: 360px;
+  line-height: 26px;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  color: #444;
+}
+
+.advancedPlanContent > p:nth-child(1) input {
+  line-height: 26px;
+  height: 26px;
+  border: 1px solid#d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  width: 80px;
+}
+
+.advancedRepeat {
+  width: 360px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.advancedRepeat > span {
+  font-family: "microsoft yahei";
+  display: block;
+  font-weight: bold;
+  color: #444444;
+  font-size: 14px;
+  margin-bottom: 7px;
+  margin-left: 12px;
+}
+.advancedRepeat > input {
+  display: inline-block;
+  width: 25px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.advancedRepeat > select {
+  display: inline-block;
+  width: 200px;
+  padding: 0 7px;
+  box-sizing: border-box;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444444;
+  font-family: "microsoft yahei";
+  margin-left: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+  /*text-align: center;*/
+}
+.onlyone {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 360px;
+}
+.starttime > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 12px;
+  margin-top: 26px;
+  color: #444444;
+}
+.starttime > select:nth-child(2) {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "microsoft yahei";
+  text-align: center;
+  color: #444444;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-left: 12px;
+}
+.starttime > span:nth-child(3) {
+  /*margin-left: 12px;*/
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+
+}
+.starttime > select:nth-child(4) {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "microsoft yahei";
+  text-align: center;
+  color: #444444;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-right: 6px;
+}
+.starttime > select:nth-child(5) {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "microsoft yahei";
+  text-align: center;
+  color: #444444;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.startdate {
+  width: 360px;
+  margin-top: 14px;
+}
+.startdate > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: block;
+  font-size: 14px;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 18px;
+  margin-left: 12px;
+  color: #444;
+
+}
+.startdate > span:nth-child(2) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 2px;
+  margin-top: 4px;
+  margin-left: 12px;
+}
+.startdate > input {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444444;
+  font-family: "microsoft yahei";
+  text-align: left;
+  text-indent: 10px;
+}
+/*************************************/
+/*second*/
+/*************************************/
+
+.choosedContent > .second {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.startdateSecond {
+  width: 360px;
+  margin-top: 10px;
+}
+.startdateSecond > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #444444;
+  margin-left: 12px;
+  margin-top: 18px;
+}
+.startdateSecond > span:nth-child(2) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  color: #444;
+  margin-left: 12px;
+  margin-bottom: 2px;
+}
+.startdateSecond > input:nth-child(3) {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444444;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.startdateSecond > span:nth-child(4) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.repeatSpread {
+  margin-top: 30px;
+}
+.repeatSpread > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: block;
+  font-size: 14px;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 18px;
+  margin-left: 12px;
+  color: #444;
+
+}
+.repeatSpread > .left {
+  width: 100%;
+  margin-top: 14px;
+}
+.repeatSpread > .left > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 2px;
+  margin-top: 4px;
+  margin-left: 12px;
+}
+.repeatSpread > .left > input:nth-child(2) {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444444;
+  font-family: "microsoft yahei";
+  text-align: left;
+  text-indent: 10px;
+  margin-left: 6px;
+}
+.repeatSpread > .right {
+  width: 100%;
+}
+.second .uper {
+  height: 30px;
+}
+.second .down {
+  height: 30px;
+}
+.repeatSpread > .right > .uper > input {
+  float: left;
+  display: block;
+  margin-top: 8px;
+}
+.repeatSpread > .right > .uper > label {
+  font-family: "microsoft yahei";
+  float: left;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+.repeatSpread > .right > .down > label:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 2px;
+  margin-top: 24px;
+  margin-left: 12px;
+}
+.repeatSpread > .right > .down > input:nth-child(2) {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444444;
+  font-family: "microsoft yahei";
+  text-align: left;
+  text-indent: 10px;
+  margin-top: 20px;
+  margin-left: 6px;
+}
+/********************************/
+/*minutes*/
+.choosedContent > .minutes {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.minutes .uper {
+  height: 30px;
+}
+.minutes .down {
+  height: 30px;
+}
+/***********************************/
+/*hours*/
+.choosedContent > .hours {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.hours .uper {
+  height: 30px;
+}
+.hours .down {
+  height: 30px;
+}
+/*****************************************/
+/*day*/
+
+.choosedContent > .day {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.day .uper {
+  height: 30px;
+}
+.day .down {
+  height: 30px;
+}
+
+.day .startdateSecond > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.day .startdateSecond > input:nth-child(2) {
+  display: inline-blockblock;
+  margin-left: 12px;
+  /*height: 30px;*/
+  box-sizing: border-box;
+  /*line-height: 30px;*/
+  margin-top: 12px;
+}
+.day .startdateSecond .radio-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+.day .startdateSecond > label:nth-child(3) {
+  display: inline-block;
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 2px;
+  color: #444444;
+  margin-top: -4px;
+}
+.day .startdateSecond > input:nth-child(4) {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "microsoft yahei";
+  text-align: center;
+  color: #444444;
+}
+.day .startdateSecond > span:nth-child(5) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.day .startdateSecond > input:nth-child(6) {
+  margin-left: 22px;
+}
+.day .startdateSecond > label:nth-child(7) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 2px;
+  color: #444444;
+}
+/*****************************/
+/*week*/
+.week .startdateSecond > span:nth-child(1) {
+  font-family: "microsoft yahei";
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.week .startdateSecond > input {
+  margin-right: 5px;
+}
+.week .startdateSecond > label {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-right: 9px;
+  user-select: none;
+}
+.choosedContent > .week {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.week .uper {
+  height: 30px;
+}
+.week .down {
+  height: 30px;
+}
+/********************************/
+/*month*/
+.choosedContent > .month {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.month .uper {
+  height: 30px;
+}
+.month .down {
+  height: 30px;
+}
+.month .startdateSecond > label:nth-child(3) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-right: 9px;
+  margin-left: 4px;
+}
+.month .startdateSecond > input:nth-child(4) {
+  display: inline-block;
+  width: 36px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.month .startdateSecond > span:nth-child(5) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-right: 39px;
+  margin-left: 4px;
+}
+.month .startdateSecond > label:nth-child(7) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.month .startdateSecond > select:nth-child(8) {
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.month .startdateSecond > select:nth-child(9) {
+  display: inline-block;
+  width: 65px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+/******************************/
+/*year*/
+.year .startdateSecond > div:nth-child(2) > label:nth-child(2) {
+  font-family: "microsoft yahei";
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.year .startdateSecond > div:nth-child(2) > select:nth-child(3) {
+  display: inline-block;
+  width: 51px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+  margin-left: 4px;
+}
+
+.year .startdateSecond  .mode:nth-child(2) > select:nth-child(3) {
+  font-size: 14px;
+  color: #444;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  background: #ffffff;
+  margin-right: 14px;
+}
+
+.year .startdateSecond > div:nth-child(2) > input:nth-child(4) {
+  display: inline-block;
+  width: 25px;
+  height: 21px;
+  margin-left: 4px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.year .startdateSecond > .mode:nth-child(2) > input:nth-child(4) {
+  height: 30px;
+  line-height: 30px;
+  width: 60px;
+  background: #ffffff;
+  color: #444444;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 10px;
+}
+.year .startdateSecond > div:nth-child(3) > select:nth-child(2) {
+  display: inline-block;
+  width: 51px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.year .startdateSecond > div:nth-child(3) > select:nth-child(3) {
+  display: inline-block;
+  width: 51px;
+  height: 24px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+  margin-left: 3px;
+}
+.year .startdateSecond > div:nth-child(3) > select:nth-child(4) {
+  display: inline-block;
+  width: 63px;
+  height: 24px;
+  margin-left: 4px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.year .startdateSecond .mode:nth-child(3) > select:nth-child(2),
+.year .startdateSecond .mode:nth-child(3) > select:nth-child(3),
+.year .startdateSecond .mode:nth-child(3) > select:nth-child(4) {
+  font-size: 14px;
+  color: #444;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  background: #ffffff;
+  margin-right: 14px;
+}
+.choosedContent > .year {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.year .uper {
+  height: 30px;
+}
+.year .down {
+  height: 30px;
+}
+
+.startdateSecond .mode label #yearChoose1,
+.startdateSecond .mode label #yearChoose2,
+.startdateSecond .mode label #monthChoose1,
+.startdateSecond .mode label #monthChoose2,
+.startdateSecond .mode label #daysChoose1,
+.startdateSecond .mode label #daysChoose2{
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.startdateSecond .mode input[type="text"] {
+  height: 30px;
+  line-height: 30px;
+  width: 60px;
+  background: #ffffff;
+  color: #444444;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 10px;
+}
+.startdateSecond .mode label {
+  vertical-align: middle;
+}
+.startdateSecond .mode label input[type="text"]:focus {
+  border: 1px solid #1890ff;
+}
+.year .startdateSecond .mode,
+.week .startdateSecond .mode,
+.month .startdateSecond .mode {
+  line-height: 32px;
+  height: 2pc;
+  width: calc(100% - 72px);
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: 12px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+.week .startdateSecond .mode {
+  height: 4pc;
+}
+.mytaskPlanContent .week .startdateSecond .mode label input {
+  margin-left: 2px;
+  margin-top:-3px;
+  margin-right: 4px;
+  font-size: 14px;
+}
+.mytaskPlanContent .week .startdateSecond .mode label{
+  width: 25%;
+}
+.advancedPlanContent .month .startdateSecond input[type="radio"]:nth-of-type(1),
+.advancedPlanContent .month .startdateSecond input[type="radio"]:nth-of-type(2){
+  width: 13px;
+  height: 13px;
+  margin-left: 14px;
+  margin-top: 2px;
+  vertical-align: middle;
+}
+
+
+.advancedPlanContent .startdateSecond > span:nth-child(1) {
+  margin-bottom: 14px;
+}
+.advancedPlanContent .month .startdateSecond > span:nth-of-type(2) {
+  font-size: 14px;
+  color: #666;
+  margin-left: 6px;
+  margin-right: 156px;
+}
+.advancedPlanContent .month .startdateSecond label:nth-of-type(1),
+.advancedPlanContent .month .startdateSecond label:nth-of-type(2) {
+  line-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  color: #666;
+}
+.advancedPlanContent .month .startdateSecond #monthChoose2 {
+  margin-left: 14px;
+  vertical-align: middle;
+}
+.advancedPlanContent .month .startdateSecond input[type="text"] {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  color: #666;
+  border-radius: 4px;
+  width: 90px;
+  text-align: center;
+}
+.advancedPlanContent .month .startdateSecond select {
+  width: 90px;
+  height: 30px;
+  margin-top: 14px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #666;
+}
+.advancedPlanContent .month .startdateSecond select:focus {
+  border: 1px solid #1890ff;
+}
+
+
+.advancedPlanContent .year .startdateSecond input[type="radio"]:nth-of-type(1),
+.advancedPlanContent .year .startdateSecond input[type="radio"]:nth-of-type(2){
+  width: 13px;
+  height: 13px;
+  margin-left: 14px;
+  margin-top: 2px;
+  vertical-align: middle;
+}
+
+.advancedPlanContent .year .startdateSecond > div:nth-child(2) > label:nth-child(2) {
+  line-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  color: #666;
+}
+
+.advancedPlanContent .year .startdateSecond > div:nth-child(2) > input:nth-child(4) {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  color: #666;
+  border-radius: 4px;
+  width: 90px;
+  text-align: center;
+}
+
+.advancedPlanContent .year .startdateSecond > div:nth-child(3) > select:nth-child(4),
+.advancedPlanContent .year .startdateSecond > div:nth-child(3) > select:nth-child(2),
+.advancedPlanContent .year .startdateSecond > div:nth-child(3) > select:nth-child(3) {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #666;
+  margin-top: 14px;
+}
+.advancedPlanContent .year .startdateSecond > div:nth-child(2) > select:nth-child(3) {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.advancedPlanContent .year .startdateSecond input[type="text"] {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  color: #666;
+  border-radius: 4px;
+  width: 90px;
+  text-align: center;
+}
+.advancedPlanContent .year .startdateSecond select {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+/**************************************/
+/*taskplan*/
+.taskplan .startdateSecond > input:nth-child(2) {
+  display: inline-block;
+  width: 148px;
+  height: 21px;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "microsoft yahei";
+  text-align: center;
+}
+.choosedContent > .taskplan {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.taskplan .uper {
+  height: 30px;
+}
+.taskplan .down {
+  height: 30px;
+}
+/*************************************/
+#taskPlanCancel {
+  position: absolute;
+  right: 113px;
+  bottom: 14px;
+  background: #ffffff;
+  outline: none;
+  width: 80px;
+  height: 32px;
+  box-sizing: border-box;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  cursor: pointer;
+  color: #000;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+#taskPlanSure {
+  position: absolute;
+  right: 20px;
+  bottom: 14px;
+  background: #1890ff;
+  outline: none;
+  width: 80px;
+  height: 32px;
+  box-sizing: border-box;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #1890ff;
+  border-radius: 4px;
+}
+#taskPlanSure:hover {
+  border: 1px solid #40a9ff;
+  background: #40a9ff;
+  color: #FFFFFF;
+}
+#taskPlanCancel:hover {
+  border: 1px solid #40a9ff;
+  color: #40a9ff;
+  background: #ffffff;
+}
+
+
+/***************************/
+/*********************/
+/*clearFailFlushTips*/
+.flushFailTips {
+  position: absolute;
+  display: none;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -250px;
+  background: white;
+  z-index: 102;
+}
+
+.flushFailTips .flushImg {
+  margin-top: 64px;
+  margin-left: 138px;
+  width: 128px;
+  height: 128px;
+  background: red;
+  display: block;
+  background: url("../../../lib/images/deleteLogo.png");
+}
+.flushFailTips > span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 16px;
+  margin-top: 13px;
+}
+.flushFailTips > button {
+  display: block;
+  width: 92px;
+  height: 30px;
+  margin-left: 276px;
+  margin-top: 76px;
+  border: none;
+  color: white;
+  background: #2e5f94;
+  text-align: center;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "microsoft yahei";
+}
+.flushFailTips > button:hover {
+  /* background: #235081; */
+  cursor: pointer;
+}
+.loader {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  float: left;
+  /*padding-bottom: 51%;*/
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  overflow: hidden;
+  z-index: 100;
+}
+.loader .loaderClose {
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 15px;
+  height: 15px;
+  background-image: url("../../../lib/images/icon_dark2.png");
+  background-position: -125px 0px;
+  z-index: 20;
+  cursor: pointer;
+}
+.loader-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 150px;
+  width: 150px;
+  margin-top: -75px;
+  margin-left: -75px;
+}
+.loader-inner > div {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  float: left;
+  margin-right: 20px;
+  margin-top: 65px;
+  -moz-border-radius: 50% 50% 50% 50%;
+  -webkit-border-radius: 50% 50% 50% 50%;
+  border-radius: 50% 50% 50% 50%;
+}
+.loader-inner > div:nth-child(1) {
+  -webkit-animation: animation_one 1.5s infinite;
+  animation: animation_one 1.5s infinite;
+}
+.loader-inner > div:nth-child(2) {
+  -webkit-animation: animation_two 1.5s infinite;
+  animation: animation_two 1.5s infinite;
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+.loader-inner > div:nth-child(3) {
+  -webkit-animation: animation_three 1.5s infinite;
+  animation: animation_three 1.5s infinite;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+@-webkit-keyframes animation_one {
+  75% {
+    -webkit-transform: scale(0);
+  }
+}
+@keyframes animation_one {
+  75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+}
+@-webkit-keyframes animation_two {
+  75% {
+    -webkit-transform: scale(0);
+  }
+}
+@keyframes animation_two {
+  75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+}
+@-webkit-keyframes animation_three {
+  75% {
+    -webkit-transform: scale(0);
+  }
+}
+@keyframes animation_three {
+  75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+}
+
+/*************************************/
+/*deleteTips*/
+
+
+
+
+
+
+/*added code*/
+.advancedSettingPlan .advancedPlanContent .regularDayNumber {
+  display: inline-block;
+  width: 48px;
+  text-align: center;
+  margin: 0 5px;
+  border: 1px solid #d8d8d8;
+}
+.choosedContent .yhn_borderWarning {
+  border: 1px solid red;
+}
+
+
+.advancedSettingPlan .day .mode input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  margin-top: 9px;
+  margin-left: 3px;
+  margin-right: 8px;
+}
+/*************************************/
+/*��������ʾ*/
+
+.clearFlushTips,
+.flushFailTips,
+.clearFlushTips1,
+.clearFlushTips2,
+.clearFlushTips3,
+.clearFlushTips4,
+.clearFlushTips5,
+.clearFlushTips6 {
+  height: 54px;
+  line-height: 54px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+
+.flushTips .clearFlushTips .clearFlushTitle,
+.deleteTips .clearFlushTips .clearFlushTitle,
+.clearFlushTips .clearFlushTitle,
+.clearFlushTips1 .clearFlushTitle1,
+.clearFlushTips2 .clearFlushTitle2,
+.clearFlushTips3 .clearFlushTitle3,
+.clearFlushTips4 .clearFlushTitle4,
+.clearFlushTips5 .clearFlushTitle5 {
+  float: left;
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  line-height: 48px;
+}
+
+.flushTips .clearFlushTips .clearFlushClose,
+.flushFailTips .clearFlushTips .clearFlushClose,
+.clearFlushTips .clearFlushClose,
+.clearFlushTips1 .clearFlushClose1,
+.clearFlushTips2 .clearFlushClose2,
+.clearFlushTips3 .clearFlushClose3,
+.clearFlushTips4 .clearFlushClose4 {
+  padding: 0;
+  float: right;
+  width: 12px;
+  height: 12px;
+  margin-top: 17px;
+  margin-right: 20px;
+  background-image: url("../../../lib/images/icon.png");
+  background-repeat: no-repeat;
+  background-position: -692px -159px;
+}
+.flushTips .clearFlushTips .clearFlushClose:hover,
+.flushFailTips .clearFlushTips .clearFlushClose:hover,
+.clearFlushTips .clearFlushClose:hover,
+.clearFlushTips1 .clearFlushClose1:hover,
+.clearFlushTips2 .clearFlushClose2:hover,
+.clearFlushTips3 .clearFlushClose3:hover,
+.clearFlushTips4 .clearFlushClose4:hover{
+  background-position: -713px -159px;
+  cursor: pointer;
+}
+
+
+/*************************************/
+/*�ƻ�ɾ����ʾ*/
+
+.deleteTips2 {
+  position: absolute;
+  display: none;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -250px;
+  background: white;
+  z-index: 102;
+}
+
+.deleteTips2 .flushImg2 {
+  margin-top: 64px;
+  margin-left: 186px;
+  width: 127px;
+  height: 127px;
+  background: red;
+  display: block;
+  background: url("../../../lib/images/deleteLogo.png");
+}
+.deleteTips2 > span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 16px;
+  margin-top: 63px;
+}
+.deleteTips2 > button {
+  display: block;
+  width: 92px;
+  height: 30px;
+  margin-left: 326px;
+  margin-top: 126px;
+  border: none;
+  color: white;
+  background: #2e5f94;
+  text-align: center;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "microsoft yahei";
+}
+.deleteTips2 > button:hover {
+  /* background: #235081; */
+  cursor: pointer;
+}
+/*************************************/
+/*�ƻ�ɾ����ʾ*/
+
+.deleteTips3 {
+  position: absolute;
+  display: none;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -250px;
+  background: white;
+  z-index: 102;
+}
+
+.deleteTips3 .flushImg3 {
+  margin-top: 64px;
+  margin-left: 188px;
+  width: 127px;
+  height: 127px;
+  background: red;
+  display: block;
+  background: url("../../../lib/images/deleteLogo.png");
+}
+.deleteTips3 > span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 16px;
+  margin-top: 63px;
+}
+.deleteTips3 > button {
+  display: block;
+  width: 92px;
+  height: 30px;
+  margin-left: 326px;
+  margin-top: 76px;
+  border: none;
+  color: white;
+  background: #2e5f94;
+  text-align: center;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "microsoft yahei";
+}
+.deleteTips3 > button:hover {
+  /* background: #235081; */
+  cursor: pointer;
+}
+
+/*************************************/
+/*�ƻ�ɾ����ʾ*/
+
+.deleteTips4 {
+  position: absolute;
+  display: none;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -250px;
+  background: white;
+  z-index: 102;
+}
+
+.deleteTips4 .flushImg4 {
+  margin-top: 64px;
+  margin-left: 138px;
+  width: 127px;
+  height: 127px;
+  background: red;
+  display: block;
+  background: url("../../../lib/images/deleteLogo.png");
+}
+.deleteTips4 > span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "microsoft yahei";
+  font-size: 16px;
+  margin-top: 13px;
+}
+
+
+/* Permit */
+.advanced-permit {
+  position: absolute;
+  width: 800px;
+  min-height: 550px;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -275px;
+  background: white;
+  z-index: 101;
+  font-size: 14px;
+}
+.advanced-permit-head {
+  height: 54px;
+  line-height: 54px;
+  font-size: 14px;
+  background-color: #fff;
+}
+advanced-permit-head span {
+  color: #333333;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 20px;
+  line-height: 54px;
+}
+.advanced-permit-title {
+  font-size: 16px;
+  line-height: 40px;
+  margin-left: 20px;
+}
+.advanced-permit-close {
+  float: right;
+  width: 12px;
+  height: 12px;
+  margin-top: 19px;
+  margin-right: 20px;
+  background-image: url("../../../lib/images/icon.png");
+  background-repeat: no-repeat;
+  background-position: -692px -159px;
+}
+.advanced-permit-close:hover {
+  background-position: -713px -159px;
+  cursor: pointer;
+}
+
+.advanced-permit-content {
+  padding: 0 35px 0 35px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.advanced-permit-content p {
+  line-height: 20px;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 18px;
+}
+.advanced-permit-content fieldset {
+  margin-bottom: 18px;
+  border: none;
+}
+.advanced-permit-content legend {
+  padding-right: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #444444;
+}
+.advanced-permit-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.advanced-permit-item {
+  display: inline-block;
+  padding: 3px 0;
+  width: 50%;
+  font-size: 14px;
+  line-height: 18px;
+  color: #666666;
+}
+.advanced-permit-item label {
+}
+.advanced-permit-item span {
+  margin-left: 6px;
+}
+.advanced-permit-fn-list {
+    height: 100px;
+    overflow: auto;
+}
+.advanced-permit-fn-list li {
+  width: 33.33%;
+  float: left;
+  margin: 3px 0;
+  position: relative;
+  height: 26px;
+  line-height: 26px;
+}
+.advanced-permit-fn-list li span {
+  display: inline-block;
+  text-overflow: ellipsis;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 0;
+  left: 23px;
+  bottom: 0;
+  right: 0;
+}
+.advanced-permit-fn-list li i {
+  position: absolute;
+  display: none;
+  left: -2px;
+  top: 2px;
+}
+.advanced-permit-fn-list li.checked span {
+  right: 22px;
+  font-size: 14px;
+  color: #666666;
+}
+.advanced-permit-fn-list li.checked i {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background: url(images/tick.png) no-repeat center;
+}
+.advanced-permit-btns {
+    width: 100%;
+}
+.advanced-permit__close-btn {
+  background: #1890ff;
+  margin-top: 3px;
+  outline: none;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #1890ff;
+  font-family: "microsoft yahei";
+  cursor: pointer;
+  border-radius: 4px;
+  color: #ffffff;
+  float: right;
+}
+.advanced-permit__close-btn:hover {
+  border: 1px solid #40a9ff;
+  background: #40a9ff;
+  color: #FFFFFF;
+}
+.licence-registry-update {
+  text-align: center;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #1890ff;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1890ff;
+  float: right;
+  margin-top: 10px;
+}
+.link-licence-registry {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #ffffff;
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.deleteFailTips,
+.deleteTips,
+.deleteTips1,
+.deleteTips2,
+.deleteTips3,
+.deleteTips4,
+.deleteTips5{
+  position: absolute;
+  display: none;
+  width: 440px;
+  height: 200px;
+  left: 50%;
+  margin-left: -220px;
+  top: 50%;
+  margin-top: -100px;
+  background: white;
+  z-index: 102;
+}
+
+
+
+.flushTips,
+.deleteTips,
+.deleteTips5,
+.deleteTips4,
+.deleteTips4,
+.deleteTips2,
+.deleteTips1 {
+  position: absolute;
+  display: none;
+  width: 440px;
+  height: 200px;
+  left: 50%;
+  margin-left: -220px;
+  top: 50%;
+  margin-top: -100px;
+  background: white;
+  z-index: 102;
+}
+
+
+.flushTips .flushImg,
+.deleteFailTips .flushImg,
+.deleteTips .flushImg,
+.deleteTips2 .flushImg2,
+.deleteTips2 .flushImg2,
+.deleteTips3 .flushImg3,
+.deleteTips4 .flushImg4,
+.deleteTips1 .flushImg1 {
+  float: left;
+  margin-top:16px;
+  margin-left:44px;
+  width:30px;
+  height:30px;
+  display: block;
+  margin-right: 14px;
+  background: url("../../../lib/images/deleteLogo.png");
+  background-size: contain;
+}
+.deleteTips2 .flushImg2
+{
+  background: url("../../../lib/images/deleteLogo.png");
+  background-size: contain;
+}
+
+.deleteTips .flushImg {
+  background: url("../../../lib/images/successLogo.png");
+  background-size: contain;
+}
+.flushTips .flushImg {
+  background: url("../../../lib/images/successLogo.png");
+  background-size: contain;
+}
+.deleteFailTips > span,
+.flushTips > span,
+.deleteTips > span,
+.deleteTips1 > span,
+.deleteTips2 > span,
+.deleteTips3 > span,
+.deleteTips4 > span,
+.deleteTips5 > span {
+  float: left;
+  width: calc(100% - 160px);
+  text-align: left;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  color: #666666;
+  margin-top: 22px;
+}
+.deleteFailTips > button,
+.flushTips > button,
+.deleteTips > button,
+.deleteTips4 > button,
+.deleteTips3 > button,
+.deleteTips2 > button,
+.deleteTips1 > button {
+  display: block;
+  width:80px;
+  height:32px;
+  line-height: 32px;
+  box-sizing: border-box;
+  margin-left:340px;
+  margin-top: 102px;
+  color:white;
+  background:#1890ff;
+  text-align: center;
+  letter-spacing: 10px;
+  border: 1px solid #1890ff;
+  text-indent: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "microsoft yahei";
+  outline: none;
+}
+
+.deleteFailTips > button:hover,
+.flushTips > button:hover,
+.deleteTips > button:hover,
+.deleteTips4 > button:hover,
+.deleteTips3 > button:hover,
+.deleteTips2 > button:hover,
+.deleteTips1 > button:hover {
+  background:#40a9ff;
+  color: #fff;
+  cursor: pointer
+}

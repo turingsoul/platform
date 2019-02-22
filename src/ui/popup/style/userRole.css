@@ -1,0 +1,1371 @@
+.headlineStyle .titleClose{
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 23px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.headlineStyle .titleClose:hover{
+    background-position: -713px -159px;
+    cursor: pointer;
+}
+.headlineStyle .titleName{
+    font-size: 14px;
+    line-height:60px;
+    font-weight: bold;
+}
+
+.propertyPopup .titleName>span:nth-child(1){
+    width: 318px;
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    
+}
+
+/* =S userRole left*/
+.systemRoleLeft,
+.roleDisplayPart,
+.userDisplayPart{
+    float:left;
+    width:186px;
+    clear:both;
+    height:510px;
+}
+.systemRoleLeft>div,
+.roleDisplayPart>div,
+.userDisplayPart>div{
+    width:100%;
+    padding-top:20px;
+    height:17px;
+}
+.systemRoleLeft>div>.manageGroup2,
+.roleDisplayPart>div>.manageGroup,
+.userDisplayPart>div>.userGroup{
+    float:left;
+    font-size:14px;
+    color: #333;
+    font-weight:bold;
+}
+.roleDisplayPart>div>.addRole,
+.userDisplayPart>div>.addUser{
+    float:right;
+    display: block;
+    width:14px;
+    height:14px;
+    background-image: url(../../../lib/images/smallButton.png);
+    background-position:0px 0px;
+    cursor: pointer;
+}
+.roleDisplayPart>div>.deleteRole,
+.userDisplayPart>div>.deleteUser{
+    float:right;
+    margin-left: 22px;
+    display:block;
+    width:14px;
+    height:14px;
+    background-image: url(../../../lib/images/smallButton.png);
+    background-position:-22px 0px;
+    cursor: pointer;
+}
+.chooseUser22,
+.chooseUser2,
+.chooseUser{
+    width:186px;
+    line-height: 30px;
+    height:486px;
+    margin-top:8px;
+    font-family:"microsoft yahei";
+    font-size:14px;
+    border:1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+    background: hsla(0,7%,73%,.2);
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+    border-radius: 0;
+    background: rgba(255,255,255,.2);
+}
+
+
+
+
+.chooseUser22 option,
+.chooseUser2 option,
+.chooseUser option{
+    height:18px;
+    line-height:18px;
+    padding-left:12px;
+    font-size: 14px;
+    color: #444444;
+    padding: 8px 0 8px 12px;
+}
+
+/* -E role right*/
+.userManagerRight{
+    float:left;
+    width:442px;
+    height:450px;
+}
+.passwordPanel{
+    margin-left:22px;
+    padding-top:18px;
+}
+.passwordPanel>.userPassword{
+    display: block;
+    font-size:14px;
+    font-weight:bold;
+    color: #444;
+}
+.passwordPanel>div{
+    height:30px;
+    margin-top:11px;
+}
+.passwordPanel>div>input{
+    float:left;
+    width: 290px;
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;
+    border: 1px solid #d8d8d8;
+    background: #f5f5f5;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-indent: 14px;
+}
+.passwordPanel>div>span.userBtn{
+    display:block;
+    float:left;
+    margin-left:16px;
+    background:#fff;
+    width: 70px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    color:#1890ff;
+    font-family:"microsoft yahei";
+    font-size: 13px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border:1px solid #1890ff;
+}
+.passwordPanel>div>span.userBtn:hover{
+    /* background:#235081; */
+}
+.userControlPanel{
+    width: 454px;
+    margin-left: 22px;
+    height:330px;
+}
+.userControlPanel>div:nth-child(1){
+    float:left;
+    width:186px;
+    height:100%;
+}
+.userControlPanel>div:nth-child(1)>span:nth-child(1){
+    display:block;
+    /*padding-top:24px;*/
+    font-size:14px;
+    font-weight:bold;
+    color: #444;
+}
+.userControlPanel>div:nth-child(1)>span:nth-child(2){
+    display:block;
+    font-size:14px;
+    color: #444444;
+    margin-top:8px;
+    font-weight:normal;
+}
+.userControlPanel>div:nth-child(1)>select{
+    display:block;
+    width:186px;
+    height:241px;
+    box-sizing: border-box;
+    margin-top:6px;
+    font-family:"microsoft yahei";
+    font-size:14px;
+    border:1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.userControlPanel>div:nth-child(2){
+    float:left;
+    margin-top:34px;
+    height:270px;
+    width:50px;
+}
+.userControlPanel>div:nth-child(2)>.jumpSelect1,
+.jumpSelect11 {
+    display: block;
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-image: url("../../../../src/lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -255px -215px;
+    border: 1px solid #d9d9d9;
+    color: #666;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 74px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.userControlPanel>div:nth-child(2)>.jumpSelect1:hover,
+.jumpSelect11:hover {
+    background-color:#1890ff;
+    background-position: -218px -215px;
+    border:1px solid #1890ff;
+    color:white;
+}
+
+.userControlPanel>div:nth-child(2)>.jumpSelect2,
+.jumpSelect21 {
+    display: block;
+    width: 30px;
+    height: 24px;
+    background-image: url("../../../../src/lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -292px -214px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    color: #666;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+.userControlPanel>div:nth-child(2)>.jumpSelect2:hover,
+.jumpSelect21:hover {
+    background-color:#1890ff;
+    background-position: -327px -214px;
+    border:1px solid #1890ff;
+    color:white;
+}
+.userControlPanel>div:nth-child(2)>.jumpSelect3,
+.jumpSelect31 {
+    display: block;
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
+    background-image: url("../../../../src/lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -362px -214px;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    color: #666;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-left: 10px;
+    border-radius: 4px;
+    letter-spacing: -3px;
+}
+.userControlPanel>div:nth-child(2)>.jumpSelect3:hover,
+.jumpSelect31:hover {
+    background-color:#1890ff;
+    background-position: -397px -214px;
+    border:1px solid #1890ff;
+    color:white;
+}
+.userControlPanel>div:nth-child(2)>.jumpSelect4,
+.jumpSelect41 {
+    display: block;
+    width: 30px;
+    height: 24px;
+    background-image: url("../../../../src/lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -432px -214px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    color: #666;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-left: 10px;
+    letter-spacing: -3px;
+    border-radius: 4px;
+}
+.userControlPanel>div:nth-child(2)>.jumpSelect4:hover,
+.jumpSelect41:hover {
+    background-color:#1890ff;
+    background-position: -467px -214px;
+    border:1px solid #1890ff;
+    color:white;
+}
+.userControlPanel>div:nth-child(3){
+    float:left;
+    height:330px;
+    width:160px;
+}
+.userControlPanel>div:nth-child(3)>span{
+    display: block;
+    margin-top:26px;
+    font-size:14px;
+    color: #444444;
+    font-weight:normal;
+}
+.userControlPanel>div:nth-child(3)>select{
+    width: 186px;
+    height: 241px;
+    box-sizing: border-box;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    margin-top:6px;
+    border:1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+/* =S roleManagerRight*/
+.roleManagerRight{
+    float:left;
+    width:442px;
+    height:548px;
+}
+.roleManagerRight>div:nth-child(1){
+    width:380px;
+    height:220px;
+}
+.roleManagerRight>div:nth-child(1)>.controlPower{
+    display: block;
+    margin-left:22px;
+    margin-top:18px;
+    margin-bottom: 18px;
+    font-size:14px;
+    font-weight:bold;
+    color: #444;
+    font-family:"microsoft yahei";
+}
+.controlList{
+    width:454px;
+    box-sizing: border-box;
+    padding: 0 0 0 22px;
+    height:90px;
+    margin-top: 12px;
+}
+.controlList>.authority{
+    float:left;
+    width: 33%;
+    box-sizing: border-box;
+    height:32px;
+}
+.authority>input{
+    display: block;
+    float:left;
+    width:15px;
+    height:15px;
+    margin-top:3px;
+}
+.authority>label{
+    float:left;
+    font-family: "microsoft yahei";
+    font-size:13px;
+    margin-left:10px;
+    line-height:20px;
+}
+.roleManagerRight>div:nth-child(2){
+    width: 454px;
+    height:394px;
+}
+.roleRightLeft{
+    float: left;
+    width: 186px;
+    height: 100%;
+    margin-left: 22px;
+}
+.roleRightLeft>span.roleType1{
+    display: block;
+    font-size:14px;
+    font-weight:bold;
+    color: #444444;
+}
+.roleRightLeft>.canChooseItem1{
+    display: block;
+    font-size:14px;
+    font-weight:normal;
+    margin-top:8px;
+    color: #333;
+}
+.roleRightLeft>.canChooseSelect1{
+    display:block;
+    width:186px;
+    height:243px;
+    box-sizing: border-box;
+    margin-top:6px;
+    font-family:"microsoft yahei";
+    font-size:14px;
+    border:1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.roleRightMiddle{
+    float: left;
+    margin-top: 34px;
+    height: 270px;
+    width: 50px;
+}
+
+
+.roleRightRight{
+    float: left;
+    width: 160px;
+    height: 100%;
+
+}
+.roleRightRight>.choosedItem1{
+    display: block;
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+}
+.roleRightRight>.choosedSelect1{
+    width: 186px;
+    height: 243px;
+    box-sizing: border-box;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    margin-top:6px;
+    border:1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.roleRightRight>.choosedSelect1 option{
+    display: block;
+    height:18px;
+    line-height:18px;
+    padding: 8px 0 8px 12px;
+}
+
+/* =E roleManagerRight*/
+/* =S systemRoleLeft*/
+.systemRoleRight{
+    float:left;
+    width:442px;
+    height:450px;
+}
+.systemRoleRight>.controlPower2{
+    display: block;
+    margin-left:22px;
+    margin-top:18px;
+    margin-bottom: 18px;
+    font-size:14px;
+    font-weight:bold;
+    color:#444;
+    font-family:"microsoft yahei";
+}
+
+/* =E systemRoleRight*/
+.tabUnChoosed{
+    background:#fff;
+    border:1px solid #c4c4c4;
+    color:#333;
+    /* border-top:1px solid rgba(0,0,0,0);
+    border-bottom:1px solid #999; */
+}
+.tabChoosed{
+    background:white;
+    /* border-top:1px solid rgba(0,0,0,0);
+    border-bottom:1px solid white; */
+    border:1px solid #1890ff;
+    color:#1890ff;
+}
+/*��ǩ��ʽ*/
+.spanStyle{
+    font-size:12px;
+    font-weight:bold;
+}
+.addNewUserTrue{
+    background: #1890ff;
+    width: 80px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px solid #1890FF;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: absolute;
+    right: 20px;
+    bottom: 14px;
+}
+.addNewUserTrue:hover{
+    border: 1px solid #40a9ff;
+    background: #40a9ff;
+    color: #FFFFFF;
+}
+.addNewUserTrue:focus {
+    border: 1px solid #1368b7;
+    background: #1368b7;
+    color: #FFFFFF;
+}
+.btn-wrapper .addNewUserFalse{
+    display:block;
+    position: absolute;
+    bottom: 14px;
+    right: 113px;
+    background:#fff;
+    width: 80px;
+    height:32px;
+    line-height:32px;
+    text-align:center;
+    font-size: 14px;
+    /*letter-spacing: 12px;*/
+    cursor: pointer;
+    color:#333333;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn-wrapper .addNewUserFalse:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+    background: #ffffff;
+}
+/*ȷ����ť��ʽ*/
+.btnCheckStyle{
+    float: right;
+    position: absolute;
+    background: #1890ff;
+    border: 1px solid#1890FF;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: "microsoft yahei";
+    bottom: 0;
+}
+.btnCheckStyle:hover{
+    border: 1px solid #40a9ff;
+    background: #40a9ff;
+    color: #FFFFFF;
+}
+
+/*ȡ����ť��ʽ*/
+.btnCancelStyle{
+    position: absolute;
+    width: 80px;
+    height: 32px;
+    box-sizing: border-box;
+    line-height: 32px;
+    text-align: center;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    cursor: pointer;
+    background: #fff;
+    color: #333;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    right: 110px;
+    bottom: 14px;
+}
+.btnCancelStyle:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+    background: #ffffff;
+}
+.btnCancelStyle:focus {
+    border: 1px solid #1368b7;
+    color: #1368b7;
+    background: #ffffff;
+}
+.popup .popupHide{
+    display: none;
+}
+.popupbox{
+    position: fixed;
+    height:650px;
+    width: 700px;
+    left:50%;
+    top:50%;
+    margin-left:-350px;
+    margin-top:-325px;
+    z-index:100;
+    background:#fff;
+}
+.popupbox select{
+    border:1px solid #d9d9d9;
+}
+/* 二级遮罩 */
+.popupbox .secondShelter{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 677px;
+    background:rgba(0,0,0,0.5);
+    padding-bottom: 23px;
+    z-index: 100;
+}
+.headlineStyle{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 48px;
+    background: #fff;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    color: #333;
+    font-weight: bold;
+    padding-left: 20px;
+
+}
+/*done*/
+.tabChoose{
+    display:block;
+    width:100%;
+    height:27px;
+    list-style: none;
+    margin-top: 19px;
+    margin-left:calc(50% - 120px);
+}
+.tabChoose>li:nth-child(3){
+    /* border-right:0px solid #c4c4c4; */
+}
+/*done*/
+.tabChoose li{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    width: 80px;
+    height:30px;
+    line-height:30px;
+    float:left;
+    cursor:pointer;
+    /* border-right:1px solid #999; */
+}
+.tabChoose .first {
+    border-radius: 4px 0 0 4px;
+}
+.tabChoose .last {
+    border-radius: 0 4px 4px 0;
+}
+.tabContent{
+    display: block;
+    list-style: none;
+    width:100%;
+    box-sizing: border-box;
+    padding: 0 36px;
+    height:560px;
+    background:white;
+}
+/*content*/
+
+.canChooseSelect option{
+    display: block;
+    height:18px;
+    line-height: 18px;
+    line-height:24px;
+    padding: 8px 0 8px 12px;
+}
+.choosedSelect option{
+    display: block;
+    height:18px;
+    line-height:18px;
+    padding: 8px 0 8px 12px;
+}
+.doItorNot{
+    position: absolute;
+    width:100%;
+    height:54px;
+    /*top:543px;*/
+    background:white;
+}
+
+.btnCancel{
+    left:21px;
+    top:25px;
+}
+.btnSubmit{
+    right:20px;
+    bottom:14px;
+}
+/*content2*/
+.roleType1{
+    top:143px;
+    left:240px;
+}
+.canChooseSelect1 option{
+    display: block;
+    height:18px;
+    line-height:18px;
+    padding: 8px 0 8px 12px;
+}
+/*content3*/
+/*add new user*/
+.addNewUser{
+    position: absolute;
+    width:340px;
+    height:334px;
+    left:50%;
+    margin-left:-170px;
+    top:50%;
+    margin-top:-167px;
+    background:white;
+    z-index: 1000;
+    display: none;
+}
+.addNewUser .title{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.addNewUser .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.addNewUser .title .title-cancel {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 17px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.addNewUser .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+.addNewUser .item {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 72px;
+}
+.addNewUser .item .name {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.addNewUser .item .name .userNameTips{
+    display: block;
+    font-weight: bold;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: rgba(255,0,0,0.7);
+}
+.addNewUser .item .name .userPasswordTips{
+    display: block;
+    font-weight: bold;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: rgba(255,0,0,0.7);
+}
+
+.addNewUser .item .name span {
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+}
+.addNewUser .item .name span:nth-of-type(1) {
+    margin-right: 10px;
+}
+.addNewUser .item input {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    text-indent: 14px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background: #fff;
+    color: #444;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+
+/*delete old user*/
+.deleteOldUser{
+    position: absolute;
+    width:440px;
+    height:200px;
+    left:50%;
+    margin-left:-220px;
+    top:50%;
+    margin-top:-100px;
+    background:white;
+    z-index: 1;
+    /*box-shadow:0px 0px 10px rgba(0,0,0,0.4);*/
+    display: none;
+    z-index: 1000;
+}
+
+.deleteOldUser .title{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.deleteOldUser .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.deleteOldUser .title .title-cancel {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 17px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.deleteOldUser .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+
+
+.deleteOldUserFalse{
+    right:113px;
+    bottom:14px;
+}
+.deleteOldUserTrue{
+    right:20px;
+    bottom:14px;
+}
+.deleteLogo{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 83px;
+    left: 37px;
+    background-size: contain;
+    background-image: url(../../../lib/images/deleteLogo.png);
+    background-repeat: no-repeat;
+    
+}
+.deleteLogoTips{
+    position: absolute;
+    display: block;
+    left: 75px;
+    text-align: center;
+    top: 86px;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: #666666;
+}
+.addNewRole{
+    position: absolute;
+    width:340px;
+    height:188px;
+    left:50%;
+    margin-left:-170px;
+    top:50%;
+    margin-top:-94px;
+    background:white;
+    z-index: 1000;
+    display: none;
+}
+
+.addNewRole .title{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+
+.addNewRole .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.addNewRole .title .title-cancel {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 17px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.addNewRole .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+.addNewRole .item {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 68px;
+}
+.addNewRole .item .name {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.addNewRole .item .name .roleNameNulTips{
+    font-weight: bold;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: rgba(255,0,0,0.7);
+}
+
+.addNewRole .item .name span {
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+}
+.addNewRole .item .name span:nth-of-type(1) {
+    margin-right: 10px;
+}
+.addNewRole .item input {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    text-indent: 14px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background: #fff;
+    color: #444;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+
+
+.addNewRole .btn-wrapper .addNewRoleFalse{
+    right:113px;
+    bottom:14px;
+}
+.addNewRole .btn-wrapper .addNewRoleTrue{
+    right:20px;
+    bottom:14px;
+}
+/*.spanRole{*/
+    /*display: block;*/
+    /*float:left;*/
+    /*margin-left:37px;*/
+    /*margin-top:40px;*/
+    /*font-size: 14px;*/
+    /*font-weight: normal;*/
+/*}*/
+/*.inputNewRole{*/
+    /*width: 256px;*/
+    /*height:30px;*/
+    /*margin-left:36px;*/
+    /*margin-top:34px;*/
+    /*font-family: "microsoft yahei";*/
+    /*font-size: 14px;*/
+    /*letter-spacing: 1px;*/
+    /*text-indent: 12px;*/
+    /*border: 1px solid #d9d9d9;*/
+    /*border-radius: 4px;*/
+/*}*/
+
+
+
+/*delete old role*/
+.deleteOldRole{
+    position: absolute;
+    width:440px;
+    height:200px;
+    left:50%;
+    margin-left:-220px;
+    top:50%;
+    margin-top:-100px;
+    background:white;
+    display: none;
+    z-index: 1000;
+}
+
+.deleteOldRole .title{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.deleteOldRole .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.deleteOldRole .title .title-cancel {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 17px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.deleteOldRole .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+
+
+
+.deleteOldRoleFalse{
+    right:113px;
+    bottom:14px;
+}
+.deleteOldRoleTrue{
+    right:20px;
+    bottom:14px;
+}
+.deleteRoleLogo{
+    position: absolute;
+    width:24px;
+    height:24px;
+    top:83px;
+    left:37px;
+    background-image: url(../../../lib/images/deleteLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.deleteRoleLogoTips{
+    position: absolute;
+    display: block;    
+    left:75px;
+    text-align: center;
+    top:86px;
+    font-family: "microsoft yahei";
+    font-size:14px;
+    color: #666666;
+}
+/*modify password*/
+.modifyPassword{
+    position: absolute;
+    width:360px;
+    height:264px;
+    left:50%;
+    margin-left:-180px;
+    top:50%;
+    margin-top:-132px;
+    background:white;
+    z-index: 1000;
+    display: none;
+}
+
+
+.modifyPassword .title{
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+
+.modifyPassword .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.modifyPassword .title .title-cancel {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 17px;
+    margin-right: 20px;
+    background-image: url("../../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.modifyPassword .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+.modifyPassword .newPassword,
+.modifyPassword .confirm {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 72px;
+}
+.modifyPassword .newPassword .name,
+.modifyPassword .confirm .name {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.modifyPassword .item .name .roleNameNulTips{
+    font-weight: bold;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: rgba(255,0,0,0.7);
+}
+
+.modifyPassword .newPassword .name span,
+.modifyPassword .confirm .name span {
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+}
+.modifyPassword .newPassword .name span:nth-of-type(1),
+.modifyPassword .confirm .name span:nth-of-type(1) {
+    margin-right: 10px;
+}
+.modifyPassword .newPassword input,
+.modifyPassword .confirm input {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    text-indent: 14px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background: #fff;
+    color: #444;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.modifyPassword .newPassword .name .modiPasswordTips{
+    display: block;
+    font-weight:bold;
+    font-family: "microsoft yahei";
+    font-size:14px;
+    color:rgba(255,0,0,0.7);
+}
+
+
+.modiPasswordTrue{
+    display: block;
+    background:#1890ff;
+    float:right;
+    margin-right:20px;
+    margin-top:20px;
+    width: 80px;
+    height:32px;
+    line-height:32px;
+    box-sizing: border-box;
+    text-align:center;
+    color:white;
+    font-size: 14px;
+    /*letter-spacing: 12px;*/
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #1890ff;
+}
+.modiPasswordTrue:hover{
+    border: 1px solid #40a9ff;
+    background: #40a9ff;
+    color: #FFFFFF;
+}
+.modiPasswordTrue:active {
+    border: 1px solid #1368b7;
+    background: #1368b7;
+    color: #FFFFFF;
+}
+
+
+.modifyPassword .btn .modiPasswordFalse{
+    display: block;
+    float:left;
+    background:#fff;
+    width: 80px;
+    height:32px;
+    box-sizing: border-box;
+    margin-top:20px;
+    margin-left:168px;
+    line-height:32px;
+    text-align:center;
+    color:#333;
+    font-family:"microsoft yahei";
+    font-size: 14px;
+    border:1px solid #d9d9d9;
+    /*letter-spacing: 12px;*/
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.modifyPassword .btn .modiPasswordFalse:hover{
+    border: 1px solid #40a9ff;
+    color: #40a9ff;
+    background: #ffffff;
+}
+.modifyPassword .btn .modiPasswordFalse:active {
+    border: 1px solid #1368b7;
+    color: #1368b7;
+    background: #ffffff;
+}
+
+
+/*新增权限*/
+.userManagerRight .powerControlPanel{
+    height:160px;
+    margin-left:22px;
+}
+.powerControlPanel .wrapper {
+    width: 456px;
+    height: 118px;
+}
+.userManagerRight .powerControlPanel>div:nth-child(1)>span:nth-child(1){
+    width: 100px;
+    display: block;
+    font-size: 14px;
+    color: #444;
+    font-weight: 400;
+    padding: 12px 0 ;
+}
+.userManagerRight .powerControlPanel .periodControl>span:nth-child(1){
+    font-size: 14px;
+    color: #444444;
+    margin-right: 10px;
+}
+.userManagerRight .powerControlPanel .periodControl{
+    width: 456px;
+    position: relative;
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+    justify-content: flex-start;
+}
+#selectPeriodControl{
+    position: relative;
+    width:110px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height:30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    font-size:14px;
+    border-radius: 4px;
+    text-indent: 0px;
+    margin-top: 2px;
+}
+#selectPeriodBox{
+    width: 456px;
+    height: 36px;
+    margin-top: 6px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #444;
+}
+#selectPeriodBox>span:nth-child(1),#selectPeriodBox>span:nth-child(3){
+    float: left;
+    font-size: 14px;
+    line-height: 32px;
+    padding-right: 8px;
+}
+#selectPeriodBox>input:nth-child(2),#selectPeriodBox>input:nth-child(4){
+    float: left;
+    text-indent: 8px;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #444;
+}
+#selectPeriodBox>input:nth-child(4){
+    /*top: 2px;*/
+    /*left:220px;*/
+    border:1px solid #d9d9d9;
+}
+#selectPeriodBox>span:nth-child(3){
+    padding-left: 8px;
+    /*top: 6px;*/
+    /*left:190px;*/
+}
+#selectPeriodBox>input:nth-child(2){
+    /*top: 2px;*/
+    /*left:24px;*/
+    border:1px solid #d9d9d9;
+}
+#selectPeriodBox>span:nth-child(1){
+    /*top: 5px;*/
+    /*left: 0px;*/
+}
+.powerControlPanel .periodDisabled{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 4px;
+}
+.powerControlPanel .periodDisabled>span:nth-child(1){
+    font-size: 14px;
+    color: #444;
+}
+.powerControlPanel .periodDisabled>input:nth-child(2){
+    position: absolute;
+    top: 11px;
+    left:52px;
+}
+.powerControlPanel .periodDisabled>span:nth-child(3){
+    position:absolute;
+    font-size: 14px;
+    color: #444;
+    top: 2px;
+    left:200px;
+}
+.powerControlPanel .periodDisabled>span:nth-child(4){
+    position:absolute;
+    font-size: 14px;
+    top: 2px;
+    left:240px;
+    color: #52c41a;
+}

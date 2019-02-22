@@ -1,0 +1,533 @@
+<div class="taskPlan">
+    <ul>
+        <li>
+            <div>计划名字</div>
+            <div>重复</div>
+            <div>源文件</div>
+            <div>输出位置</div>
+            <div>上次运行</div>
+            <div>下次运行</div>
+            <div>创建者</div>
+            <div>状态</div>
+            <div>操作</div>
+        </li>
+        <li ng-repeat="m in planList" ng-hide="m.jobName=='GeneratedContentCleaner'">
+            <div title="{{m.jobName}}">{{m.jobName}}</div>
+            <div title="{{m.jobTrigger | repeatDetail}}">{{m.jobTrigger | repeatDetail}}</div>
+            <div title="{{m.jobParams.jobParams | path:'fileSource'}}">{{m.jobParams.jobParams | path:'fileSource'}}</div>
+            <div title="{{m.jobParams.jobParams | path:'filePath'}}">{{m.jobParams.jobParams | path:'filePath'}}</div>
+            <div title="{{m.lastRun | runTime}}">{{m.lastRun | runTime}}</div>
+            <div title="{{m.nextRun | runTime}}">{{m.nextRun | runTime}}</div>
+            <div title="{{m.userName}}">{{m.userName}}</div>
+            <div title="{{m.state}}">{{m.state}}</div>
+            <div>
+                <i class="icon editIcon" title="编辑" ng-click="editPlan(m);"></i>
+                <i class="icon {{m.state}}" title="{{m.state | psState}}" ng-click="startOrPause(m.jobId,m.state,m);"></i>
+                <i class="icon doIcon" title="立即执行" ng-click="rightNow(m.jobId,m);"></i>
+                <i class="icon removeIcon" title="删除" ng-click="delJob(m.jobId);"></i>
+            </div>
+        </li>
+    </ul>
+    <div class="fixedBox hide">
+        <div class="planBox editPlan hide">
+            <div class="title font-blod600">
+                <span class="title-name">编辑计划</span>
+                <span class="title-cancel" ng-click="close();" title="关闭"></span>
+            </div>
+            <div class="main">
+                <div class="planName">
+                    <p>
+                        <span class="font-blod600">计划名字</span>
+                        <span>:将此作为计划生成内容的名称</span>
+                    </p>
+                    <input type="text" ng-model="planName" />
+                </div>
+                <div class="planPossiton">
+                    <p>
+                        <span class="font-blod600">生成内容位置</span>
+                    </p>
+                    <div class="planPath"></div>
+                    <!--<span class="newBuild">+</span>-->
+                    <div class="myFileTree">
+                        <div id="myFileTree2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="planBtn">
+                <input type="button" class="next myBtn" ng-click="showPlan();" value="下一步" title="下一步" />
+                <input type="button" class="cancel myBtn1" ng-click="close();" value="取消" title="取消" />
+            </div>
+        </div>
+        <div class="planBox sendMail hide">
+            <div class="title font-blod600">
+                <span class="title-name">编辑计划</span>
+                <span class="title-cancel" ng-click="close();" title="关闭"></span>
+            </div>
+            <div class="main">
+                <p>当计划运行时发送邮件吗？</p>
+                <div>
+                    <label class="ifEmail">
+                        <input type="radio" name="email" id="emailNo" ng-click="changeRaido(false);" checked/>NO</label>
+                    <label class="ifEmail">
+                        <input type="radio" name="email" id="emailYes" ng-click="changeRaido(true);" />YES</label>
+                </div>
+                <div class="emailInfo hide">
+                    <div>
+                        <p>
+                            <span>To:</span>
+                            <i>使用分号或逗号分隔多个电子邮件地址。</i>
+                        </p>
+                        <input type="text" ng-model="emails" />
+                    </div>
+                    <div>
+                        <p>
+                            <span>主题：</span>
+                        </p>
+                        <input type="text" ng-model="emailsTitle" />
+                    </div>
+                    <div>
+                        <p>
+                            <span>附件名称：</span>
+                        </p>
+                        <input type="text" ng-model="emailFileName" />
+                    </div>
+                    <div>
+                        <p>
+                            <span>消息（可选）：</span>
+                        </p>
+                        <textarea ng-model="emailMsn"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="planBtn">
+                <input type="button" class="next myBtn right-btn" ng-click="checkout();" value="下一步" title="下一步" />
+                <input type="button" class="next myBtn middle-btn" ng-click="preStep('mytaskPlan','sendMail');" value="上一步" title="上一步" />
+                <input type="button" class="cancel myBtn1" ng-click="close();" value="取消" title="取消" />
+            </div>
+        </div>
+        <!--taskplan_yhn_start-->
+        <div class="planBox mytaskPlan hide">
+            <div class="title font-blod600">
+                <span class="title-name">编辑计划</span>
+                <span class="title-cancel" ng-click="close();" title="关闭"></span>
+            </div>
+            <div class="mytaskPlanContent">
+                <div class="mytaskRepeat">
+                    <span>重复</span>
+                    <select name="" id="mytaskChoosedPlan" ng-change="changeOpt(myType)" ng-model="myType">
+                        <option value="RUN_ONCE" selected>只运行一次</option>
+                        <option value="SECONDS">秒</option>
+                        <option value="MINUTES">分钟</option>
+                        <option value="HOURS">小时</option>
+                        <option value="DAILY">天</option>
+                        <option value="WEEKLY">周</option>
+                        <option value="MONTHLY">月</option>
+                        <option value="YEARLY">年</option>
+                        <!--<option value="taskplan">计划任务表</option>-->
+                    </select>
+                </div>
+                <div class="mychoosedContent">
+                    <!--onlyone-->
+                    <div class="onlyone RUN_ONCE" ng-show="_taskplan == 'RUN_ONCE'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdate">
+                            <span>开始日期</span>
+                            <input type="text" class="datePicker" id="onlyone" ng-model="myStartDate" />
+                        </div>
+                    </div>
+                    <!--second-->
+                    <div class="second SECONDS" ng-show="_taskplan == 'SECONDS'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond">
+                            <span>定期模式</span>
+                            <span>每一个</span>
+                            <input type="text" ng-model="mySecond" ng-keyup="borderRed($event,mySecond,'mySecond');" />
+                            <span>秒</span>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="second" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="secondend" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--minutes-->
+                    <div class="minutes MINUTES" ng-show="_taskplan == 'MINUTES'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond">
+                            <span>定期模式</span>
+                            <span>每一个</span>
+                            <input type="text" ng-model="myMinutes" ng-keyup="borderRed($event,myMinutes,'myMinutes');" />
+                            <span>分钟</span>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="minutes" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="minutesend" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--hours-->
+                    <div class="hour HOURS" ng-show="_taskplan == 'HOURS'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond">
+                            <span>定期模式</span>
+                            <span>每一个</span>
+                            <input type="text" ng-model="myHours" ng-keyup="borderRed($event,myHours,'myHours');" />
+                            <span>小时</span>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="hour" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="hourend" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--days-->
+                    <div class="day DAILY" ng-show="_taskplan == 'DAILY'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond">
+                            <span>定期模式</span>
+                            <div class="mode">
+                                <label>
+                                    <input type="radio" id="myChoose4" name="daysMottern" ng-checked='_myChoose4' ng-click="oneday();"
+                                    />每一个</label>
+                                <input type="text" ng-model="myDay" ng-disabled="dayable" ng-keyup="borderRed($event,myDay,'myDay');" />
+                                <span>天</span>
+                            </div>
+                            <div class="mode">
+                                <label>
+                                    <input type="radio" id="myChoose5" name="daysMottern" ng-checked='_myChoose5' ng-click="everyworkday();"
+                                    />每个工作日</label>
+                            </div>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="day" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="dayend" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--week-->
+                    <div class="week WEEKLY" ng-show="_taskplan == 'WEEKLY'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond days">
+                            <span>定期模式</span>
+                            <div class="mode">
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck0' value="0" />星期日</label>
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck1' value="1" />星期一</label>
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck2' value="2" />星期二</label>
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck3' value="3" />星期三</label>
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck4' value="4" />星期四</label>
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck5' value="5" />星期五</label>
+                                <label>
+                                    <input type="checkbox" name="myChecked" ng-checked='_weekcheck6' value="6" />星期六
+                                </label>
+                            </div>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="week" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="weekend" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--month-->
+                    <div class="month MONTHLY" ng-show="_taskplan == 'MONTHLY'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond">
+                            <span>定期模式</span>
+                            <div class="mode">
+                                <label>
+                                    <input type="radio" id="myChoose2" name="monthPattern" ng-checked='_myChoose2' ng-click="onemonth();"
+                                    />每月
+                                    <input type="text" ng-model="myMonth" ng-disabled="monthable" style="width:50px;" ng-keyup="borderRed($event,myMonth,'myMonth');"
+                                    />
+                                    <span>天</span>
+                                </label>
+                            </div>
+                            <div class="mode monthMode">
+                                <label class="monthFirstLabel">
+                                    <input type="radio" id="myChoose3" name="monthPattern" ng-checked='_myChoose3' ng-click="everymonth();"
+                                    />每月</label>
+                                <select class="weeksOfMonth" ng-model="weeksOfMonth">
+                                    <option value="0">第一</option>
+                                    <option value="1">第二</option>
+                                    <option value="2">第三</option>
+                                    <option value="3">第四</option>
+                                    <option value="4">最后</option>
+                                </select>
+                                <select class="daysOfWeek" ng-model="daysOfWeek">
+                                    <option value="0">星期日</option>
+                                    <option value="1">星期一</option>
+                                    <option value="2">星期二</option>
+                                    <option value="3">星期三</option>
+                                    <option value="4">星期四</option>
+                                    <option value="5">星期五</option>
+                                    <option value="6">星期六</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="month" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="monthend" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--year-->
+                    <div class="year YEARLY" ng-show="_taskplan == 'YEARLY'">
+                        <div class="starttime">
+                            <span>开始时间</span>
+                            <select ng-model="myHour">
+                                <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                            </select>
+                            <span>:</span>
+                            <select ng-model="myMinute">
+                                <option value="{{num1}}" ng-repeat="num1 in minutes">{{num1}}</option>
+                            </select>
+                            <select ng-model="myHalf">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="startdateSecond">
+                            <span>定期模式</span>
+                            <div class="mode">
+                                <input type="radio" id="mychoose0" name="yearPattern" ng-checked='_mychoose0' value="0" ng-click="oneyear();" />
+                                <label for="mychoose0">每一个</label>
+                                <select class="monthsOfYear" ng-model="monthsOfYear">
+                                    <option value="0">1月</option>
+                                    <option value="1">2月</option>
+                                    <option value="2">3月</option>
+                                    <option value="3">4月</option>
+                                    <option value="4">5月</option>
+                                    <option value="5">6月</option>
+                                    <option value="6">7月</option>
+                                    <option value="7">8月</option>
+                                    <option value="8">9月</option>
+                                    <option value="9">10月</option>
+                                    <option value="10">11月</option>
+                                    <option value="11">12月</option>
+                                </select>
+                                <input type="text" ng-model="myYear" ng-disabled="yearable" ng-keyup="borderRed($event,myYear,'myYear');" />
+                            </div>
+                            <div class="mode">
+                                <input type="radio" name="yearPattern" id="mychoose1" ng-checked='_mychoose1' value="1" ng-click="everyear();" />
+                                <select class="monthsOfYear1" ng-model="monthsOfYear1">
+                                    <option value="0">1月</option>
+                                    <option value="1">2月</option>
+                                    <option value="2">3月</option>
+                                    <option value="3">4月</option>
+                                    <option value="4">5月</option>
+                                    <option value="5">6月</option>
+                                    <option value="6">7月</option>
+                                    <option value="7">8月</option>
+                                    <option value="8">9月</option>
+                                    <option value="9">10月</option>
+                                    <option value="10">11月</option>
+                                    <option value="11">12月</option>
+                                </select>
+                                <select class="weeksOfMonth1" ng-model="weeksOfMonth1">
+                                    <option value="0">第一</option>
+                                    <option value="1">第二</option>
+                                    <option value="2">第三</option>
+                                    <option value="3">第四</option>
+                                    <option value="4">最后</option>
+                                </select>
+                                <select class="daysOfWeek1" ng-model="daysOfWeek1">
+                                    <option value="0">星期日</option>
+                                    <option value="1">星期一</option>
+                                    <option value="2">星期二</option>
+                                    <option value="3">星期三</option>
+                                    <option value="4">星期四</option>
+                                    <option value="5">星期五</option>
+                                    <option value="6">星期六</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="year" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="yearend" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--taskplan-->
+                    <div class="taskplan" ng-show="_taskplan == 'taskplan'">
+                        <div class="startdateSecond">
+                            <span>字符串</span>
+                            <input type="text" />
+                        </div>
+                        <div class="repeatSpread">
+                            <span>重复范围</span>
+                            <div class="left">
+                                <span>开始日期</span>
+                                <input type="text" class="datePicker" id="mytaskplanDate2" ng-model="myStartDate" />
+                            </div>
+                            <div class="right">
+                                <div class="down">
+                                    <label>结束日期</label>
+                                    <input type="text" class="datePicker" id="mytaskplanEndDate2" placeholder="无结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="planBtn">
+                <input type="button" class="next myBtn right-btn" ng-click="email();" value="下一步" title="下一步" />
+                <input type="button" class="next myBtn middle-btn" ng-click="preStep('editPlan','mytaskPlan');" value="上一步" title="上一步" />
+                <input type="button" class="cancel myBtn1" ng-click="close();" value="取消" title="取消" />
+            </div>
+        </div>
+        <!--taskplan_yhn_end-->
+    </div>
+</div>

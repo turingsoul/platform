@@ -1,0 +1,616 @@
+<div ng-controller="advancedSettingWrapController">
+    <div class="advancedSettingBox" ng-controller="advancedSettingController">
+        <div class="advancedHead">
+            <span class="advancedTitle">高级设置</span>
+            <span class="advancedClose" ng-click="close();"></span>
+        </div>
+        <div class="advancedSettingContent">
+            <p>定时任务可能会生成报表文件并存储在资料库中，过期的报表文件应被及时删除</p>
+            <div>
+                <button class="planToDelete" ng-click="showPlan();"></button>
+                <span class="deletePlan" ng-click="cancelCurrentPlan();">删除计划</span>
+            </div>
+            <div>
+                <button class="immediateDelete" ng-click="deleteImediate();">立即删除</button>
+                <input type="text" class="inputedDay" id="deleteImmediateDay" />
+                <span>天前的文件</span>
+            </div>
+            <p>平台缓存机制能大幅提高性能，如果更新后台数据或模型，需及时清除缓存。</p>
+            <button class="clearCache" ng-click="clearFlush();">清除缓存</button>
+            <p>查看和修改系统许可信息</p>
+            <button class="permit" ng-click="showPermit()">许可信息</button>
+            <div class="btn-wrapper">
+                <button class="advancedSettingConfirm" ng-click="close();">确定</button>
+                <button class="advancedSettingCancel" ng-click="close();">取消</button>
+            </div>
+        </div>
+    </div>
+    <div class="advanced-permit" ng-if="permit.show">
+        <div class="advanced-permit-head">
+            <span class="advanced-permit-title">许可信息</span>
+            <span class="advanced-permit-close" ng-click="closePermit();"></span>
+        </div>
+        <div class="advanced-permit-content">
+            <p>感谢您的使用！若要更新许可，请填写用户和项目信息，点击注册申请按钮生成注册文件并发送给客服，收到客服返回的许可文件后将其导入系统即可更新许可。</p>
+            <fieldset>
+                <legend>许可信息</legend>
+                <div class="advanced-permit-form">
+                    <div class="advanced-permit-item">
+                        <label>用户名称:</label>
+                        <span ng-bind="permit.authorizedUser"></span>
+                    </div>
+                    <div class="advanced-permit-item">
+                        <label>项目名称:</label>
+                        <span>{{permit.authorizedProject}}</span>
+                    </div>
+                    <div class="advanced-permit-item" >
+                        <label>联系方式:</label>
+                        <span>{{permit.authorizedPhone}}</span>
+                    </div>
+                    <div class="advanced-permit-item">
+                        <label>联系邮箱:</label>
+                        <span>{{permit.authorizedEmail}}</span>
+                    </div>
+                </div>
+                <div class="licence-registry-update">
+                    <a class="link-licence-registry" href="/xdatainsight/LicenceRegistry" target="_blank">更新授权</a>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>授权信息</legend>
+                <div class="advanced-permit-form">
+                    <div class="advanced-permit-item">
+                        <label>许可类型:</label>
+                        <span>{{permit.authorizedType}}</span>
+                    </div>
+                    <div class="advanced-permit-item">
+                        <label>授权日期:</label>
+                        <span>{{permit.authorizedDate}}</span>
+                    </div>
+                    <div class="advanced-permit-item">
+                        <label>有效期:</label>
+                        <span>{{permit.expireDate}}</span>
+                    </div>
+                    <div class="advanced-permit-item">
+                        <label>最大用户数:</label>
+                        <span>{{permit.maxUser}}</span>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>授权功能</legend>
+                <ul class="advanced-permit-fn-list">
+                    <li ng-repeat="item in permit.plugins" ng-class="{checked:item.checked}">
+                        <span title="{{item.name}}">{{item.name}}</span>
+                        <i class="fa fa-check-circle "></i>
+                    </li>
+                </ul>
+            </fieldset>
+            <div class="advanced-permit-btns">
+                <button class="advanced-permit__close-btn" ng-click="closePermit();">关闭</button>
+            </div>
+        </div>
+    </div>
+    <!--计划任务-->
+    <div class="advancedSettingPlan" ng-controller="advancedSettingController">
+
+        <div class="advancedPlanHead">
+            <span class="advancedPlanTitle">编辑计划</span>
+            <span class="advancedPlanClose" ng-click="closePlan();"></span>
+        </div>
+        <div class="advancedPlanContent">
+            <p>用以下规则删除之前
+                <input class="regularDayNumber" type="text" />天前生成的文件：</p>
+            <div class="advancedRepeat">
+                <span>重复</span>
+                <select name="" id="advancedChoosedPlan">
+                    <option value="onlyone" name="selectedboy">只运行一次</option>
+                    <option value="second" name="selectedboy">秒</option>
+                    <option value="minutes" name="selectedboy">分钟</option>
+                    <option value="hour" name="selectedboy">小时</option>
+                    <option value="day" name="selectedboy">天</option>
+                    <option value="week" name="selectedboy">周</option>
+                    <option value="month" name="selectedboy">月</option>
+                    <option value="year" name="selectedboy">年</option>
+                    <!--<option value="taskplan" name="selectedboy">计划任务表</option>-->
+                </select>
+            </div>
+            <div class="choosedContent">
+                <!--onlyone-->
+                <div class="onlyone">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="onlyoneHour">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="onlyoneMinute">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="onlyoneHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                    <div class="startdate">
+                        <span>重复范围</span>
+                        <span>开始日期</span>
+                        <input type="text" id="only1start" />
+                    </div>
+                </div>
+                <!--second-->
+                <div class="second">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_secondHour">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_secondMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_secondHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <span>每一个</span>
+                        <input type="text" />
+                        <span>秒</span>
+                    </div>
+
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="secondDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="secondEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--minutes-->
+                <div class="minutes">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_minutesHour">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_minutesMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_minutesHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <span>每一个</span>
+                        <input type="text" />
+                        <span>分钟</span>
+                    </div>
+
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="minutesDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="minutesEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--hours-->
+                <div class="hours">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_hoursHour">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_hoursMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_hoursHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <span>每一个</span>
+                        <input type="text" />
+                        <span>小时</span>
+                    </div>
+
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="hoursDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="hoursEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--days-->
+                <div class="day">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_dayHours">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_dayMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_dayHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <div class="mode">
+                            <input type="radio" id="daysChoose1" name="daysMottern" />
+                            <label for="daysChoose1">每一个</label>
+                            <input type="text" />
+                            <span>天</span>
+                        </div>
+                        <div class="mode">
+                            <input type="radio" id="daysChoose2" name="daysMottern" checked/>
+                            <label for="daysChoose2">每个工作日</label>
+                        </div>
+                    </div>
+
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="dayDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="dayEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--week-->
+                <div class="week">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_weekHours">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_weekMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_weekHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <div class="mode">
+                            <input type="checkbox" id="weekChoose0" />
+                            <label for="weekChoose0">星期日</label>
+                            <input type="checkbox" id="weekChoose1" />
+                            <label for="weekChoose1">星期一</label>
+                            <input type="checkbox" id="weekChoose2" />
+                            <label for="weekChoose2">星期二</label>
+                            <input type="checkbox" id="weekChoose3" />
+                            <label for="weekChoose3">星期三</label>
+                            <input type="checkbox" id="weekChoose4" />
+                            <label for="weekChoose4">星期四</label>
+                            <input type="checkbox" id="weekChoose5" />
+                            <label for="weekChoose5">星期五</label>
+                            <input type="checkbox" id="weekChoose6" />
+                            <label for="weekChoose6">星期六</label>
+                        </div>
+                    </div>
+
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="weekDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="weekEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--month-->
+                <div class="month">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_monthHours">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_monthMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_monthHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <input type="radio" id="monthChoose1" name="monthPattern" />
+                        <label for="monthChoose1">每月</label>
+                        <input type="text" />
+                        <span>天</span>
+                        <input type="radio" id="monthChoose2" name="monthPattern" />
+                        <label for="monthChoose2">每月</label>
+                        <select name="" id="yhn_month_weekNumber">
+                            <option value="0">第一</option>
+                            <option value="1">第二</option>
+                            <option value="2">第三</option>
+                            <option value="3">第四</option>
+                            <option value="4">最后</option>
+                        </select>
+                        <select name="" id="yhn_month_week">
+                            <option value="1">星期一</option>
+                            <option value="2">星期二</option>
+                            <option value="3">星期三</option>
+                            <option value="4">星期四</option>
+                            <option value="5">星期五</option>
+                            <option value="6">星期六</option>
+                            <option value="0">星期日</option>
+                        </select>
+                    </div>
+
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="monthDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="monthEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--year-->
+                <div class="year">
+                    <div class="starttime">
+                        <span>开始时间</span>
+                        <select name="" id="yhn_yearHours">
+                            <option value="{{num}}" ng-repeat="num in hours">{{num}}</option>
+                        </select>
+                        <span>:</span>
+                        <select name="" id="yhn_yearMinutes">
+                            <option value="{{num}}" ng-repeat="num in minutes">{{num}}</option>
+                        </select>
+                        <select name="" id="yhn_yearHalfDay">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+
+                    <div class="startdateSecond">
+                        <span>定期模式</span>
+                        <div>
+                            <input type="radio" id="yearChoose1" name="yearPattern" />
+                            <label for="yearChoose1">每一个</label>
+                            <select name="" class="year_select1_month">
+                                <option value="0">1月</option>
+                                <option value="1">2月</option>
+                                <option value="2">3月</option>
+                                <option value="3">4月</option>
+                                <option value="4">5月</option>
+                                <option value="5">6月</option>
+                                <option value="6">7月</option>
+                                <option value="7">8月</option>
+                                <option value="8">9月</option>
+                                <option value="9">10月</option>
+                                <option value="10">11月</option>
+                                <option value="11">12月</option>
+                            </select>
+                            <input type="text" class="year_select1_day" />
+                        </div>
+                        <div>
+                            <input type="radio" id="yearChoose2" name="yearPattern" />
+                            <select class="year_select2_month">
+                                <option value="0">1月</option>
+                                <option value="1">2月</option>
+                                <option value="2">3月</option>
+                                <option value="3">4月</option>
+                                <option value="4">5月</option>
+                                <option value="5">6月</option>
+                                <option value="6">7月</option>
+                                <option value="7">8月</option>
+                                <option value="8">9月</option>
+                                <option value="9">10月</option>
+                                <option value="10">11月</option>
+                                <option value="11">12月</option>
+                            </select>
+                            <select class="year_select2_sequence">
+                                <option value="0">第一</option>
+                                <option value="1">第二</option>
+                                <option value="2">第三</option>
+                                <option value="3">第四</option>
+                                <option value="4">最后</option>
+                            </select>
+                            <select class="year_select2_week">
+                                <option value="1">星期一</option>
+                                <option value="2">星期二</option>
+                                <option value="3">星期三</option>
+                                <option value="4">星期四</option>
+                                <option value="5">星期五</option>
+                                <option value="6">星期六</option>
+                                <option value="0">星期日</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="yearDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="yearEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--taskplan-->
+                <div class="taskplan">
+                    <div class="startdateSecond">
+                        <span>字符串</span>
+                        <input type="text" />
+                    </div>
+                    <div class="repeatSpread">
+                        <span>重复范围</span>
+                        <div class="left">
+                            <span>开始日期</span>
+                            <input type="text" id="taskplanDate1" />
+                        </div>
+                        <div class="right">
+                            <div class="down">
+                                <label>结束日期</label>
+                                <input type="text" id="taskplanEndDate" placeholder="无结束日期" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button id="taskPlanCancel" ng-click="closePlan();">取消</button>
+        <button id="taskPlanSure" ng-click="submitMyPlan()">确定</button>
+    </div>
+
+    <!--Flush Clear Success Tips-->
+    <div class="flushTips" ng-controller="advancedSettingController">
+        <div class="clearFlushTips">
+            <span class="clearFlushTitle">清除缓存</span>
+            <span class="clearFlushClose" ng-click="clearFlushTips();"></span>
+        </div>
+        <div class="flushImg"></div>
+        <span>清除缓存成功</span>
+        <button ng-click="clearFlushTips();">关闭</button>
+    </div>
+    <!--Flush Clear Fail Tips-->
+    <div class="flushFailTips" ng-controller="advancedSettingController">
+        <div class="clearFlushTips">
+            <span class="clearFlushTitle">清除缓存</span>
+            <span class="clearFlushClose" ng-click="clearFlushFailTips();"></span>
+        </div>
+        <div class="flushImg"></div>
+        <span>清除缓存失败</span>
+        <button ng-click="clearFlushFailTips();">关闭</button>
+    </div>
+    <!--Delete Success-->
+    <div class="deleteTips" ng-controller="advancedSettingController">
+        <div class="clearFlushTips">
+            <span class="clearFlushTitle">立即删除</span>
+            <span class="clearFlushClose" ng-click="clearDeleteTips();"></span>
+        </div>
+        <div class="flushImg"></div>
+        <span>删除成功</span>
+        <button ng-click="clearDeleteTips();">关闭</button>
+    </div>
+    <!--Delete Fail-->
+    <div class="deleteFailTips" ng-controller="advancedSettingController">
+        <div class="clearFlushTips">
+            <span class="clearFlushTitle">立即删除</span>
+            <span class="clearFlushClose" ng-click="clearDeleteFailTips();"></span>
+        </div>
+        <div class="flushImg"></div>
+        <span>删除失败</span>
+        <button ng-click="clearDeleteFailTips();">关闭</button>
+    </div>
+    <!--waiting-->
+    <div class="loader" ng-controller="advancedSettingController">
+        <div class="loader-inner">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="loaderClose" ng-click="closeYhnLoading();"></div>
+    </div>
+    <!--正整数提示-->
+    <div class="deleteTips1" ng-controller="advancedSettingController">
+        <div class="clearFlushTips1">
+            <span class="clearFlushTitle1">立即删除</span>
+            <span class="clearFlushClose1" ng-click="clearDeleteTips1();"></span>
+        </div>
+        <div class="flushImg1"></div>
+        <span>请输入正整数</span>
+        <button ng-click="clearDeleteTips1();">关闭</button>
+    </div>
+    <!--错误日期提示-->
+    <div class="deleteTips2" ng-controller="advancedSettingController">
+        <div class="clearFlushTips2">
+            <span class="clearFlushTitle2">计划删除</span>
+            <span class="clearFlushClose2" ng-click="clearDeleteTips2();"></span>
+        </div>
+        <div class="flushImg2"></div>
+        <span>开始时间应当晚于系统当前时间</span>
+        <button ng-click="clearDeleteTips2();">关闭</button>
+    </div>
+    <!--信息填写不完整-->
+    <div class="deleteTips3" ng-controller="advancedSettingController">
+        <div class="clearFlushTips3">
+            <span class="clearFlushTitle3">编辑计划</span>
+            <span class="clearFlushClose3" ng-click="clearDeleteTips3();"></span>
+        </div>
+        <div class="flushImg3"></div>
+        <span>请填入正确的天数</span>
+        <button ng-click="clearDeleteTips3();">关闭</button>
+    </div>
+    <!--公共报错显示牌-->
+    <div class="deleteTips4" ng-controller="advancedSettingController">
+        <div class="clearFlushTips4">
+            <span class="clearFlushTitle4">编辑计划</span>
+            <span class="clearFlushClose4" ng-click="clearDeleteTips4();"></span>
+        </div>
+        <div class="flushImg4"></div>
+        <span id="commonTips">请填入正确的天数</span>
+        <button ng-click="clearDeleteTips4();">关闭</button>
+    </div>
+</div>

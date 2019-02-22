@@ -1,0 +1,31 @@
+<div class="popupbox" ng-controller="userRoleController">
+    <!-- 二级遮罩 -->
+    <div class="secondShelter">
+        
+    </div>
+    <div class="headlineStyle">
+        <span class="titleName">用户和角色</span>
+        <span class = "titleClose" ng-click = "close();"></span>
+    </div>
+    <ul class="tabChoose">
+        <li class="first">管理用户</li>
+        <li>管理角色</li>
+        <li class="last">系统角色</li>
+    </ul>
+    <!-- three tabs-->
+    <ul class="tabContent">
+        <li>
+            <user-manage ng-controller = "userManageController"></user-manage>
+        </li>
+        <li>
+            <role-manage ng-controller = "roleManageController"></role-manage>
+        </li>
+        <li>
+            <system-role ng-controller = "systemRoleController"></system-role>
+        </li>
+    </ul>
+    <div class="doItorNot">
+        <div class="btnSubmit btnCheckStyle">关闭</div>
+    </div>
+</div>
+<fine-fine></fine-fine>    

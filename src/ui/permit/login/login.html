@@ -1,0 +1,17 @@
+<div id="xdt-login-form" class="login-form-wrap" ng-controller="loginFormCtr">
+    <div class="login-form">
+        <div id="login-form-loading" class="login-form-loading" ng-show="loading"></div>
+        <div class="login-form-title">用户登录</div>
+        <div class="login-form-msg">会话已失效，请重新登录。</div>
+        <div class="login-form-item">
+            <input id="login_form_username" type="text" autocomplete="off" readonly placeholder="用户名" />
+        </div>
+        <div class="login-form-item login-form-item-pw">
+            <input ng-model="password" type="password" autocomplete="off" placeholder="密码"/>
+        </div>
+        <div class="login-form-error">{{errorMsg}}</div>
+        <div class="login-form-footer">
+            <button ng-click="login()">登录</button>
+        </div>
+    </div>
+</div>

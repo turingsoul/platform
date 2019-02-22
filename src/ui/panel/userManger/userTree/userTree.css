@@ -1,0 +1,89 @@
+.tree-wrapper {
+  width: 100%;
+  height: auto;
+}
+.ut-list {
+  font-size: 14px;
+  color: #444;
+  padding-left: 24px;
+  line-height: 32px;
+  height: 32px;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: space-between;
+}
+.ut-list .ut-right-noitem {
+  display: flex;
+  justify-content: flex-start;
+}
+.ut-list:hover {
+  background-color: #bfdaf5;
+}
+.ut-list:hover .ut-right-noitem {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.parent-list {
+  line-height: 32px;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #444;
+}
+.ut-list-parent {
+  padding-left: 0px;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ut-list-parent:hover {
+  background-color: #bfdaf5;
+}
+
+.ut-list-parent:hover .ut-right {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ut-list .ut-right-noitem,
+.ut-list-parent .ut-right{
+  display: none;
+  justify-content: flex-start;
+}
+.ut-list .ut-right-noitem .edit,
+.ut-list-parent .ut-right .edit {
+  width: 15px;
+  height: 15px;
+  margin-top: 8px;
+  margin-right: 12px;
+  background: url("../../../../lib/images/newIcon.png") -620px -181px no-repeat;
+}
+
+.ut-list .ut-right-noitem .delete,
+.ut-list-parent .ut-right .delete {
+  width: 15px;
+  height: 15px;
+  margin-top: 8px;
+  margin-right: 10px;
+  background: url("../../../../lib/images/newIcon.png") -639px -181px no-repeat;
+}
+
+
+.parent-list .icon {
+  display: inline-block;
+  width: 12px;
+  height: 14px;
+  margin-right: 2px;
+  vertical-align: middle;
+  background:url("../../../../lib/images/newIcon.png") -751px -184px no-repeat;
+}
+.parent-list .rotated {
+  background:url("../../../../lib/images/newIcon.png") -734px -184px no-repeat;
+}
+
+.um-group-tree .isSelected {
+  background-color: #bfdaf5;
+  color: #fff;
+}

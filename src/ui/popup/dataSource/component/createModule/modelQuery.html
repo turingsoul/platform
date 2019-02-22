@@ -1,0 +1,100 @@
+<div class="createModel modelQuery hide" ng-controller="queryCtr">
+    <div class="title font-blod600">
+        <span class="title-name">新建数据集</span>
+        <span class="title-cancel" ng-click="close();" title="关闭"></span>
+    </div>
+    <div class="navigation">
+        <!--<span class="active">数据源类别</span>-->
+        <!--<span></span>-->
+        <!--<span class="active" ng-click="toArgs();">连接参数</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">定义查询</span>-->
+        <!--<span></span>-->
+        <!--<span>定义表间关系</span>-->
+        <span class="active">
+                <div class="order">1</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">数据源类别</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+        <span class="active">
+                <div class="order">2</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">连接参数</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+        <span class="active">
+                <div class="order">3</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">定义查询</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+        <span>
+                <div class="order">4</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">定义表间关系</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+    </div>
+    <div class="main" style="position: relative;">
+        <div class="xdt-div-loading" ng-style="{display:divLoading?'block':'none'}"></div>
+        <div class="setType">
+            <span class="mySpan">类别</span>
+            <select class="mySelect">
+                <option value="0">数据库表</option>
+                <option value="1">自定义SQL语句查询</option>
+            </select>
+        </div>
+        <div class="sheet-body">
+            <p class="tishi">请选择一张表并完成向导，或选择多张表并定义它们之间的连接关系。若指定一张事实表，创建业务数据集的同时还将创建多维数据集。</p>
+            <div class="setModel">
+                <span class="mySpan">模式</span>
+                <select class="mySelect" ng-change="modelChange(moren);" ng-model="moren">
+                    <option ng-repeat="x in moshi">{{x}}</option>
+                </select>
+            </div>
+            <div class="sheet">
+                <div class="sheet-left">
+                    <p>可用的表</p>
+                    <select class="myOption lSheet" multiple="multiple">
+                        <option ng-repeat="y in biao" title={{y|replaceFh}} value={{y}}>{{y|replaceAndCut}}</option>
+                    </select>
+                </div>
+                <div class="sheet-center">
+                    <div class="add add1" ng-click="addSheet();"></div>
+                    <div class="remove" ng-click="removeSheet();"></div>
+                </div>
+                <div class="sheet-right">
+                    <p>已选择的表</p>
+                    <select class="myOption rSheet" multiple="multiple">
+
+                    </select>
+                    <p class="warning warning-info">请至少选择一张表</p>
+                    <div class="sheet-two">
+                        <span class="mySpan">事实表</span>
+                        <select class="mySelect factSheet">
+                            <option value="0">未选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="SQL-body hide">
+            <p>SQL语句查询</p>
+            <textarea></textarea>
+        </div>
+    </div>
+    <div class="model-btn">
+        <input type="button" class="queryPre myBtn" value="上一步" ng-click="preStep();" title="上一步"/>
+        <input type="button" class="queryNext myBtn" value="下一步" ng-click="nextStep();" title="下一步"/>
+        <input type="button" class="queryComplete myBtn hide" value="完成" ng-click="complete();" title="完成"/>
+    </div>
+</div>

@@ -1,0 +1,284 @@
+<!-- S管理数据源弹出框 -->
+<div class="source-list" ng-controller="sourceController">
+
+    <div class="fengebox">
+        <!-- 标题栏 -->
+        <div class="title font-blod600">
+            <span class="title-name">管理数据源</span>
+            <span class="title-cancel" ng-click="close();" title="关闭"></span>
+        </div>
+        <!-- 内容区域 -->
+        <div class="main">
+            <p>选择一个数据源，再点击下方的操作按钮</p>
+            <div class="table">
+                <div class="table-title">
+                    <table>
+                        <tr>
+                            <th width="58%">数据源</th>
+                            <th width="42%">类型</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-main">
+                    <table>
+                        <tr ng-repeat="x in duowei.Item" ng-click="selectThis($event,x,'DuoWei');">
+                            <td>{{x}}</td>
+                            <td>多维数据集</td>
+                        </tr>
+                        <tr ng-repeat="x in xiangdao.Item" ng-click="selectThis($event,x,'XiangDao');">
+                            <td>{{x.replace(".xmi","")}}</td>
+                            <td>数据集</td>
+                        </tr>
+                        <tr ng-repeat="x in guanxi.Item" ng-click="selectThis($event,x,'GuanXi');">
+                            <td>{{x}}</td>
+                            <td>业务数据集</td>
+                        </tr>
+                        <tr ng-repeat="x in jdbc.databaseConnections" ng-click="selectThis($event,x.name,'JDBC',x.hostname,x.databaseName,x.databasePort,x.username,x.password,x.databaseType.name);">
+                            <td>{{x.name}}</td>
+                            <td>JDBC</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="do">
+                <span title="导出" ng-click="export();">导出</span>
+                <span title="删除" ng-click="alert();">删除</span>
+                <span title="编辑" ng-click="edit();">编辑</span>
+            </div>
+            <div class="xdt-div-loading" id="datasourceLoading">
+            </div>
+        </div>
+        <div class="model-btn">
+                <input type="button" class="next myBtn" value="确定" title="确定" ng-click="close();" />
+                <input type="button" class="cancel myBtn1" ng-click="close();" value="取消" title="取消" />
+            </div>
+        <!-- 操作提示框 -->
+        <div class="alert alert-del hide">
+            <div class="alert-box">
+                <div class="title font-blod600">
+                    <span class="title-name">删除确认</span>
+                    <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+                </div>
+                <div class="alert-main">
+                    <div class="imgbox"></div>
+                    <p class="long-text">所有与选择数据源相关的内容将不再工作，确认要删除吗？</p>
+                </div>
+                <div class="alert-input">
+                    <input type="button" class="myBtn" value="删除" ng-click="del();" title="删除" />
+                    <input type="button" class="myBtn1" value="取消" ng-click="closeAlert();" title="取消" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hide-box hide">
+        <div class="advanced-set">
+            <div class="title font-blod600">
+                <span class="title-name">数据集</span>
+                <span class="title-cancel" ng-click="closeAlert1();" title="关闭"></span>
+            </div>
+            <div class="main" style="margin-bottom:25px">
+                <div class="success">
+                    <i></i>
+                    <p>数据集创建成功！</p>
+                </div>
+                <p class="text">为了支持多维分析和仪表盘，系统为该数据源创建了默认的数据集，你可以任何时候在数据源>管理数据源中编辑它。</p>
+                <div>
+                    <label>
+                        <input type="radio" name="settings" checked value="0" />保持默认数据集</label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="settings" value="1" />立即自定义数据集</label>
+                </div>
+                
+            </div>
+            <div class="do-btn">
+                    <input type="button" class="myBtn" value="确定" title="确定" ng-click="save();" />
+                </div>
+        </div>
+    </div>
+</div>
+<!-- E管理数据源弹出框 -->
+
+
+<div class="agileBox hide" ng-controller="agileController">
+    <div class="agileBoxTitle">
+        <span>数据集编辑器</span>
+        <span class="agileBoxIcon" title="关闭" ng-click="closeAgile();"></span>
+    </div>
+    <div class="agileBoxMain">
+        <div class="mainItem mainItem1">
+            <div class="mainItemTitle">
+                <span>可用项</span>
+                <i class="agileEdit" title="使用默认维度和度量自动填充模型" ng-click="deleteM('1');"></i>
+                <!--<i class="agileFull" title="编辑数据源"></i>-->
+            </div>
+            <div class="mainItemBody" id="mainItemBody">
+                <!--<div class="mainItemBody1">-->
+                <!--<div class="parent open">-->
+                <!--<span class="parentTitle">1</span>-->
+                <!--</div>-->
+                <!--<ul class="children">-->
+                <!--<li>1.1</li>-->
+                <!--<li>1.2</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="mainItem mainItem2">
+            <div class="mainItemTitle">
+
+                <span ng-show="Tab1normal!==false" title="多维数据集" class="mainItemBody-tab active" ng-click="switchTab(0)">多维数据集</span>
+                <span title="业务数据集" class="mainItemBody-tab" ng-click="switchTab(1)">业务数据集</span>
+                <i class="deleteM" title="清除模型" ng-click="deleteM('0');"></i>
+                <i class="deleteP" title="删除项目" ng-click="deleteSelection();"></i>
+                <i class="moveDown" title="上移项目" ng-click="moveUp();"></i>
+                <i class="moveUp" title="下移项目" ng-click="moveDown();"></i>
+            </div>
+
+            <div class="mainItemCenter">
+                <div id="mainItemBody0"></div>
+                <div id="mainItemBody1" style="display:none"></div>
+            </div>
+        </div>
+        <div class="mainItem mainItem3">
+            <div class="mainItemTitle">
+                <span>属性</span>
+            </div>
+            <div class="mainItemBody">
+                <div class="mainItemBodyBox">
+                    <div class="mainItemBodyItem" ng-show="errorShow">
+                        <div class="errorBox">
+                            <i class="errorIcon"></i>
+                            <ul ng-repeat="err in errlist">
+                                <li>{{ err }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mainItemBodyItem" ng-show="nameShow">
+                        <p class="font-blod600">{{ nameExp }}</p>
+                        <p class="font-blod600"></p>
+                        <input type="text" class="columnName" ng-change="changeName(columnName,event);" ng-model="columnName" />
+                    </div>
+                    <div class="mainItemBodyItem" ng-show="sourceShow">
+                        <p class="font-blod600">来源列</p>
+                        <!--<select class="SourceColumn" ng-model="SourceColumnVal" ng-change="changeSc(SourceColumnVal);">-->
+                        <!--<option ng-repeat="n in SourceColumn" test='{{$index}}'>{{ n.name }}</option>-->
+                        <!--</select>-->
+                        <select class="SourceColumn" ng-model="SourceColumnVal" ng-change="changeSc(SourceColumnVal);" ng-options="item.name group by item.tb for item in SourceColumn">
+                            <!--<option ng-repeat="n in SourceColumn" test='{{$index}}'>{{ n.name }}</option>-->
+                        </select>
+                    </div>
+                    <div class="mainItemBodyItem mainItemBodyItem_spe" ng-show="uniqueShow">
+                        <label>
+                            <input type="checkbox" class="havingUniqueMembers" ng-model="havingUniqueMembers" ng-change="changeHum(havingUniqueMembers);"
+                            />仅包含唯一成员</label>
+                    </div>
+                    <div class="mainItemBodyItem" ng-show="juheShow">
+                        <p class="font-blod600">默认聚合</p>
+                        <select class="juhe" ng-model="juheVal" ng-change="changeJh(juheVal)">
+                            <option ng-repeat="x in juhe">{{ x }}</option>
+                        </select>
+                    </div>
+                    <div class="mainItemBodyItem" ng-show="paixuShow">
+                        <p class="font-blod600">排序列</p>
+                        <select class="paixu" ng-model="paixuVal" ng-change="changePx(paixuVal)">
+                            <option ng-repeat="m in SourceColumn">{{ m.name }}</option>
+                        </select>
+                    </div>
+                    <div class="mainItemBodyItem" ng-show="geshihuaShow">
+                        <p class="font-blod600">格式化</p>
+                        <select class="optional geshihua" size="10" ng-model="geshihuaVal" ng-change="changeGsh(geshihuaVal)">
+                            <option ng-repeat="y in geshihua">{{ y }}</option>
+                        </select>
+                    </div>
+
+                    <!-- 业务数据集部分 -->
+                    <div class="mainItemBodyItem" ng-show="metaGroupShow">
+                        <p class="font-blod600">分组名称</p>
+                        <input type="text" class="columnName" ng-change="changeName(columnName,event);" ng-model="columnName" />
+                    </div>
+                    <div class="mainItemBodyItem" ng-show="metaLabelShow">
+                        <p class="font-blod600">字段名称</p>
+                        <input type="text" class="columnName" ng-change="changeName(columnName,event);" ng-model="columnName" />
+                        <p class="font-blod600">来源列</p>
+                        <select class="SourceColumn" ng-model="sourceColumn" ng-change="changeSourceColumn(id,sourceColumn);" ng-click="changeSourceVia($event)">
+                            <optgroup ng-repeat="item in sourceColumnCat" label="{{item.name}}">
+                                <option ng-repeat="cat in item.cat" value="{{item.name}}#{{cat.name}}#{{cat.type}}">{{cat.name}}</option>
+                            </optgroup>
+                        </select>
+                        <div ng-show="isNumberLize">
+                            <p class="font-blod600">数据格式</p>
+                            <select class="optional geshihua" size="10" ng-model="numberLizeValue" ng-change="changeGsh(numberLizeValue)">
+                                <option ng-repeat="little in geshihua" value="{{little}}" label="{{little}}">{{little}}</option>
+                            </select>
+                        </div>
+                        <p class="font-blod600">字段类型</p>
+                        <p>{{labelType}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="agileBoxFoot">
+        <input type="button" class="myBtn2" value="取消" ng-click="closeAgile();">
+        <input type="button" class="myBtn" value="确定" ng-click="saveData();">
+    </div>
+    <div class="alert alert-del hide deleteModel">
+        <div class="alert-box">
+            <div class="title font-blod600">
+                <span class="title-name">{{title}}</span>
+                <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+            </div>
+            <div class="alert-main">
+                <div class="imgbox bg2"></div>
+                <p>{{content}}</p>
+            </div>
+            <div class="alert-input">
+                <input type="button" class="myBtn" value="是" ng-click="clearModel();" title="是" />
+                <input type="button" class="myBtn1" value="否" ng-click="closeAlert();" title="否" />
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-del alert-warning hide">
+        <div class="alert-box">
+            <div class="title font-blod600">
+                <span class="title-name">无效的模型</span>
+                <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+            </div>
+            <div class="alert-main">
+                <div class="imgbox bg2"></div>
+                <p></p>
+            </div>
+            <div class="alert-input1">
+                <input type="button" class="myBtn" value="确定" ng-click="closeAlert();" title="确定" />
+            </div>
+        </div>
+    </div>
+
+    <div class="alert hide newBuildBox">
+        <div class="alert-box newBuild" style="height:auto">
+            <div class="title font-blod600">
+                <span class="title-name">{{ titleDes }}</span>
+                <span class="title-cancel" ng-click="cancelAdd();"></span>
+            </div>
+            <div class="newBuilditem newBuildName">
+                <span>{{ contentDes }}</span><span class="errorTips"></span>
+                <input type="text" ng-model="newBuildName" ng-keyup="onNewNameInputKeyup()"/>
+            </div>
+            <div class="addedChooseList" ng-show="type==7">
+                <span>选择来源列</span><span class="errorTips1"></span>
+                <select class="SourceColumn" ng-model="sourceColumnChoosed" ng-change="changeSourceColumnChoosed(id,sourceColumnChoosed);">
+                    <optgroup ng-repeat="item in sourceColumnCat" label="{{item.name}}">
+                        <option ng-repeat="cat in item.cat" value="{{item.name}}#{{cat.name}}#{{cat.type}}">{{cat.name}}</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="alert-input yhnButtonGroup">
+                <input type="button" class="myBtn" value="确定" ng-click="addBuildItem();" />
+                <input type="button" class="myBtn1" value="取消" ng-click="cancelAdd();" />
+            </div>
+        </div>
+    </div>
+</div>

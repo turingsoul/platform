@@ -1,0 +1,18 @@
+
+
+<div class="filePath" ng-controller="pathController">
+	<div>
+		<span></span>
+		<span class="pathParam">{{folderPathShow}}</span>
+	</div>
+	<div class="labelName">
+		<span class="slipArrow"></span>
+		<span>
+			<span ng-repeat="name in fileName" class="pathLabel">
+				<span ng-click=switchLabel(name,$event)>{{name}}</span>
+				<i ng-click="closePanel(name,$event)"></i>
+			</span>
+		</span>
+		<span class="slipArrow"></span>
+	</div>
+</div>

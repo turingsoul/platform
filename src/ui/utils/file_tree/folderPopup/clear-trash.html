@@ -1,0 +1,15 @@
+
+<div class="clearoutCollection" ng-if="folderOperateObj.trashPopup">
+	<div class="title">
+		<span class="title-name">清空回收站</span>
+		<span class="title-cancel" ng-click = "folderOperateClose()"></span>
+	</div>
+	<div class="content">
+		<span class="imgbox"></span>
+		<span class="text">确实要彻底删除回收站里的内容</span>
+	</div>
+	<div class="handleButton">
+		<button class="submitButton" ng-click = "clearoutTrash()">确定</button>
+		<button class="cancelButton" ng-click = "folderOperateClose()">取消</button>
+	</div>
+</div>

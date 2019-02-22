@@ -1,0 +1,143 @@
+.user-edit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.user-edit .edit-con {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.user-edit .left {
+  width: 386px;
+  margin-left: 30px;
+
+}
+.user-edit .title {
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+}
+.user-edit .edit-info {
+
+}
+
+.user-edit .left .item {
+  margin: 18px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.user-edit .left .item:nth-of-type(1) {
+  margin-top: 4px;
+}
+.user-edit .left .item .name {
+  height: 32px;
+  line-height: 32px;
+  width: 86px;
+  font-size: 14px;
+  color: #444444;
+}
+.user-edit .left .item .name span {
+  color: #f93535;
+  margin-right: 2px;
+}
+.user-edit .left .item  .no-stress {
+  text-indent: 10px;
+}
+.user-edit .left .item input {
+  width: 300px;
+  height: 32px;
+  line-height: 32px;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-indent: 10px;
+}
+
+.user-edit .right {
+  margin-left: 30px;
+}
+
+.user-edit .right .role-wrapper {
+  width: 400px;
+  height: 82%;
+  box-sizing: border-box;
+  padding: 12px 30px;
+  margin-top: 4px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+.user-edit .right .role-wrapper .role {
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #444;
+}
+
+.user-edit .right .role-wrapper .role input {
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.user-edit .btn-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 230px;
+  height: 36px;
+  line-height: 36px;
+  position: relative;
+  left: 36px;
+  bottom: 60px;
+}
+.user-edit .btn-wrapper button {
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444444;
+  margin-right: 17px;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.user-edit .btn-wrapper button:hover {
+  border: 1px solid #40a9ff;
+  color: #40a9ff;
+  background: #ffffff;
+}
+
+.user-edit .btn-wrapper button:active {
+  border: 1px solid #1368b7;
+  color: #1368b7;
+  background: #ffffff;
+}
+
+.user-edit .btn-wrapper .save {
+  border: 1px solid #1890FF;
+  color: #ffffff;
+  background: #1890FF;
+}
+
+.user-edit .btn-wrapper .save:hover {
+  border: 1px solid #40a9ff;
+  background: #40a9ff;
+  color: #FFFFFF;
+}
+
+.user-edit .btn-wrapper save:active {
+  border: 1px solid #1368b7;
+  background: #1368b7;
+  color: #FFFFFF;
+}
+
+

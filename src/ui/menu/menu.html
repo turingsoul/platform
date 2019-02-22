@@ -1,0 +1,111 @@
+<ul class="menu" ng-controller="menuController">
+    <li class="openReport">
+        <span class="display" ng-click="list($event)">分析浏览
+            <div class="bkimg"></div>
+        </span>
+        <a href="" class="saiku" ng-click='fileMenu($event)' ng-class="{alt:yhnSaiku}">
+            <div class="display">多维分析</div>
+        </a>
+        <a href="" class="wcdf" ng-click='fileMenu($event)' ng-class="{alt:yhnWcdf}">
+            <div class="display">仪表盘</div>
+        </a>
+        <a href="" class="xdp" ng-click='fileMenu($event)' ng-class="{alt:yhnXdp}">
+            <div class="display">数据门户</div>
+        </a>
+        <a href="" class="xwaqr" ng-click='fileMenu($event)' ng-class="{alt:yhnXwaqr}">
+            <div class="display">即席查询</div>
+        </a>
+        <a href="" class="prpt" ng-click='fileMenu($event)' ng-class="{alt:yhnPrpt}">
+            <div class="display">定制报表</div>
+        </a>
+        <a href="" class="recentView" ng-click='fileMenu($event)'>
+            <div class="display">最近浏览</div>
+        </a>
+        <a href="" class="collection" ng-click='fileMenu($event)'>
+            <div class="display">我的收藏</div>
+        </a>
+    </li>
+    <li class="newPulgin" ng-show="reportCreate">
+        <span class="display" ng-click="list($event)">分析与报表
+            <div class="bkimg"></div>
+        </span>
+        <a ng-click="newReportView('newOlap')" class="saiku" ng-class="{alt:yhnSaiku}">
+            <div class="">新建多维分析</div>
+        </a>
+        <a ng-click="newReportView('newAdhoc')" ng-class="{alt:yhnXwaqr}">
+            <div class="">新建即席查询</div>
+        </a>
+        <a ng-click="newReportView('newDashboard')" class="xdf" ng-class="{alt:yhnXdf}">
+            <div class="">新建仪表盘</div>
+        </a>
+        <a ng-click="newReportView('newPortal')" class="xdp" ng-class="{alt:yhnXdp}">
+            <div class="">新建数据门户</div>
+        </a>
+    </li>
+    <li class="dataSourceList popupMenu" ng-show="manageDataSource">
+        <span class="display" ng-click="list($event)">数据源
+            <div class="bkimg"></div>
+        </span>
+        <a href="" class="createLink" ng-click="getDataBaseType($event)">
+            <div class="">新建数据源连接</div>
+        </a>
+        <a href="" class="createModule" ng-click="getJdbc($event)">
+            <div class="">新建数据集</div>
+        </a>
+        <a href="" class="leadinModule" ng-click="getList($event)">
+            <div class="">导入数据集</div>
+        </a>
+        <a href="" class="existData" ng-click="menuQuickModule($event)">
+            <div class="">管理数据源</div>
+        </a>
+        <a href="" class="dataQueryManagement" ng-click="newReportView('dataQueryManagement')">
+            <div class="">管理数据查询</div>
+        </a>
+        
+    </li>
+    <li class="userSet popupMenu" ng-show="settingDisplayControl()">
+        <span class="display" ng-click="list($event)">设置
+            <div class="bkimg"></div>
+        </span>
+        <!--
+            <a href="" class="userRole" ng-class="userManger">-->
+            <!--<div class="" ng-click="newReportView('userManager')">用户和角色</div>-->
+        <!--</a>-->
+        <a href="" class="userRole" ng-class="{alt:adminSecurity}">
+            <div class="">用户和角色</div>
+        </a>
+        <a ng-click="newReportView('taskPlan')" class="taskPlan" ng-class="{alt:planContent}">
+            <div class="">任务计划</div>
+        </a>
+        <a href="" class="emailService" ng-class="{alt:adminSecurity}">
+            <div class="">邮件服务</div>
+        </a>
+        <a href="" class="advancedSetting" ng-class="{alt:adminSecurity}">
+            <div class="">高级设置</div>
+        </a>
+    </li>
+    <li class="fileManagement">
+        <a class="" ng-click="newReportView('fileManagement')">
+            <span class="" ng-click="list($event)">文件管理
+                <div class="bkimg hideArrow"></div>
+            </span>
+        </a>
+    </li>
+    <div class="tableList listHide">
+        <!-- <div class="local-loading hide"></div> -->
+        <div class="xdt-div-loading" ng-style="{display:listLoadingShow?'block':'none'}">
+        </div>
+        <div class="display shelter">A</div>
+        <li class="" ng-repeat="item in fileList">
+            <span ng-click="tableList($event)" class="display firstLetter">
+                <span class="display iconTriangle"></span>
+                <span>{{item.key}}</span>
+            </span>
+            <a href="" class="" ng-repeat="num in item.value" ng-click="reportView(num.file.path, num)">
+                <span title='{{num.file.name.split(".")[0]}}'>{{num.file.name.split(".")[0]}}</span>
+                <span title='{{num.file.path}}'>{{num.file.path}}</span>
+                <span>{{num.file.lastModifiedDate}}</span>
+            </a>
+        </li>
+    </div>
+</ul>

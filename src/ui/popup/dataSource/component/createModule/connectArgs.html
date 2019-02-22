@@ -1,0 +1,187 @@
+
+<div class="createModel connectArgs hide" ng-controller="argCtr">
+    <div class="title font-blod600">
+        <span class="title-name">新建数据集</span>
+        <span class="title-cancel" ng-click="close();" title="关闭"></span>
+    </div>
+    <div class="navigation">
+        <!--<span class="active">数据源类别</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">连接参数</span>-->
+        <!--<span></span>-->
+        <!--<span>定义查询</span>-->
+        <!--<span></span>-->
+        <!--<span>定义表间关系</span>-->
+        <span class="active">
+            <div class="order">1</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">数据源类别</i>
+                <i class="right"></i>
+            </div>
+        </span>
+        <span class="active">
+            <div class="order">2</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">连接参数</i>
+                <i class="right"></i>
+            </div>
+        </span>
+        <span>
+            <div class="order">3</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">定义查询</i>
+                <i class="right"></i>
+            </div>
+        </span>
+        <span>
+            <div class="order">4</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">定义表间关系</i>
+                <i class="right"></i>
+            </div>
+        </span>
+    </div>
+    <div class="main" style="position: relative;">
+        <div class="xdt-div-loading" ng-style="{display:divLoading?'block':'none'}"></div>
+        <p style="margin-top: 8px;margin-bottom: 17px;padding-left: 35px;">请输入连接数据库服务器所需的信息</p>
+        <div class="args has-qudong">
+            <div class="div0">
+                <div class="args-name argsItem argsItem1">
+                    <span class="speSpan">连接名称</span>
+                    <input type="text" ng-model="connectName" placeholder="请输入连接名称"/>
+                    <p class="warning">连接名称不能为空且不能包含下列字符：\/:;?+#%&</p>
+                </div>
+            </div>
+            <div class="div1">
+                <div class="args-hostname argsItem">
+                    <span class="speSpan">主机名/IP</span>
+                    <input type="text" ng-model="host" ng-change="changeInput();" placeholder="请输入主机名/IP"/>
+                    <p class="warning">请输入主机名/IP</p>
+                </div>
+                <div class="args-database argsItem">
+                    <span class="speSpan">数据库名</span>
+                    <input type="text" ng-model="databaseName" ng-change="changeInput();" placeholder="请输入数据库名"/>
+                    <p class="warning">请输入数据库名</p>
+                </div>
+                <div class="args-port argsItem">
+                    <span class="speSpan">端口号</span>
+                    <input type="text" ng-model="port" ng-change="changeInput();" placeholder="请输入端口号"/>
+                    <p class="warning">请输入端口号</p>
+                </div>
+            </div>
+            <div class="div2">
+                <div class="args-url argsItem1">
+                    <span class="speSpan">自定义链接URL</span>
+                    <input type="text" ng-model="url" ng-change="changeInput();" placeholder="请输入链接URL"/>
+                    <p class="warning">请输入链接URL</p>
+                </div>
+
+                <div class="args-qudong argsItem1">
+                    <span class="speSpan">自定义驱动类型名</span>
+                    <input type="text" ng-model="qudong" ng-change="changeInput();" placeholder="请输入驱动类型名"/>
+                    <p class="warning">请输入驱动类型名</p>
+                </div>
+            </div>
+            <div class="div3">
+                <div class="args-username">
+                    <span class="speSpan">用户名</span>
+                    <input type="text" ng-model="username" ng-change="changeInput();" placeholder="请输入用户名"/>
+                    <p></p>
+                </div>
+            </div>
+            <div class="div4">
+                <div class="args-password">
+                    <span class="speSpan">密码</span>
+                    <input type="password" ng-model="password" ng-change="changeInput();" placeholder="请输入密码"/>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="test" style="overflow: hidden;margin-bottom: 19px";>
+            <span title="高级设置" ng-click="adSetting();">高级设置</span>
+            <span ng-click="testConn();" title="测试连接">测试连接</span>
+        </div>
+        <div class="alert alert-ad hide">
+            <div class="advancedSet" id="advancedSet" style="height: 428px; margin-top:-214px">
+                <div class="title font-blod600">
+                    <span class="title-name" >高级设置</span>
+                    <span class="title-cancel" ng-click="closeAlert();"></span>
+                </div>
+                <div class="main">
+                    <div class="biaozhifu">
+                        <p style="margin-bottom:10px">标识符</p>
+                        <label><input type="checkbox" ng-model="quoteAllFields"/>为数据库对象加上定界符</label>
+                        <label><input type="checkbox" ng-model="forcingIdentifiersToUpperCase" ng-change="uporlow(true);"/>强制使用大写</label>
+                        <label><input type="checkbox" ng-model="forcingIdentifiersToLowerCase" ng-change="uporlow(false);"/>强制使用小写</label>
+                    </div>
+                    <div class="advanced-args">
+                        <div class="args-title" style="margin-bottom:10px; margin-top:20px">
+                            <span >参数</span>
+                            <span class="remove-args" ng-click="removeArgs();">-</span>
+                            <span class="add-args" ng-click="addArgs();">+</span>
+                        </div>
+                        <div style="max-height: 134px; height:134px; overflow:auto;border: 1px solid #d8d8d8;">
+                            <table>
+                                <tr>
+                                    <th>名称</th>
+                                    <th>值</th>
+                                </tr>
+                                <tr ng-repeat="x in tr" ng-click="setClass($index,x.name);">
+                                    <td><input type="text" ng-model="x.name"/></td>
+                                    <td><input type="text" ng-model="x.content"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="do-btn">
+                        <input type="button" class="myBtn" value="保存" ng-click="save();"/>
+                        <input type="button" class="myBtn1" value="取消"  ng-click="closeAlert();"/>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="btn-wrapper">
+        <div class="model-btn btn1">
+            <input type="button" class="pre myBtn pre1" value="上一步" ng-click="preStep();" title="上一步"/>
+            <input type="button" class="complete myBtn complete1" value="下一步" ng-click="nextStep();" title="下一步"/>
+        </div>
+    </div>
+    <div class="alert alert-close hide">
+        <div class="alert-box">
+            <div class="title font-blod600">
+                <span class="title-name">连接测试</span>
+                <span class="title-cancel" ng-click="closeAlert();" title="关闭"></span>
+            </div>
+            <div class="alert-main">
+                <div class="imgbox"></div>
+                <p></p>
+            </div>
+            <div class="alert-input">
+                <input type="button" class="myBtn" value="关闭" ng-click="closeAlert();" title="关闭"/>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-fugai hide">
+        <div class="fugai-box">
+            <div class="fugai-main title font-blod600">
+                <span class="fugai-title title-name">覆盖确认</span>
+                <span class="title-cancel" title="关闭"></span>
+            </div>
+            <div class="alert-main file-alert">
+                <div class="imgbox1"></div>
+                <p>连接已经存在，你想要覆盖它吗？</p>
+            </div>
+            <div class="fugai-input alert-input">
+                <input type="button" class="myBtn sure" value="确定"  title="删除" />
+                <input type="button" class="myBtn1 cancel" value="取消" title="取消" />
+            </div>
+        </div>
+    </div>
+</div>

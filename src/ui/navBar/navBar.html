@@ -1,0 +1,120 @@
+<div id="xdt-navBar" class="navbar-wrap">
+    <header class="navbar" ng-controller="navController" ng-show="!ifheadhide">
+        <span class="display buttom flexline folded" id="flexline" title="主菜单" ng-click = "toggleIcon();"></span>
+        <span>
+            <menu-directive class="menu-hide"></menu-directive>
+        </span>
+        <div style="display:inline-block; position: relative;width: calc(100% - 50px);left:20px;" ng-show="projectArr ? (projectArr.length ? false : true) : true">
+          <a id="logo" href="#welcome"></a>
+          <span ng-blur="boxBlur();" class="navSpan1">
+              <input class="yhn_search" type="text" placeholder="请输入您要找的文件名" ng-focus = "focusEvent();" ng-blur = "blurEvent();"
+                      ng-keypress = "enterEvent($event);"
+                      ng-keyup = "keyUpEvent($event);"
+                      autocomplete = "off"
+                      ng-model = "searchContent"/>
+              <ul class="suffixList" style="display:none" ng-click="search(x.file.name);">
+                  <li ng-repeat="x in list" ng-click="searchMe(x.file.name);">{{x.file.name | Suffix}}</li>
+              </ul>
+          </span>
+          <span class="display userAttribute navSpan2"  title="用户中心"></span>
+          <span class="navSpan3">
+              <a href="#collection" class="collection1" title="收藏夹"></a>
+          </span>
+          <span class="navSpan4">
+              <a href="#recentReview" class="lastest" title="最近访问"></a>
+          </span>
+          <!-- <div id="vertical_line"  class="navSpan5"></div> -->
+          <div id="username"  class="navSpan6"></div>
+          <div id="titleTips"  class="navSpan7"></div>
+          <span class="userList user-hide navSpan8">
+              <ul>   
+                  <li class="userSet" ng-click="userSet();">用户设置</li>
+                  <li class="display passwordSet" ng-click="modifyPassword();">修改密码</li>
+                  <li class="display helpCenter"><a href="http://www.xdatainsight.com/portal/html/product.html" target="_blank">帮助中心</a></li>
+                  <li class="display about"><a href="http://www.xdatainsight.com/portal/html/home.html" target="_blank">关于我们</a></li>
+                  <!-- <li class="display userGuide" ng-click = "userGuide();">用户引导</li> -->
+                  <li class="display logOut" ng-click = "logOut();">退出登录</li>
+              </ul>
+          </span>
+        </div>
+        <div style="display:inline-block;position: relative;width: calc(100% - 50px);left:20px;box-sizing: border-box;padding-left:25px;height:100%" ng-show="projectArr ? (projectArr.length ? true : false) : false">
+            <ul class="navList">
+                <li  ng-repeat="x in projectArr" ng-if="x.isShow" title="{{x.data.paramData.split('.')[0]}}" ng-click="navListClick($index, x)" ng-class="{active:x.active}">
+                    {{x.name}}
+                    <span ng-show="x.active" class="navLiBtn" ng-click="removeLi($index)"></span>
+                </li>
+            </ul>
+            <div class="showOther">
+                <span class="showOtherBtn"  ng-show="doulbleArrow"></span>
+                <ul class="navList1">
+                    <li ng-repeat="x in projectArr" ng-if="!x.isShow" ng-click="relplaceShowLi($index,x)" title="{{x.data.paramData.split('.')[0]}}">{{x.name}}</li>
+                </ul>
+            </div>
+      
+      
+            <ul class="otherBtn">
+                <li>
+                    <!--添加搜索框-->
+                    <input class="yhn_search1" type="text" placeholder="请输入您要找的文件名" ng-focus = "focusEvent();" ng-blur = "blurEvent();"
+                    ng-keypress = "enterEvent($event);"
+                    ng-keyup = "keyUpEvent($event);"
+                    ng-model = "searchContent"/>
+                </li>
+                <li class="showPageControll"  ng-show="isHandleShow">
+                  <div class="panel" id="panel1" style="display:none">
+                    <div class="toolbarBox">
+                      <div class="toolbar">
+                        <span title="导出为PDF" ng-click="pdfImport();" ng-if="selfWcdf">导出为PDF</span>
+                        <span title="编辑" ng-click="edit();" ng-if="_xdfAndOlapIsEdit && ((selfWcdf && _xdfIsEdit) || (selfSaiku && _saikuIsEdit)|| (selfXdp && _xdpIsEdit))">编辑</span>
+                        <!-- <span title="编辑" ng-click="edit();" ng-if="selfSaiku">编辑</span> -->
+                        <span title="编辑" ng-click="share();" ng-if="selfWcdf">分享</span>
+                        <!-- <span title="打印" ng-click="print();">打印</span> -->
+                        <span title="收藏" ng-click="collect($event);" class="collectlv">收藏</span>
+                        <span title="设置为首页" ng-click="homePage($event);">设置为首页</span>
+                      </div>
+                    </div>
+                    <div id="leftTips"></div>
+                  </div>
+                </li>
+                <li class="hideNav" ng-click="hideNav()"></li>
+                <li class="removeNavList" ng-click="removeNavList()"></li>
+            </ul>
+        </div>
+      </header>
+      <div class="toolbarBg"></div>
+      <div class="alert1 hide">
+          <div class="alert-box1">
+              <div class="title font-blod600">
+                  <span class="title-name">关闭确认</span>
+                  <span class="title-cancel" title="关闭" ng-click="navRemoveResolve()"></span>
+              </div>
+              <div class="alert-main1">
+                  <div class="imgbox1 yhnIconPng"></div>
+                  <p class="yhnTextTips">确定关闭所有内容吗？未保存内容将丢失。</p>
+              </div>
+              <div class="alert-input1">
+                  <input type="button"  class="myBtn yhnSure" value="确定"   ng-click="navRemoveList()" title="删除"/>
+                  <input type="button" class="myBtn1 yhnCancel" value="取消" ng-click="navRemoveResolve();" title="取消"/>
+              </div>
+          </div>
+      </div>
+      <div class="alert2 hide">
+          <div class="alert-box2">
+              <div class="title font-blod600">
+                  <span class="title-name">关闭确认</span>
+                  <span class="title-cancel" title="关闭" ng-click="ifSaveResolve()"></span>
+              </div>
+              <div class="alert-main2">
+                  <div class="imgbox1 yhnIconPng" ></div>
+                  <p class="yhnTextTips">未保存的内容会丢失，确定要关闭吗？</p>
+              </div>
+              <div class="alert-input2">
+                      <input type="button" class="myBtn yhnSure" value="确定"   ng-click="ifSaveRemove()" title="确定"/>
+                      <input type="button"  class="myBtn1 yhnCancel" value="取消" ng-click="ifSaveRemoveResolve();" title="取消"/>
+                  </div>
+          </div>
+      </div>
+      <div class="showNav" ng-click="showNav()" style="display:none">
+        <i class="showNavImg"></i>
+      </div>
+</div>

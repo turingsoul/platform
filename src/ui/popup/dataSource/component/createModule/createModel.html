@@ -1,0 +1,117 @@
+
+<div class="createModel createModel1" ng-controller="modelCtr">
+    <div class="title font-blod600">
+        <span class="title-name">新建数据集</span>
+        <span class="title-cancel" ng-click="close();" title="关闭"></span>
+    </div>
+    <div class="navigation-body">
+        <div class="navigation">
+            <!--<span class="active">数据源类别</span>-->
+            <!--<span></span>-->
+            <!--<span>连接参数</span>-->
+            <!--<span></span>-->
+            <!--<span>定义查询</span>-->
+            <!--<span></span>-->
+            <!--<span>定义表间关系</span>-->
+            <span class="active">
+                <div class="order">1</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">数据源类别</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+            <span>
+                <div class="order">2</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">连接参数</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+            <span>
+                <div class="order">3</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">定义查询</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+            <span>
+                <div class="order">4</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">定义表间关系</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-top">
+            <div class="model-name">
+                <span class="mySpan font-blod600">名称</span>
+                <input type="text" class="myInput" placeholder="请输入名称..." ng-model="sourceName"/>
+                <p class="errorMsg"></p>
+            </div>
+            <div class="model-connect">
+                <span class="mySpan font-blod600">数据源连接</span>
+                <select class="mySelect">
+                    <option value="0">新建数据源连接</option>
+                    <option value="1">选择已有连接</option>
+                </select>
+            </div>
+        </div>
+        <div class="model-type-box">
+            <div class="model-type" data-tag="MySQL">
+                <div class="type-itme">
+                    <div class="type-name font-blod600">本地文件</div>
+                    <ul>
+                        <li ng-click="setType($event);" data-role="excel" class="excel" title="excel"></li>
+                        <li ng-click="setType($event);" data-role="txt" class="txt" title="txt"></li>
+                        <li ng-click="setType($event);" data-role="csv" class="csv" title="csv"></li>
+                    </ul>
+                </div>
+                <div class="type-itme font-blod600">
+                    <div class="type-name">关系型数据库</div>
+                    <ul>
+                        <li ng-click="setType($event);" data-role="MySQL" class="mysql active" title="mysql"></li>
+                        <li ng-click="setType($event);" data-role="Oracle" class="oracle" title="oracle"></li>
+                        <li ng-click="setType($event);" data-role="MS SQL Server" class="sqlserver" title="sqlserver"></li>
+                        <li ng-click="setType($event);" data-role="IBM DB2" class="db2" title="db2"></li>
+                    </ul>
+                </div>
+                <div class="type-itme font-blod600">
+                    <div class="type-name">NoSQL</div>
+                    <ul>
+                        <li ng-click="" data-role="MONETDB" class="db" title="db"></li>
+                        <li ng-click="" data-role="cassandra" class="cassandra" title="cassandra"></li>
+                    </ul>
+                </div>
+                <div class="type-itme font-blod600">
+                    <div class="type-name">大型数据连接</div>
+                    <ul>
+                        <li ng-click="setType($event);" data-role="Hadoop Hive 2" class="hive" title="hive"></li>
+                        <li ng-click="setType($event);" data-role="Hadoop Hive 2" class="spark" title="spark"></li>
+                    </ul>
+                </div>
+                <div class="type-itme font-blod600">
+                    <div class="type-name">通用数据库</div>
+                    <ul>
+                        <li style="height:54px; line-height:54px" ng-click="setType($event);" data-role="Generic database" class="other" title="其他数据库">其他数据库...</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modelExist hide">
+                <select class="myOption" size="1000">
+                    <option ng-repeat="x in jdbc.databaseConnections">{{x.name}}</option>
+                </select>
+            </div>
+        </div>
+        
+    </div>
+    <div class="model-btn">
+        <input type="button" class="cancel myBtn1" value="取消" ng-click="close();" title="取消"/>
+        <input type="button" class="next myBtn" value="下一步" ng-click="nextStep();" title="下一步"/>
+    </div>
+</div>

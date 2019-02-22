@@ -1,0 +1,1068 @@
+.taskPlan {
+    height: calc(100% - 144px);
+    overflow-y: auto;
+}
+.taskPlan p{
+    margin-bottom: 10px;
+}
+.taskPlan ul li{
+
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    color: #6666;
+    font-size: 14px;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.taskPlan ul li:nth-of-type(1) {
+    font-size: 14px;
+    color: #444444;
+    font-weight: bold;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.taskPlan ul li:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.taskPlan li div {
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666666;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.taskPlan ul li:nth-of-type(1) div {
+    text-indent: 16px;
+    box-sizing: border-box;
+    color: #444444;
+    background: #eeeeee;
+    border-right: 1px solid #e6e6e6;
+}
+.taskPlan ul li:nth-of-type(1) div:nth-of-type(1) {
+    border-left: 1px solid #e6e6e6;
+}
+
+.taskPlan li div:nth-of-type(1) {
+    width: 13%;
+}
+.taskPlan li div:nth-of-type(2) {
+    width: 13%;
+}
+.taskPlan li div:nth-of-type(3) {
+    width: 18%;
+}
+.taskPlan li div:nth-of-type(4) {
+    width: 7.7%;
+}
+.taskPlan li div:nth-of-type(5) {
+    width: 8.8%;
+}
+.taskPlan li div:nth-of-type(6) {
+    width: 8.8%;
+}
+.taskPlan li div:nth-of-type(7) {
+    width: 7.2%;
+}
+.taskPlan li div:nth-of-type(8) {
+    width: 6.6%;
+}
+.taskPlan li div:nth-of-type(9) {
+    width: 16%;
+}
+
+
+
+
+
+
+
+
+
+
+/*.taskPlan li div{*/
+/*width: calc(20% - 100px);*/
+/*height: 40px;*/
+/*line-height: 40px;*/
+/*float: left;*/
+/*text-indent: 15px;*/
+/*!*min-width: 132px;*!*/
+/*overflow: hidden;*/
+/*text-overflow: ellipsis;*/
+/*white-space: nowrap;*/
+/*font-size: 16px;*/
+/*}*/
+/*.taskPlan li div:first-child{*/
+/*width: 120px;*/
+/*}*/
+/*.taskPlan li div:last-child{*/
+/*width: 180px;*/
+/*}*/
+/*.taskPlan li div:nth-child(7),.taskPlan li div:nth-child(8){*/
+/*width: 100px;*/
+/*}*/
+/*.taskPlan li:nth-child(even){*/
+/*background: #fff;*/
+/*}*/
+/*.taskPlan li:nth-child(odd){*/
+/*background: #f2f2f2;*/
+/*}*/
+/*.taskPlan li:nth-child(1){*/
+/*background: #999999;*/
+/*color: #fff;*/
+/*font-weight: 600;*/
+/*}*/
+/*.taskPlan li:nth-child(1) div{*/
+/*border-right: 1px solid #fff;*/
+/*box-sizing: border-box;*/
+/*}*/
+/*.taskPlan li:not(:first-child):hover{*/
+/*background: #d3e6f5;*/
+/*cursor: pointer;*/
+/*}*/
+.taskPlan .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../lib/images/icon_dark2.png") no-repeat;
+    margin: 10px 5px 0;
+    vertical-align: top;
+    cursor: pointer;
+}
+.taskPlan .editIcon{
+    background-position: -105px -123px;
+}
+.taskPlan .NORMAL{
+    background-position: -105px -227px;
+}
+.taskPlan .PAUSED{
+    background-position: -105px -248px;
+}
+.taskPlan .doIcon{
+    background-position: -105px -270px;
+}
+.taskPlan .removeIcon{
+    background-position: -105px -206px;
+}
+.taskPlan .icon:hover{
+    background-position-x: -84px;
+}
+.taskPlan .COMPLETE {
+    display: none;
+}
+.taskPlan .UNKNOWN {
+    display: none;
+}
+
+z.fixedBox{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    z-index:100;
+}
+.planBox{
+    position: fixed;
+    width: 440px;
+    height: 650px;
+    left: 50%;
+    top: 50%;
+    margin-top: -325px;
+    margin-left: -220px;
+    background: #fff;
+    z-index: 10000;
+}
+.planBox_1 {
+    height: 200px;
+    margin-top: -100px;
+}
+.planBox .title {
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    background-color: #fff;
+}
+.planBox .title span {
+    float: left;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 54px;
+}
+
+.planBox .title .title-cancel {
+    padding: 0;
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: 12px;
+    margin-top: 19px;
+    margin-right: 20px;
+    background-image: url("../../lib/images/icon.png");
+    background-repeat: no-repeat;
+    background-position: -692px -159px;
+}
+.planBox .title .title-cancel:hover {
+    background-position: -713px -159px;
+}
+.planBox .main {
+    padding-top: 0;
+}
+.planBox .main p {
+    margin-left: 0;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #444444;
+}
+
+.sendMail .planBtn,
+.mytaskPlan .planBtn {
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0px;
+}
+.mytaskPlan .planBtn input {
+    position: relative;
+}
+
+
+
+.planBox .main .tipInfo {
+    float: left;
+    font-size: 14px;
+    color: #444444;
+    margin-left: 8px;
+    margin-top: 32px;
+    font-weight: normal;
+}
+.planBox .main p span {
+    font-size: 14px;
+    color: #444444;
+}
+.planName input,.planPath{
+    width: 364px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+    text-indent: 10px;
+    color: #666;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.planName input:focus{
+    border-color: #1890ff;
+}
+.planPossiton{
+    margin-top: 20px;
+}
+.planPossiton .newBuild{
+    float: right;
+    font-size: 32px;
+    color: #646464;
+    margin-top: -10px;
+    cursor: pointer;
+}
+.planPossiton .myFileTree{
+    width: 353px;
+    height: 354px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    margin: 20px auto 0px;
+    padding:5px;
+    overflow:auto;
+    position: relative;
+}
+/*.myFileTree{width:200px;border:2px inset #fff;height:400px;padding:5px;overflow:auto;}*/
+.myFileTree dd,.tree dt, .tree dl{margin:0;padding:0;overflow:hidden;}
+.myFileTree dd{margin-left:18px;}
+.myFileTree dt{background:url("../../lib/images/tree-bg.png") no-repeat 0 0;padding-left:40px;line-height :30px;height:30px;}
+.myFileTree dt.node-close{background-position: 0 -16px;}
+.myFileTree dt.node-open{background-position: 0 -51px;}
+.myFileTree dt a{color:#666;text-decoration:none;font: 14px/1 verdana;line-height :12px;_line-height :16px;}
+.myFileTree dt a:hover{background:#ebf7ff;color:#333;}
+.myFileTree .active a{background:#ebf7ff;color:#333;}
+
+
+
+
+.planBtn{
+    height: 55px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden
+}
+.planBtn input{
+    float: right;
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    margin-top: 11px;
+    margin-left: 12px;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    color: #333333;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.planBtn .next{
+    border: 1px solid #1890ff;
+    background: #1890ff;
+    color: #fff;
+    margin-right: 20px;
+}
+.planBtn .middle-btn {
+    margin-right: 0px;
+}
+
+.planBtn .right-btn {
+    margin-right: 20px;
+}
+.main .ifEmail{
+    display: inline-block;
+    margin: 6px 44px 4px 0;
+    cursor: pointer;
+}
+.main .ifEmail input{
+    float: left;
+    margin: 1px 5px 0 0;
+}
+.emailInfo div input{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    text-indent: 10px;
+    color: #666;
+    font-size: 14px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.emailInfo div input:focus {
+    border: 1px solid #1890ff;
+}
+.emailInfo div{
+    margin-top: 12px;
+}
+.emailInfo div textarea{
+    height: 210px;
+    padding: 0;
+    border: 1px solid #d9d9d9;
+}
+.main .successImg{
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 30px auto 50px;
+    background: url("../../lib/images/successLogo.png") no-repeat;
+    background-size: cover;
+}
+.main .tipInfo{
+    text-align: center;
+}
+
+
+
+/*yhn start*/
+/*plan*/
+
+
+.mytaskPlanContent{
+    width:100%;
+    height:360px;
+}
+.mytaskPlanContent>p:nth-child(1){
+    margin-top: 20px;
+    margin-left:20px;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+}
+.mytaskRepeat{
+    width:360px;
+    height:58px;
+    margin-left:36px;
+    margin-top: 4px;
+}
+.starttime {
+    height: 68px;
+}
+.mytaskRepeat>span{
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:4px;
+}
+.mytaskRepeat>input{
+    display: inline-block;
+    width:25px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.mychoosedContent {
+    padding-left: 4px;
+}
+.mytaskRepeat>select{
+    display: inline-block;
+    width: 110px;
+    height:30px;
+    margin-top: 4px;
+    border:1px solid #d9d9d9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    text-align: left;
+    text-indent: 7px;
+    color: #444444;
+    background: #ffffff;
+}
+.onlyone{
+    margin-left:20px;
+    margin-top: 10px;
+    width:360px;
+}
+.starttime>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:2px;
+    margin-left: 16px;
+}
+
+
+/*12345*/
+/*.starttime>select:nth-child(2){*/
+    /*display: inline-block;*/
+    /*width: 56px;*/
+    /*height:26px;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+    /*padding-left:8px;*/
+/*}*/
+.planBox .starttime > select:nth-child(2) {
+    margin-left: 12px;
+}
+.planBox .startdate > span:nth-child(1) {
+    margin-left: 14px;
+}
+.planBox .startdate > input {
+    margin-left: 12px;
+}
+.starttime>span:nth-child(3){
+    margin-left:3px;
+    font-family: "microsoft yahei";
+    display: inline-block;
+    font-size: 14px;
+}
+/*.starttime>select:nth-child(4){*/
+    /*display: inline-block;*/
+    /*width: 56px;*/
+    /*height:26px;*/
+    /*margin-left:4px;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*text-align: center;*/
+    /*padding-left:8px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+/*}*/
+/*.starttime>select:nth-child(5){*/
+    /*display: inline-block;*/
+    /*width: 56px;*/
+    /*height:26px;*/
+    /*padding-left:4px;*/
+    /*margin-left:10px;*/
+    /*text-align: center;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+/*}*/
+.startdate{
+    width:360px;
+    margin-top: 14px;
+}
+.startdate>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.startdate>span:nth-child(2){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+/*************************************/
+/*second*/
+/*************************************/
+
+.mychoosedContent>.second{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.startdateSecond{
+    width:360px;
+    margin-top: 10px;
+}
+.startdateSecond .mode {
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: #444444;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.startdateSecond .mode label #yearChoose1,
+.startdateSecond .mode label #yearChoose2,
+.startdateSecond .mode label #monthChoose1,
+.startdateSecond .mode label #monthChoose2,
+.startdateSecond .mode label #daysChoose1,
+.startdateSecond .mode label #daysChoose2{
+    width: 13px;
+    height: 13px;
+    margin-right: 8px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.startdateSecond .mode input[type="text"] {
+    height: 30px;
+    line-height: 30px;
+    width: 60px;
+    background: #ffffff;
+    color: #444444;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 10px;
+}
+.startdateSecond .mode label {
+    vertical-align: middle;
+}
+.startdateSecond .mode label input[type="text"]:focus {
+    border: 1px solid #1890ff;
+}
+.year .startdateSecond .mode,
+.week .startdateSecond .mode,
+.month .startdateSecond .mode {
+    line-height: 32px;
+    height: 2pc;
+    width: calc(100% - 72px);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.week .startdateSecond .mode {
+    height: 4pc;
+}
+
+.week .startdateSecond .mode input {
+    width: 13px;
+    height: 13px;
+    margin-top: 9px;
+    margin-right: 6px;
+}
+.week .startdateSecond .mode label {
+    width: calc(25% - 20px);
+}
+
+
+
+/*.year .startdateSecond .mode:nth-of-type(2),*/
+/*.week .startdateSecond .mode:nth-of-type(2) {*/
+    /*margin-top: 0;*/
+/*}*/
+
+
+
+.month .mode label,
+.week .mode label {
+    width: 25%;
+    box-sizing: border-box;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #444444;
+}
+.month .mode label {
+    width: 100%;
+}
+.year .mode label {
+    width: 21%;
+}
+.month .mode .monthFirstLabel {
+    width: 21%;
+}
+.year .mode input[type="radio"] {
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: 8px;
+}
+.mychoosedContent .year .startdateSecond .mode select,
+.month .mode select {
+    font-size: 14px;
+    color: #444;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    text-align: center;
+    background: #ffffff;
+    margin-right: 14px;
+}
+.month .mode select:focus{
+    border: 1px solid #1890ff;
+}
+.month .mode label input,
+.month .mode label input,
+.week .mode label input {
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 4px;
+}
+.startdateSecond>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.startdateSecond>span:nth-child(2){
+    font-family: "microsoft yahei";
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.startdateSecond>input:nth-child(3){
+    display: inline-block;
+    width:36px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.startdateSecond>span:nth-child(4){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.repeatSpread{
+    margin-top: 5px;
+}
+.repeatSpread>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.repeatSpread>.left{
+    width: 100%;
+}
+.repeatSpread>.left>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+/*.repeatSpread>.left>input:nth-child(2){*/
+    /*display: inline-block;*/
+    /*width:82px;*/
+    /*height:24px;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+/*}*/
+.repeatSpread>.right{
+    width: 100%;
+}
+.second .uper{
+    height:30px;
+}
+.second .down{
+    height:30px;
+}
+.repeatSpread>.right>.uper>input{
+    float:left;
+    display: block;
+    margin-top: 8px;
+}
+.repeatSpread>.right>.uper>label{
+    font-family: "microsoft yahei";
+    float:left;
+    display: block;
+    font-size: 14px;
+    margin-bottom:2px;
+    margin-top: 4px;
+    margin-left:5px;
+}
+
+/*.repeatSpread>.right>.down>input:nth-child(2){*/
+    /*display: inline-block;*/
+    /*width:82px;*/
+    /*height:24px;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+    /*margin-left:10px;*/
+/*}*/
+/********************************/
+/*minutes*/
+.mychoosedContent>.minutes{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.minutes .uper{
+    height:30px;
+}
+.minutes .down{
+    height:30px;
+}
+/***********************************/
+/*hours*/
+.mychoosedContent>.hour{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.hour .uper{
+    height:30px;
+}
+.hour .down{
+    height:30px;
+}
+/*****************************************/
+/*day*/
+
+.mychoosedContent>.day{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.day .uper{
+    height:30px;
+}
+.day .down{
+    height:30px;
+}
+
+.day .startdateSecond>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.day .startdateSecond>input:nth-child(2){
+    display: inline-block;
+}
+.day .startdateSecond>label:nth-child(3){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.day .startdateSecond>input:nth-child(4){
+    display: inline-block;
+    width:36px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.day .startdateSecond>span:nth-child(5){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.day .startdateSecond>input:nth-child(6){
+    margin-left:22px;
+}
+.day .startdateSecond>label:nth-child(7){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+/*****************************/
+/*week*/
+.week .startdateSecond>span:nth-child(1){
+    font-family: "microsoft yahei";
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom:2px;
+}
+.week .startdateSecond>input{
+    margin-right:5px;
+}
+.week .startdateSecond>label{
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:3px;
+    margin-right:9px;
+    user-select: none;
+}
+.mychoosedContent>.week{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.week .uper{
+    height:30px;
+}
+.week .down{
+    height:30px;
+}
+/********************************/
+/*month*/
+.mychoosedContent>.month{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.month .uper{
+    height:30px;
+}
+.month .down{
+    height:30px;
+}
+.month .startdateSecond>label:nth-child(3){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:3px;
+    margin-right:9px;
+    margin-left:4px;
+}
+.month .startdateSecond>input:nth-child(4){
+    display: inline-block;
+    width:36px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.month .startdateSecond>span:nth-child(5){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:3px;
+    margin-right:39px;
+    margin-left:4px;
+}
+.month .startdateSecond>label:nth-child(7){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:3px;
+    margin-right:4px;
+    margin-left:4px;
+}
+/*.month .startdateSecond>select:nth-child(8){*/
+    /*display: inline-block;*/
+    /*width:50px;*/
+    /*height:24px;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+/*}*/
+/*.month .startdateSecond>select:nth-child(9){*/
+    /*display: inline-block;*/
+    /*width:65px;*/
+    /*height:24px;*/
+    /*border:1px solid #D8D8D8;*/
+    /*-webkit-border-radius: 1px;*/
+    /*-moz-border-radius: 1px;*/
+    /*border-radius: 1px;*/
+    /*font-size: 13px;*/
+    /*font-family: "microsoft yahei";*/
+    /*text-align: center;*/
+/*}*/
+/******************************/
+/*year*/
+.year .startdateSecond>div:nth-child(2)>label:nth-child(2){
+    font-family: "microsoft yahei";
+    display: inline-block;;
+    font-size: 14px;
+    margin-bottom:3px;
+    margin-right:4px;
+    margin-left:4px;
+}
+.year .startdateSecond>div:nth-child(2)>select:nth-child(3){
+    display: inline-block;
+    width:51px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+    margin-left:4px;
+}
+.year .startdateSecond>div:nth-child(2)>input:nth-child(4){
+    display: inline-block;
+    width:25px;
+    height:21px;
+    margin-left:4px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.year .startdateSecond>div:nth-child(3)>select:nth-child(2){
+    display: inline-block;
+    width:51px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.year .startdateSecond>div:nth-child(3)>select:nth-child(3){
+    display: inline-block;
+    width:51px;
+    height:24px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+    margin-left:3px;
+}
+.year .startdateSecond>div:nth-child(3)>select:nth-child(4){
+    display: inline-block;
+    width:63px;
+    height:24px;
+    margin-left:4px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.mychoosedContent>.year{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.year .uper{
+    height:30px;
+}
+.year .down{
+    height:30px;
+}
+/**************************************/
+/*taskplan*/
+.smalltaskplan .startdateSecond>input:nth-child(2){
+    display: inline-block;
+    width:148px;
+    height:21px;
+    border:1px solid #D8D8D8;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: "microsoft yahei";
+    text-align: center;
+}
+.mychoosedContent>.taskplan{
+    margin-top: 10px;
+    margin-left:20px;
+}
+.taskplan .uper{
+    height:30px;
+}
+.taskplan .down{
+    height:30px;
+}
+
+/*yhn end*/
+/*added code*/
+.mytaskPlan .mytaskPlanContent .regularDayNumber{
+    display:inline-block;
+    width:24px;
+    text-align: center;
+    margin:0 5px;
+    border:1px solid #D8D8D8;
+}
+
+/*目录树样式*/
+input.fileTreeCheckbox{
+    float: left;
+    margin-top:13px;
+    margin-right: 4px;
+}
+

@@ -1,0 +1,53 @@
+<!--用户编辑-->
+
+<div class="user-edit" ng-controller="userEdit">
+  <div class="edit-con">
+    <div class="left">
+      <div class="title">用户信息</div>
+      <div class="edit-info">
+        <div class="item">
+          <div class="name"><span>*</span>用户名</div>
+          <input type="text">
+        </div>
+        <div class="item">
+          <div class="name"><span>*</span>姓名</div>
+          <input type="text">
+        </div>
+        <div class="item">
+          <div class="name"><span>*</span>密码</div>
+          <input type="text">
+        </div>
+        <div class="item">
+          <div class="name"><span>*</span>确认密码</div>
+          <input type="text">
+        </div>
+        <div class="item">
+          <div class="name no-stress">邮箱</div>
+          <input type="text">
+        </div>
+        <div class="item">
+          <div class="name no-stress">有效期</div>
+          <input type="text">
+        </div>
+        <div class="item">
+          <div class="name no-stress">已禁用</div>
+          <input type="text">
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="title">角色组</div>
+      <div class="role-wrapper">
+        <div ng-show="roles.length>=1" class="roles">
+          <div ng-repeat="role in roles" class="role">
+            <input type="checkbox" ng-checked="role.selected"> {{role.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <button class="save">保存</button>
+    <button class="reset">重置</button>
+  </div>
+</div>

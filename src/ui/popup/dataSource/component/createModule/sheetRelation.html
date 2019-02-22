@@ -1,0 +1,98 @@
+
+<div class="createModel sheetRelation hide" ng-controller="relationCtr">
+    <div class="title font-blod600">
+        <span class="title-name">新建数据集</span>
+        <span class="title-cancel" ng-click="close();" title="关闭"></span>
+    </div>
+    <div class="navigation">
+        <!--<span class="active">数据源类别</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">连接参数</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">定义查询</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">定义表间关系</span>-->
+        <span class="active">
+            <div class="order">1</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">数据源类别</i>
+                <i class="right"></i>
+            </div>
+        </span>
+        <span class="active">
+            <div class="order">2</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">连接参数</i>
+                <i class="right"></i>
+            </div>
+        </span>
+        <span class="active">
+            <div class="order">3</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">定义查询</i>
+                <i class="right"></i>
+            </div>
+        </span>
+        <span class="active">
+            <div class="order">4</div>
+            <div class="icon">
+                <i class="left"></i>
+                <i class="name">定义表间关系</i>
+                <i class="right last"></i>
+            </div>
+        </span>
+    </div>
+    <div class="main" style="position: relative;">
+        <div class="xdt-div-loading" ng-style="{display:divLoading?'block':'none'}"></div>
+        <p style="font-size:10.5pt">定义表间的连接关系，所有表都必须定义至少一个连接关系</p>
+        <div class="sheet-relation">
+            <div class="relation-left">
+                <div class="sheet-name">
+                    <span class="mySpan">左表</span>
+                    <select class="mySelect" ng-change="changeLeft(moren1)" ng-model="moren1">
+                        <option ng-repeat="x in sheet1">{{x}}</option>
+                    </select>
+                </div>
+                <div class="sheet-field">
+                    <div class="mySpan">字段</div>
+                    <div class="sheet-field-left" style="position:relative;">
+                        <select class="myOption" size="10">
+                            <option ng-repeat="a in ziduan1">{{a}}</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="button" class="createConn myBtn" value="创建连接∨" ng-click="createLink();"/>
+            </div>
+            <div class="relation-right">
+                <div class="sheet-name">
+                    <span class="mySpan">右表</span>
+                    <select class="mySelect" ng-change="changeRight(moren2)" ng-model="moren2">
+                        <option ng-repeat="y in sheet2">{{y}}</option>
+                    </select>
+                </div>
+                <div class="sheet-field">
+                    <div class="mySpan">字段</div>
+                    <div class="sheet-field-right" style="position:relative;">
+                    <select class="myOption" size="10">
+                        <option ng-repeat="b in ziduan2">{{b}}</option>
+                    </select>
+                </div>
+                </div>
+                <input type="button" class="deleteConn myBtn" value="删除连接∧" ng-click="deleteLink();"/>
+            </div>
+        </div>
+        <div class="relation-tips">
+            <select class="myOption" size="10">
+                <option ng-repeat="c in linkList">{{c[0]}}</option>
+            </select>
+        </div>
+        
+    </div>
+    <div class="model-btn">
+        <input type="button" class="pre myBtn" value="上一步" ng-click="preStep();" title="上一步"/>
+        <input type="button" class="complete myBtn" value="完成" ng-click="complete();" title="完成"/>
+    </div>
+</div>

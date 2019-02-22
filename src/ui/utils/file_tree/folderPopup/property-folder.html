@@ -1,0 +1,185 @@
+<div class="propertyPopup">
+	<div class="titleName">
+		<span>{{nodeFolder.file.title}}属性</span>
+		<span ng-click = "folderOperateClose()"></span>
+	</div>
+	<div class="propertyBox">
+		<div class="selectProperty">
+			<ul>
+				<li class="active">通用</li>
+				<li>共享</li>
+			</ul>
+		</div>
+		<div class="propertyBody">
+			<div class="item item0">
+				<p><span>名字：</span><span>{{nodeFolder.file.title}}</span></p>
+				<p><span>类型：</span><span>{{nodeFolder.file.ownerType}}</span></p>
+				<p><span>所有者：</span><span>{{shareData.owner}}</span></p>
+				<p><span>源：</span><span>{{nodeFolder.file.path}}</span></p>
+				<p><span>位置：</span><span>{{position}}</span></p>
+				<p><span>大小：</span><span></span></p>
+				<p><span>已创建：</span><span>{{nodeFolder.file.createdDate | date:"yyyy-MM-dd HH:mm:ss"}}</span></p>
+				<p><span>最后修改：</span><span>{{nodeFolder.file.createdDate | date:"yyyy-MM-dd HH:mm:ss"}}</span></p>
+				<p><label><input type="checkbox" ng-model="fileHiden">隐藏</label></p>
+			</div>
+			<div class="item item1">
+				<p><label class="first"><input type="checkbox" ng-model="inherit" ng-change="changeInhert(inherit)">继承目录权限</label></p>
+				<div class="btn-wrapper">
+					<span>用户和角色</span>
+					<div class="model-btn">
+						<input type="button" class="next myBtn" value="+" title="增加" ng-click="roleBox();"/>
+						<input type="button" class="cancel myBtn1" ng-click="removeRole();" value="-" title="移除"/>
+					</div>
+				</div>
+				<select size="10">
+					<option ng-repeat = 'aces in shareData.aces' ng-click = "getUserName(aces)">
+						{{aces.recipient}}
+					</option>
+				</select>
+				
+				<p class="special">权限{{ableName}}</p>
+				<p>
+					<label class="first" ng-click="changeCheckbox(allDisabled);"><input type="checkbox" ng-model="allAble" ng-disabled="allDisabled"/>管理权限</label>
+					<label ng-click="changeCheckbox(deleteDisabled);"><input type="checkbox" ng-model="deleteAble" ng-disabled="deleteDisabled">删除</label>
+					<label ng-click="changeCheckbox(writeDisabled);"><input type="checkbox" ng-model="writeAble" ng-disabled="writeDisabled">可写</label>
+					<label ng-click="changeCheckbox();"><input type="checkbox" ng-model="readAble" disabled>只读</label>
+				</p>
+			</div>
+			
+		</div>
+		
+	</div>
+	<div class="model-btn">
+		<input type="button" class="cancel myBtn1" ng-click = "folderOperateClose();" value="取消" title="取消"/>
+		<input type="button" class="next myBtn" value="确定" title="确定" ng-click="propertyComplete();"/>
+	</div>
+</div>
+<div class="propertyPopup roleBox">
+	<div class="titleName">
+		<span>选择用户或者角色</span>
+		<span ng-click = "closeRoleBox();">×</span>
+	</div>
+	<div class="propertyBody">
+		<p>用户</p>
+		<select size="10" multiple="multiple" class="propertyUser">
+			<option ng-repeat = "user in usersName" >{{user}}</option>
+		</select>
+		<p>角色</p>
+		<select size="10" multiple="multiple" class="propertyRole">
+			<option ng-repeat = "role in rolesName">{{role}}</option>
+		</select>	
+	</div>
+	<div class="model-btn">
+		<input type="button" class="cancel myBtn1" ng-click="closeRoleBox();" value="取消" title="取消"/>
+		<input type="button" class="next myBtn" value="确定" title="确定" ng-click="addRole();"/>
+	</div>
+
+</div>
+<!--<div class="propertyPopup">-->
+<!--<div class="titleName">-->
+<!--<span>共享目录 属性</span>-->
+<!--<span ng-click = "folderOperateClose()">×</span>-->
+<!--</div>-->
+<!--<div class="userInfo">-->
+<!--<div class="userName">-->
+<!--<span>用户</span>-->
+<!--<select name="" multiple="multiple">-->
+<!--<option value="" ng-repeat = "user in usersName" ng-click="chooseUser(user)">-->
+<!--{{user}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="roleName">-->
+<!--<span>角色</span>-->
+<!--<select name="" multiple="multiple">-->
+<!--<option value="" ng-repeat = "role in rolesName" ng-click="chooseRole(role)">-->
+<!--{{role}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="handleButton">-->
+<!--<button class="cancelButton" ng-click = "folderOperateClose()">取消</button>-->
+<!--<button class="submitButton" ng-click = "getProperty()">确定</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="setProperty">-->
+<!--<div class="propertyTitle">-->
+<!--<span>通用</span>-->
+<!--<span ng-click = "shareInfo()">共享</span>-->
+<!--</div>-->
+<!--<div class="propertyInfo">-->
+<!--<div class="propertyInfo">-->
+<!--<span>-->
+<!--<span>名字:</span>-->
+<!--<span>{{nodeFolder.file.name}}</span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>类型:</span>-->
+<!--<span>{{nodeFolder.file.ownerType}}</span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>所有者:</span>-->
+<!--<span></span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>源:</span>-->
+<!--<span></span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>位置:{{nodeFolder.file.path}}</span>-->
+<!--<span></span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>大小:</span>-->
+<!--<span>{{nodeFolder.file.fileSize}}</span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>已创建:</span>-->
+<!--<span>{{nodeFolder.file.createdDate}}</span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<span>最后修改:</span>-->
+<!--<span></span>-->
+<!--</span>-->
+<!--<span>-->
+<!--<input type="checkbox" ng-model="hideValue">-->
+<!--<span>隐藏</span>-->
+<!--</span>-->
+<!--</div>-->
+<!--<div class="handleButton">-->
+<!--<button class="cancelButton" ng-click = "folderOperateClose()">取消</button>-->
+<!--<button class="submitButton" ng-click = "putPermissions()">确定</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="shareInfo">-->
+<!--<div>-->
+<!--<span>-->
+<!--<input type="checkbox">继承目录权限-->
+<!--</span>-->
+<!--<span class="userRole"><b>用户和角色</b></span>-->
+<!--<span>-->
+<!--<select name="" multiple="multiple" class="select">-->
+<!--<option value="" ng-repeat = 'aces in shareData.aces' ng-click = "getUserName(aces)">-->
+<!--{{aces.recipient}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</span>-->
+<!--<div class="handleButton">-->
+<!--<button class="cancelButton" ng-click = "folderOperateClose()">增加</button>-->
+<!--<button class="submitButton" ng-click = "">移除</button>-->
+<!--</div>-->
+<!--<div class="authenticated">-->
+<!--<span><b>权限Authenticated</b></span></br>-->
+<!--<span class="evenSpan" ng-if="shareDataPermissions.admin"><input type="checkbox" ng-change='data(val,"4")' ng-model="val">管理权限</span>-->
+<!--<span ng-if="shareDataPermissions.write"><input type="checkbox" ng-change='data(val,"1")' ng-model="val">可写</span></br>-->
+<!--<span class="deletSpan" ng-if="shareDataPermissions.delete"><input type="checkbox" ng-change='data(val,"2")' ng-model="val">删除</span>-->
+<!--<span ng-if="shareDataPermissions.readOnly"><input type="checkbox" ng-change='data(val,"0")' ng-model="val">只读</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="handleButton">-->
+<!--<button class="cancelButton" ng-click = "folderOperateClose()">取消</button>-->
+<!--<button class="submitButton" ng-click = "putPermissions1()">确定</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

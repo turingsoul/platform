@@ -1,0 +1,78 @@
+
+<div class="createModel modelSetting hide" ng-controller="settingCtr">
+    <div class="title font-blod600">
+        <span class="title-name">新建数据集</span>
+        <span class="title-cancel" ng-click="close();"></span>
+    </div>
+    <div class="navigation navigation-center">
+        <!--<span class="active">数据源类别</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">文件解析</span>-->
+        <!--<span></span>-->
+        <!--<span class="active">导入设置</span>-->
+
+        <span class="active">
+                <div class="order">1</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">数据源类别</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+        <span class="active">
+                <div class="order">2</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">文件解析</i>
+                    <i class="right"></i>
+                </div>
+            </span>
+        <span class="active">
+                <div class="order">3</div>
+                <div class="icon">
+                    <i class="left"></i>
+                    <i class="name">导入设置</i>
+                    <i class="right last"></i>
+                </div>
+            </span>
+    </div>
+    <div class="main" style="position: relative;">
+        <p>选择你想要导入服务器的列并配置它们的属性，然后指定数字和日期字段在源文件中的格式化方式</p>
+        <div class="tableBox">
+            <table>
+                <tr>
+                    <th><input type="checkbox" class="seletAll"/></th>
+                    <!--<th><input type="checkbox" ng-change="selectAll(val);" ng-model="val"/></th>-->
+                    <th style="width: 103px">名称</th>
+                    <th>类型</th>
+                    <th>格式化</th>
+                    <th>长度</th>
+                    <th>精度</th>
+                </tr>
+                <tr ng-repeat="x in setlist track by $index">
+                    <td><input type="checkbox"/></td>
+                    <td><input type="text" ng-model="x.title" class="setlistTitle"/></td>
+                    <td>
+                        <select ng-model="x.dataType" class="setlistType">
+                            <option value="STRING">STRING</option>
+                            <option value="DATE">DATE</option>
+                            <option value="BOOLEAN">BOOLEAN</option>
+                            <option value="NUMERIC">NUMERIC</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="setlistStrings" ng-model="x.format" ng-init="x.format">
+                            <option ng-repeat ="y in dataTypeFormatMapping[x.dataType]" ng-value="y">{{y}}</option>
+                        </select>
+                    <td><input type="text" ng-model="x.length" class="setlistLength"/></td>
+                    <td><input type="text" ng-model="x.precision" class="setlistPrecision"/></td>
+                </tr>
+            </table>
+        </div>
+        <div class="xdt-div-loading" ng-style="{display:modelSettingLoadingShow?'block':'none'}"></div>
+    </div>
+    <div class="model-btn">
+            <input type="button" class="pre myBtn" value="上一步" ng-click="preStep();"/>
+            <input type="button" class="complete myBtn" value="完成" ng-click="complete();"/>
+        </div>
+</div>

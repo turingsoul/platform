@@ -1,0 +1,91 @@
+<div class="userManger" ng-init="navType='user'">
+  <div class="um-nav">
+    <li ng-class="navType==='user'?'active':''" ng-click="navClick('user')">用户管理</li>
+    <li ng-class="navType==='role'?'active':''" ng-click="navClick('role')">角色管理</li>
+  </div>
+
+  <!--用户管理-->
+  <div ng-show="navType==='user'" class="um-user">
+    <div class="um-user-left">
+      <div class="um-add-group">
+        <div class="um-add-name">用户组</div>
+        <div class="um-add-icon" ng-click="addNewGroup()"></div>
+      </div>
+      <div class="um-group-tree">
+        <user-tree ng-init="folder=folder"></user-tree>
+      </div>
+    </div>
+
+
+    <div class="um-user-right" ng-init="rightType='userList'">
+      <div ng-if="rightType==='userList'" class="ul-wrapper">
+        <user-list></user-list>
+      </div>
+      <div ng-if="rightType==='userEdit' || rightType === 'addUser'" class="ue-wrapper">
+        <user-edit></user-edit>
+      </div>
+      <div ng-if="rightType==='newGroup'" class="ng-wrapper">
+        <new-group ng-init="groupInit={}"></new-group>
+      </div>
+      <div ng-if="rightType==='editGroup'" class="ng-wrapper">
+        <new-group ng-init="groupInit=groupInit"></new-group>
+      </div>
+    </div>
+  </div>
+
+  <!--角色管理-->
+  <div ng-show="navType==='role'" class="um-role">
+    <div class="um-role-left">
+      <div class="um-add-group">
+        <div class="um-add-name">角色</div>
+        <div class="um-add-icon"></div>
+      </div>
+      <div class="all-roles">
+        <div class="item"
+             ng-repeat="role in allRoles"
+             ng-class="roleIndex == $index ? 'active' : ''"
+             ng-click="clickRole($index)">
+          {{role.name}}
+        </div>
+      </div>
+    </div>
+    <div class="um-role-right">
+      <div class="role-content">
+        <div class="left">
+          <div class="title">用户组</div>
+          <div class="edit-info">
+            <div class="item">
+              <div class="name no-stress">编号</div>
+              <input type="text">
+            </div>
+            <div class="item">
+              <div class="name"><span>*</span>组名</div>
+              <input type="text">
+            </div>
+            <div class="item">
+              <div class="name no-stress">描述</div>
+              <textarea name="" id="" cols="50" rows="10" class="text"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="middle">
+          <div class="head">
+            <div class="title">角色组</div>
+            <div class="select-all">全选 <input type="checkbox"></div>
+          </div>
+          <div class="tree-wrapper">
+          </div>
+        </div>
+        <div class="right">
+          <div class="title">角色分配</div>
+          <div class="user-tree-wrapper">
+
+          </div>
+          <div class="allot-user-wrapper">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+
+
+<div class="uploadPopup">
+	<div class="titleName">
+		<span>上传文件或文件夹</span>
+		<span ng-click = "folderOperateClose()"></span>
+	</div>
+	<div class="wordsTip">选择文件并上传到资源库,如需上传目录及其文件，请将目录添加到zip压缩包，上传后该压缩包被自动解压。
+	</div>
+	<form id="flieForm">
+		<div class="hide">
+			<input type="text" id="importDir" name="importDir" value="{{nodeFolder.file.path}}"/>
+			<input type="text" id="overwriteFile" name="overwriteFile" value="{{overwriteFile}}"/>
+			<input type="text" id="overwriteAclPermissions" name="overwriteAclPermissions" value="{{overwriteAclPermissions}}"/>
+			<input type="text" id="applyAclPermission" name="applyAclPermission" value="true"/>
+			<input type="text" id="retainOwnership" name="retainOwnership" value="{{retainOwnership}}"/>
+			<input type="text" id="logLevel" name="logLevel" value="ERROR"/>
+			<input type="text" id="charSet" name="charSet" value="utf-8"/>
+			<input type="text" id="fileNameOverride" name="fileNameOverride" value=""/>
+		</div>
+		<div class="fileOperate">
+			<span>选择文件</span>
+			<label for="uploadFile" class="myBtn upload"><input type="file" id="uploadFile" class="hide" name="fileUpload" onchange="angular.element(this).scope().changeVal(this.value);"/>浏览</label>
+			<span class="filePathParam"></span>
+		</div>
+		<div class="operateOption">
+			<div class="setOptions">
+				<span></span>
+				<span>高级选项</span>
+			</div>
+			<div class="fileOption">
+				<span>同名文件</span>
+				<select class="folderName" ng-model="overwriteFile">
+					<option value="true">替换</option>
+					<option value="false">跳过</option>
+				</select>
+			</div>
+			<div class="fileOption">
+				<span>文件权限</span>
+				<select class="folderPermission" ng-model="overwriteAclPermissions">
+					<option value="true">改变权限</option>
+					<option value="false">保留上传文件权限</option>
+				</select>
+			</div>
+			<div class="fileOption">
+				<span class="special">文件所有权</span>
+				<select class="filePermission" ng-model="retainOwnership">
+					<option value="true">不改变所有者</option>
+					<option value="false">设置上传文件的所有者</option>
+				</select>
+			</div>
+		</div>
+	</form>
+	<div class="handleButton">
+		<button class="cancelButton" ng-click = "folderOperateClose()">取消</button>
+		<button class="submitButton" ng-click = "uploadFolderRequest(fileOldName)">确定</button>
+	</div>
+</div>

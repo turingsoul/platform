@@ -1,0 +1,133 @@
+<!--userManger userDisplayPart 1/-->
+<div class = "userDisplayPart" >
+    <div>
+        <span class="userGroup">用户</span>
+        <span class="deleteUser"></span>
+        <span class="addUser"></span>
+    </div>
+    <select class="chooseUser" multiple="multiple"></select>
+</div>
+<div class="userManagerRight">
+    <div class="passwordPanel">
+        <span class="userPassword spanStyle">密码</span>
+        <div>
+            <input type="password" class="userTxt" disabled/>
+            <span class="userBtn">编辑</span>
+        </div>
+    </div>
+    <div class="powerControlPanel">
+        <div class="wrapper">
+            <span>限制</span>
+            <div class = "periodControl">
+                <span>有效期</span>
+                <select name="" id="selectPeriodControl" ng-model = "yhnLongOrPeriod" ng-change = "longOrPeriod(yhnLongOrPeriod);">
+                    <option value="long">长期</option>
+                    <option value="short">期间</option>
+                </select>
+            </div>
+            <div id="selectPeriodBox" ng-show = "ifShowPeriod();">
+                <span>从</span>
+                <input type="text" id="timePickPeriod1">
+                <span>到</span>
+                <input type="text" id="timePickPeriod2">
+            </div>
+        </div>
+        <div class="periodDisabled">
+            <span>禁用</span>
+            <input type="checkbox" id="abandonCheck"  ng-click = "abandonCheckButton();">
+            <span>状态</span>
+            <span id="stateExpire">已过期</span>
+        </div>
+    </div>
+    <div class="userControlPanel">
+        <div>
+            <span>角色</span>
+            <span class="canChooseItem">可用项</span>
+            <select class="canChooseSelect" multiple="multiple"></select>
+        </div>
+        <div>
+            <span class="jumpSelect1" ng-click="addRolesToUser();"></span>
+            <span class="jumpSelect3"></span>
+            <span class="jumpSelect4"></span>
+            <span class="jumpSelect2" ng-click = "removeRolesFromUser();"></span>
+        </div>
+        <div>
+            <span class="choosedItem">选中的</span>
+            <select class="choosedSelect" multiple="multiple">
+                <option value="admin1">admin5</option>
+                <option value="admin2">admin6</option>
+                <option value="option-C">admin7</option>
+                <option value="option-D">admin8</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+<!--add New User-->
+<div class="addNewUser">
+    <div class="title">
+        <span class="title-name">新用户</span>
+        <span class="title-cancel addNewUserFalse"></span>
+    </div>
+    <div class="item addNewUserItem1">
+        <div class="name">
+            <span class="spanUser spanStyle">用户名</span>
+            <span class="userNameTips"></span>
+        </div>
+        <input type="text" class="inputNewUser"/>
+    </div>
+    <div class="item addNewUserItem2">
+        <div class="name">
+            <span class="spanPassword spanStyle">密码</span>
+            <span class="userPasswordTips"></span>
+
+        </div>
+        <input type="password" class="inputNewPassword"/>
+    </div>
+
+    <div class="item addNewUserItem3">
+        <div class="name">
+            <span class="spanPasswordCheck spanStyle">确认密码</span>
+        </div>
+        <input type="password" class="inputCheckNewPassword"/>
+    </div>
+    <div class="btn-wrapper">
+        <span class="addNewUserTrue" ng-click = "addUserTrue();">确定</span>
+        <span class="addNewUserFalse btnCancelStyle">取消</span>
+    </div>
+</div>
+<!--Delete user-->
+<div class="deleteOldUser">
+    <div class="title deleteOldUserFalse">
+        <span class="title-name">删除用户</span>
+        <span class="title-cancel"></span>
+    </div>
+    <div class="deleteOldUserTrue btnCheckStyle">确定</div>
+    <div class="deleteOldUserFalse btnCancelStyle">取消</div>
+    <div class="deleteLogo"></div>
+    <panel class="deleteLogoTips">确定删除该用户？</panel>
+</div>
+<!--modify password-->
+<div class="modifyPassword">
+    <div class="title">
+        <span class="title-name">修改密码</span>
+        <span class="title-cancel modiPasswordFalse"></span>
+    </div>
+    <div class="newPassword">
+        <div class="name">
+            <span class="spanStyle">新密码</span>
+            <span class="modiPasswordTips"></span>
+        </div>
+        <input type="password" class="inputModiPassword" />
+    </div>
+    <div class="confirm">
+        <div class="name">
+            <span class="modiPasswordAgain spanStyle">确认密码</span>
+        </div>
+        <input type="password" class="inputModiPasswordAgain"/>
+    </div>
+    <div class="btn">
+        <span class="modiPasswordTrue">确定</span>
+        <span class="modiPasswordFalse">取消</span>
+    </div>
+</div>
